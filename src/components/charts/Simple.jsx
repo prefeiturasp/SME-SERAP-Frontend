@@ -11,7 +11,7 @@ export default class Simple extends PureComponent {
     });
 
     getEscolas().then(result => {
-      console.log(result);
+      console.dir(result);
     });
   }
 

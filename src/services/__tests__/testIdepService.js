@@ -1,5 +1,3 @@
-import { ANOS_META } from "../idep";
-
 const metaEscolaAnosIniciaisEol191 = {
   nse: 3,
   icg: 1,
@@ -17,14 +15,14 @@ const metaEscolaAnosFinaisEol191 = {
 };
 
 describe("Teste IDEP Service", () => {
-  const getMetaAnosIniciais = jest.fn((codEol, tipo = ANOS_META.INICIAIS) => {
+  const getMetaAnosIniciais = jest.fn((codEol, tipo = "ANOS_META.INICIAIS") => {
     const p = new Promise((resolve, reject) => {
       resolve(metaEscolaAnosIniciaisEol191);
     });
     return p;
   });
 
-  const getMetaAnosFinais = jest.fn((codEol, tipo = ANOS_META.FINAIS) => {
+  const getMetaAnosFinais = jest.fn((codEol, tipo = "ANOS_META.FINAIS") => {
     const p = new Promise((resolve, reject) => {
       resolve(metaEscolaAnosFinaisEol191);
     });
