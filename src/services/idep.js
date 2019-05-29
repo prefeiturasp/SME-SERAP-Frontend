@@ -1,15 +1,20 @@
 import CONFIG from "../config";
+import authService from "./auth";
 
 const BASE_HEADER = {
-  method: "GET"
+  method: "GET",
+  headers: {
+    Authorization: `JWT ${authService.getToken()}`
+  }
 };
 
 export const ANOS_META = {
-  INICIAIS: "inicial",
+  INICIAIS: "meta_ano_inicial",
   FINAIS: "final"
 };
 
 export const getMetaAnos = async (codEol, tipo = ANOS_META.INICIAIS) => {
+  debugger;
   const header = { ...BASE_HEADER };
   const response = await fetch(`${CONFIG.API_URL}/${tipo}/${codEol}`, header);
   const json = await response.json();
