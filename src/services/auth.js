@@ -39,6 +39,11 @@ const getToken = () => {
   }
 };
 
+const getRF = () => {
+  const decoded = decode(getToken());
+  return decoded.rf;
+};
+
 const isLoggedIn = () => {
   const token = localStorage.getItem(TOKEN_ALIAS);
   if (token) {
@@ -86,6 +91,7 @@ const authService = {
   login,
   logout,
   getToken,
+  getRF,
   isLoggedIn,
   isValidResponse
 };

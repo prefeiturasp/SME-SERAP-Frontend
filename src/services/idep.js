@@ -8,17 +8,28 @@ const BASE_HEADER = {
   }
 };
 
+const rf = authService.getRF();
+
 export const ANOS_META = {
   INICIAIS: "meta_ano_inicial",
   FINAIS: "final"
 };
 
 export const getMetaAnos = async (codEol, tipo = ANOS_META.INICIAIS) => {
-  debugger;
   const header = { ...BASE_HEADER };
   const response = await fetch(`${CONFIG.API_URL}/${tipo}/${codEol}`, header);
-  const json = await response.json();
-  return json;
+  const data = await response.json();
+  return data.result[0];
+};
+
+export const getEscolas = async () => {
+  let header = { ...BASE_HEADER };
+  const response = await fetch(
+    `${CONFIG.API_URL}/servidorescolas/${rf}`,
+    header
+  );
+  const data = await response.json();
+  return data.results;
 };
 
 export const getPorNivelSocioEconomico = async (
@@ -96,8 +107,8 @@ const option = {
 };
 
 export const getChartOption = async () => {
-  const meta191 = await getMetaAnos(477);
-  option.xAxis[0].data = meta191.anos;
-  option.series[1].data = meta191.metas;
+  const meta = await getMetaAnos(477);
+  option.xAxis[0].data = meta.anos;
+  option.series[1].data = meta.metas;
   return option;
 };
