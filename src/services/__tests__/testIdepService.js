@@ -1,4 +1,4 @@
-import { ANOS_META } from "../idepService";
+import { ANOS_META } from "../idep";
 
 const metaEscolaAnosIniciaisEol191 = {
   nse: 3,
