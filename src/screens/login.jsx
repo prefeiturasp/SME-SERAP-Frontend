@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import BaseButton, { ButtonStyle, ButtonType } from '../components/button';
+import DatePickerXXX from '../components/datepicker';
 import { Grid } from '../components/grid';
-import authService from '../services/auth';
 import './custom.css';
 import logo from './logo.png';
 
@@ -58,6 +58,15 @@ export class Login extends Component {
                     placeholder={'CPF'}
                   />
                 </div>
+                <div className="form-group">
+                  <DatePickerXXX
+                    className="form-control"
+                    name="dn"
+                    id="dn"
+                    placeholder={'Data de nascimento'}
+                  />
+                </div>
+                <div className="form-group" />
                 <BaseButton
                   type={ButtonType.SUBMIT}
                   style={ButtonStyle.Primary}
