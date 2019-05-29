@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
 import BaseButton, { ButtonStyle, ButtonType } from '../components/button';
+import { Grid } from '../components/grid';
 import authService from '../services/auth';
+import './custom.css';
+import logo from './logo.png';
 
 export class Login extends Component {
   state = { rf: '', idade: '', cpf: '' };
+
   handleSubmit = values => {
-    const { email, password } = values;
-    if (email && password) {
-      authService.login(email, password);
-    }
+    console.log(values, 'zxxxx');
+    // const { email, password } = values;
+    // if (email && password) {
+    //   authService.login(email, password);
+    // }
   };
 
   onRfChanged(e) {
@@ -23,21 +28,19 @@ export class Login extends Component {
 
   render() {
     return (
-      <div>
-        <div className="container">
-          <div className="card mb-5 mt-5 mx-auto card-width bg-dark">
-            <div className="card-body">
-              <div className="card-body text-center text-white">LOGO</div>
-            </div>
+      <div className="align-items-center">
+        <Grid cols="4 4 4 4" className="container">
+          <div>
+            <img src={logo} alt="Logo" />
+            <p className="blueFont">SERAp</p>
           </div>
-          <div className="card card-login mx-auto mt-5 card-width">
+          <div>
+            <p className="whiteFont">PORTAL IDEP</p>
+          </div>
+          <div className="card card-login mx-auto card-width mt-4">
             <div className="card-body">
               <form onSubmit={e => this.handleSubmit(e)}>
-                <div className="form-group" />
                 <div className="form-group">
-                  <label htmlFor="rf" className={'col-form-label'}>
-                    RF:{' '}
-                  </label>
                   <input
                     className="form-control"
                     name="rf"
@@ -45,10 +48,8 @@ export class Login extends Component {
                     onChange={e => this.onRfChanged(e)}
                     placeholder={'RF'}
                   />
-
-                  <label htmlFor="cpf" className={'col-form-label'}>
-                    CPF:{' '}
-                  </label>
+                </div>
+                <div className="form-group">
                   <input
                     className="form-control"
                     name="cpf"
@@ -63,16 +64,10 @@ export class Login extends Component {
                   label="Acessar"
                   className="btn-block"
                 />
-
-                <p className="text-center mt-3">
-                  <a href="#teste" className="text-primary">
-                    Ainda não sou cadastrado
-                  </a>
-                </p>
               </form>
             </div>
           </div>
-        </div>
+        </Grid>
       </div>
     );
   }
