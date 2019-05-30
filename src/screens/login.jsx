@@ -1,29 +1,38 @@
 import React, { Component } from 'react';
 import BaseButton, { ButtonStyle, ButtonType } from '../components/button';
-import DatePickerXXX from '../components/datepicker';
+import MonthPicker from '../components/datepicker';
 import { Grid } from '../components/grid';
 import './custom.css';
 import logo from './logo.png';
 
 export class Login extends Component {
-  state = { rf: '', idade: '', cpf: '' };
+  state = { rf: '', cpf: '', dateSelected: '', disabled: true };
 
-  handleSubmit = values => {
-    console.log(values, 'zxxxx');
-    // const { email, password } = values;
-    // if (email && password) {
-    //   authService.login(email, password);
-    // }
-  };
+  handleSubmit(event) {
+    alert('A name was submitted: ' + JSON.stringify(this.state));
+    event.preventDefault();
+  }
+
+  canSubmit() {
+    const disabled = this.state.rf && this.state.cpf && this.state.dateSelected;
+    disabled
+      ? this.setState({ disabled: false })
+      : this.setState({ disabled: true });
+  }
 
   onRfChanged(e) {
     this.setState({ rf: e.target.value });
-    console.log(this.state.rf);
+    this.canSubmit();
   }
 
   onCPFChanged(e) {
     this.setState({ cpf: e.target.value });
-    console.log(this.state.cpf);
+    this.canSubmit();
+  }
+
+  onDateSelected(date) {
+    this.setState({ dateSelected: date });
+    this.canSubmit();
   }
 
   render() {
@@ -59,18 +68,20 @@ export class Login extends Component {
                   />
                 </div>
                 <div className="form-group">
-                  <DatePickerXXX
+                  <MonthPicker
                     className="form-control"
                     name="dn"
                     id="dn"
-                    placeholder={'Data de nascimento'}
+                    placeholder="Mês/Ano de nascimento"
+                    onSelect={date => this.onDateSelected(date)}
                   />
                 </div>
                 <div className="form-group" />
                 <BaseButton
                   type={ButtonType.SUBMIT}
                   style={ButtonStyle.Primary}
-                  label="Acessar"
+                  disabled={this.state.disabled}
+                  label="Entrar"
                   className="btn-block"
                 />
               </form>

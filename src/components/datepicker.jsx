@@ -4,11 +4,9 @@ import React, { Component } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
-export default class DatePickerXXX extends Component {
+export default class MonthPicker extends Component {
   static propTypes = {
     placeholder: PropTypes.string,
-    cols: PropTypes.string,
-    label: PropTypes.string,
     dateFormat: PropTypes.string,
     minDate: PropTypes.instanceOf(Date),
     maxDate: PropTypes.instanceOf(Date)
@@ -16,8 +14,8 @@ export default class DatePickerXXX extends Component {
 
   static defaultProps = {
     placeholder: '',
-    dateFormat: 'DD/MM/YYYY',
-    cols: '',
+    maxDate: new Date(),
+    dateFormat: 'MM/yyyy',
     fullScreen: false,
     inline: false,
     hasIcon: true
@@ -26,7 +24,7 @@ export default class DatePickerXXX extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedDate: new Date()
+      selectedDate: undefined
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -35,6 +33,7 @@ export default class DatePickerXXX extends Component {
     this.setState({
       selectedDate: date
     });
+    this.props.onSelect(date);
   }
 
   render() {
@@ -61,6 +60,7 @@ export default class DatePickerXXX extends Component {
           onChange={this.handleChange}
           selected={this.state.selectedDate}
           locale={ptBR}
+          showMonthYearPicker
           id={name}
           name={name}
         />
