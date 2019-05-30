@@ -29,8 +29,14 @@ describe("test <MonthPicker>", () => {
     wrapper.find("input").simulate("change", { target: { value: testDate2 } });
     expect(onSelect).toHaveBeenCalledTimes(2);
   });
+
   it("called with correct parameters", () => {
     wrapper.find("input").simulate("change", { target: { value: testDate } });
     expect(onSelect).toHaveBeenCalledWith(testDate);
+  });
+
+  it("correct status after change value", () => {
+    wrapper.find("input").simulate("change", { target: { value: testDate } });
+    expect(wrapper.state("selectedDate")).toStrictEqual(testDate);
   });
 });

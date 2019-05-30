@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
-function toCssClasses(numbers) {
+const toCssClasses = numbers => {
   const cols = numbers ? numbers.split(' ') : [];
   let classes = '';
 
@@ -10,11 +11,20 @@ function toCssClasses(numbers) {
   if (cols[3]) classes += ` col-xs-${cols[3]}`;
 
   return classes;
-}
+};
 
 export default class Grid extends Component {
+  static propTypes = {
+    cols: PropTypes.string,
+    className: PropTypes.string
+  };
+
+  static defaultProps = {
+    cols: '4 4'
+  };
+
   render() {
-    const gridClasses = toCssClasses(this.props.cols || '');
+    const gridClasses = toCssClasses(this.props.cols);
     return (
       <div
         className={`${gridClasses} ${this.props.className}`}

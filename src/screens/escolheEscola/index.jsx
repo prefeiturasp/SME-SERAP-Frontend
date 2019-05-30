@@ -11,7 +11,6 @@ export default class EscolheEscola extends Component {
 
   componentDidMount() {
     getEscolas().then(escolas => {
-      console.log(escolas);
       this.setState({ escolas });
     });
   }
