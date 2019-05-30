@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import logo from '../../assets/logo.png';
-import BaseButton, { ButtonStyle, ButtonType } from '../../components/button';
-import MonthPicker from '../../components/datepicker';
-import { Grid } from '../../components/grid';
+import BaseButton, { ButtonStyle, ButtonType } from '../../components/Button';
+import MonthPicker from '../../components/MonthPicker';
 import authService from '../../services/auth';
 import './custom.css';
+import { Grid } from '../../components/Grid';
 
 export class Login extends Component {
   state = {

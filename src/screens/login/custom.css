@@ -26,3 +26,8 @@ hr {
   height: 2px;
   border: 4px;
 }
+
+.container, .row.justify-content-center.align-items-center {
+  height: 100%;
+  min-height: 100%;
+}

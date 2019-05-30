@@ -1,6 +1,6 @@
 import Simple from "../components/charts/Simple";
-import EscolheEscola from "../screens/escolheEscola/EscolheEscola";
-import Login from "../screens/login/Login";
+import EscolheEscola from "../screens/escolheEscola";
+import Login from "../screens/login/";
 
 const routesConfig = [
   {
@@ -9,7 +9,7 @@ const routesConfig = [
     exact: true
   },
   {
-    path: "/simple",
+    path: "/grafico",
     component: Simple,
     exact: false
   },

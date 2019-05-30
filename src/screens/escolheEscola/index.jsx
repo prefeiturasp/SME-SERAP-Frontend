@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from '../../assets/logo.png';
-import BaseButton, { ButtonStyle, ButtonType } from '../../components/button';
-import { Grid } from '../../components/grid';
+import BaseButton, { ButtonStyle, ButtonType } from '../../components/Button';
+import { Grid } from '../../components/Grid';
 import { getEscolas } from '../../services/idep';
 
 export default class EscolheEscola extends Component {
@@ -18,7 +18,7 @@ export default class EscolheEscola extends Component {
 
   render() {
     return (
-      <div className="align-items-center">
+      <div className="justify-content-center">
         <Grid cols="4 4 4 4" className="container">
           <div>
             <img
@@ -47,7 +47,7 @@ export default class EscolheEscola extends Component {
                   key={cd_unidade_educacao_atual}
                   type={ButtonType.SUBMIT}
                   style={ButtonStyle.OutlineDark}
-                  onClick={() => console.log(cd_unidade_educacao_atual)}
+                  onClick={() => alert(cd_unidade_educacao_atual)}
                   label={`${cd_unidade_educacao_atual} ${tipoesc} ${nomesc}`}
                   className="btn-block"
                 />
