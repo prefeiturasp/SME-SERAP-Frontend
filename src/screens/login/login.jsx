@@ -8,8 +8,8 @@ import logo from './logo.png';
 
 export class Login extends Component {
   state = {
-    rf: '1150669',
-    cpf: '57640459834',
+    rf: '',
+    cpf: '',
     dateSelected: '',
     disabled: true
   };

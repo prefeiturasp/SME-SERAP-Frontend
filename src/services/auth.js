@@ -13,12 +13,11 @@ const login = async (rf, cpf, anonasc, mesnasc) => {
         Accept: "application/json"
       }
     });
-    debugger;
     const json = await response.json();
     const isValid = isValidResponse(json);
     if (isValid) {
       localStorage.setItem(TOKEN_ALIAS, json.token);
-      // window.location.href = "/";
+      window.location.href = "/";
     }
     return { isValid: isValid, detail: json.message };
   } catch (error) {
@@ -41,8 +40,13 @@ const getToken = () => {
 };
 
 const getRF = () => {
-  const decoded = decode(getToken());
-  return decoded.rf;
+  try {
+    const decoded = decode(getToken());
+    return decoded.rf;
+  } catch (error) {
+    console.log("erro ao recuperar rf");
+    return false;
+  }
 };
 
 const isLoggedIn = () => {
