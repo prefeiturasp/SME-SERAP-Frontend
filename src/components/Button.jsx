@@ -38,7 +38,7 @@ export var ButtonType = {
   RESET: 'reset'
 };
 
-export default class BaseButton extends Component {
+export default class Button extends Component {
   render() {
     return (
       <button

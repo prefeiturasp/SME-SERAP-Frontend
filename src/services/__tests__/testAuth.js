@@ -34,6 +34,12 @@ describe("AuthService Helper functions", () => {
     const resp = authService.isLoggedIn();
     expect(resp).toBe(true);
   });
+  it("should return false on isLoggedIn after removing localStorage", () => {
+    localStorage.removeItem(TOKEN_ALIAS);
+    const resp = authService.isLoggedIn();
+    expect(resp).toBe(false);
+  });
+
   it("should return correct seconds", () => {
     const resp = calculateTokenSecondsLeft(expiredToken);
     expect(resp).toBe(-536.077);
