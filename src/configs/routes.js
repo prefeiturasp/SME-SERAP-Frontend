@@ -1,11 +1,17 @@
 import Simple from "../components/charts/Simple";
-import Login from "../screens/login/login";
+import EscolheEscola from "../screens/escolheEscola/EscolheEscola";
+import Login from "../screens/login/Login";
 
 const routesConfig = [
   {
     path: "/",
-    component: Simple,
+    component: EscolheEscola,
     exact: true
+  },
+  {
+    path: "/simple",
+    component: Simple,
+    exact: false
   },
   {
     path: "/login",
