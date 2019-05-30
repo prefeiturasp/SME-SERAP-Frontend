@@ -1,11 +1,11 @@
 import React from "react";
 import "./App.css";
-import Simple from "./components/charts/Simple";
+import Login from "./screens/login/login";
 
 function App() {
   return (
     <div className="App">
-      <Simple />
+      <Login />
     </div>
   );
 }

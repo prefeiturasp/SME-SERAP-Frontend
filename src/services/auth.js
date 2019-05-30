@@ -3,26 +3,27 @@ import CONFIG from "../config";
 
 export const TOKEN_ALIAS = "TOKEN";
 
-const login = async (rf, cpf, anoNasc) => {
+const login = async (rf, cpf, anonasc, mesnasc) => {
   try {
     const response = await fetch(`${CONFIG.API_URL}/login/`, {
       method: "POST",
-      body: JSON.stringify({ rf, cpf, anonasc: anoNasc }),
+      body: JSON.stringify({ rf, cpf, anonasc, mesnasc }),
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json"
       }
     });
+    debugger;
     const json = await response.json();
     const isValid = isValidResponse(json);
     if (isValid) {
       localStorage.setItem(TOKEN_ALIAS, json.token);
       // window.location.href = "/";
     }
-    return isValid;
+    return { isValid: isValid, detail: json.message };
   } catch (error) {
     console.log(`login error: ${error}`);
-    return false;
+    return { isValid: false, detail: error };
   }
 };
 
