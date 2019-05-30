@@ -1,15 +1,35 @@
 import React, { Component } from 'react';
-import BaseButton, { ButtonStyle, ButtonType } from '../components/button';
-import MonthPicker from '../components/datepicker';
-import { Grid } from '../components/grid';
+import BaseButton, { ButtonStyle, ButtonType } from '../../components/button';
+import MonthPicker from '../../components/datepicker';
+import { Grid } from '../../components/grid';
+import authService from '../../services/auth';
 import './custom.css';
 import logo from './logo.png';
 
 export class Login extends Component {
-  state = { rf: '', cpf: '', dateSelected: '', disabled: true };
+  state = {
+    rf: '1150669',
+    cpf: '57640459834',
+    dateSelected: '',
+    disabled: true
+  };
 
   handleSubmit(event) {
-    alert('A name was submitted: ' + JSON.stringify(this.state));
+    const { rf, cpf, dateSelected } = this.state;
+    authService
+      .login(
+        rf,
+        cpf,
+        dateSelected.getYear() + 1900,
+        dateSelected.getMonth() + 1
+      )
+      .then(response => {
+        if (response.isValid) {
+          alert(`Tudo certo`);
+        } else {
+          alert(`Erro ao entrar: ${response.detail}`);
+        }
+      });
     event.preventDefault();
   }
 
@@ -72,6 +92,7 @@ export class Login extends Component {
                     className="form-control"
                     name="dn"
                     id="dn"
+                    autoComplete="off"
                     placeholder="Mês/Ano de nascimento"
                     onSelect={date => this.onDateSelected(date)}
                   />
