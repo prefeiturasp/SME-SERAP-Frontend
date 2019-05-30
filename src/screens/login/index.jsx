@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import BaseButton, { ButtonStyle, ButtonType } from '../../components/button';
-import MonthPicker from '../../components/datepicker';
-import { Grid } from '../../components/grid';
+import logo from '../../assets/logo.png';
+import BaseButton, { ButtonStyle, ButtonType } from '../../components/Button';
+import MonthPicker from '../../components/MonthPicker';
 import authService from '../../services/auth';
 import './custom.css';
-import logo from './logo.png';
+import { Grid } from '../../components/Grid';
 
 export class Login extends Component {
   state = {
-    rf: '1150669',
-    cpf: '57640459834',
+    rf: '',
+    cpf: '',
     dateSelected: '',
     disabled: true
   };
@@ -24,17 +24,13 @@ export class Login extends Component {
         dateSelected.getMonth() + 1
       )
       .then(response => {
-        if (response.isValid) {
-          alert(`Tudo certo`);
-        } else {
-          alert(`Erro ao entrar: ${response.detail}`);
-        }
+        if (!response.isValid) alert(`Erro ao entrar: ${response.detail}`);
       });
     event.preventDefault();
   }
 
   canSubmit() {
-    const disabled = this.state.rf && this.state.cpf && this.state.dateSelected;
+    const disabled = this.state.rf && this.state.cpf;
     disabled
       ? this.setState({ disabled: false })
       : this.setState({ disabled: true });
@@ -60,12 +56,16 @@ export class Login extends Component {
       <div className="align-items-center">
         <Grid cols="4 4 4 4" className="container">
           <div>
-            <img src={logo} alt="Logo" />
-            <p className="blueFont">SERAp</p>
+            <img
+              src={logo}
+              style={{ width: '170.00px', height: '70.13px' }}
+              alt="Logo"
+            />
           </div>
           <div>
             <p className="whiteFont">PORTAL IDEP</p>
           </div>
+          <hr />
           <div className="card card-login mx-auto card-width mt-4">
             <div className="card-body">
               <form onSubmit={e => this.handleSubmit(e)}>

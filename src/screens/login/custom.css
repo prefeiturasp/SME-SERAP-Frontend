@@ -1,5 +1,4 @@
 .blueFont {
-  font-family: Roboto;
   font-style: normal;
   font-weight: bold;
   font-size: 26px;
@@ -7,13 +6,28 @@
 }
 
 .whiteFont {
-  font-family: Roboto;
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
   color: #ffffff;
 }
+
 body {
-  background: linear-gradient(-270deg, #6eade7 0%, #d7ecff 100%);
+  font-family: Roboto;
+  background: linear-gradient(180deg, #6eade7 0%, #d7ecff 100%);
 }
 
+html {
+  height: 100%;
+}
+
+hr {
+  background-color: white;
+  height: 2px;
+  border: 4px;
+}
+
+.container, .row.justify-content-center.align-items-center {
+  height: 100%;
+  min-height: 100%;
+}
