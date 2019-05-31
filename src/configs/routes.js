@@ -1,6 +1,6 @@
-import Simple from "../components/charts/Simple";
 import EscolheEscola from "../screens/escolheEscola";
 import Login from "../screens/login/";
+import Simple from "../components/charts/Simple";
 
 const routesConfig = [
   {

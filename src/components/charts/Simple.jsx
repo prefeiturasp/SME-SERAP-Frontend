@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { getChartOption, getEscolas } from '../../services/idep';
-import EchartsReact from './ReactEcharts';
+import EchartsReact from './helpers/ReactEcharts';
 
 export default class Simple extends PureComponent {
   state = { options: {} };
