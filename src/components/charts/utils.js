@@ -3,14 +3,16 @@ import ecStat from "echarts-stat";
 import { getIncidesAnoInicial } from "../../services/idep";
 
 const roundNumber = number => {
-  return parseFloat(Number(number).toFixed(1));
+  return parseFloat(Number(number).toFixed(2));
 };
 
 export const getHistogramOption = async () => {
-  const meta = await getIncidesAnoInicial(477);
+  const meta = await getIncidesAnoInicial(191);
+
   const { indices, indice_da_escola } = meta;
-  console.log(indices, "xxxxxxxxxxxxxxx");
   let bins = ecStat.histogram(indices);
+  const colorAll = "#7C7772";
+  const colorSelected = "#E47A16";
 
   let interval;
   let min = Infinity;
@@ -30,6 +32,14 @@ export const getHistogramOption = async () => {
     let start = api.coord([api.value(0), yValue]);
     let size = api.size([api.value(1) - api.value(0), yValue]);
     let style = api.style();
+
+    if (indice_da_escola >= api.value(0) && indice_da_escola <= api.value(1)) {
+      style.fill = colorSelected;
+      style.textStroke = colorSelected;
+    } else {
+      style.fill = colorAll;
+      style.textStroke = colorAll;
+    }
 
     return {
       type: "rect",
@@ -51,7 +61,7 @@ export const getHistogramOption = async () => {
       left: "center",
       top: 10
     },
-    color: "#c65836",
+    color: colorAll,
     grid: {
       top: 80,
       containLabel: true
@@ -90,6 +100,5 @@ export const getHistogramOption = async () => {
       }
     ]
   };
-  debugger;
   return histogramOption;
 };
