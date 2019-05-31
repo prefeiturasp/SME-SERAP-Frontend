@@ -1,13 +1,14 @@
 import React, { PureComponent } from 'react';
-import { getChartOption, getEscolas } from '../../services/idep';
+import { getEscolas } from '../../services/idep';
 import EchartsReact from './helpers/ReactEcharts';
+import { getHistogramOption } from './utils';
 
 export default class Simple extends PureComponent {
-  state = { options: {} };
+  state = { histogramOptions: {}, barOptions: {} };
 
   componentDidMount() {
-    getChartOption().then(options => {
-      this.setState({ options });
+    getHistogramOption().then(histogramOptions => {
+      this.setState({ histogramOptions });
     });
 
     getEscolas().then(result => {
@@ -17,11 +18,19 @@ export default class Simple extends PureComponent {
 
   render() {
     return (
-      <EchartsReact
-        option={this.state.options}
-        style={{ height: '400px', width: '100%' }}
-        className="react_for_echarts"
-      />
+      <div>
+        <EchartsReact
+          option={this.state.histogramOptions}
+          style={{ height: '400px', width: '100%' }}
+          className="react_for_echarts"
+        />
+        <hr />
+        <EchartsReact
+          option={this.state.histogramOptions}
+          style={{ height: '400px', width: '100%' }}
+          className="react_for_echarts"
+        />
+      </div>
     );
   }
 }
