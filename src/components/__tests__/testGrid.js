@@ -29,9 +29,9 @@ describe("test <Grid>", () => {
   });
 
   it("correct default div className pt2", () => {
-    wrapper = mount(<Grid cols="3 7 9 4" />);
+    wrapper = mount(<Grid cols="3 7 9 4" className="TEST@" />);
     expect(wrapper.find("div").props().className).toBe(
-      "col-sm-3 col-lg-7 col-md-9 col-xs-4 undefined"
+      "col-sm-3 col-lg-7 col-md-9 col-xs-4 TEST@"
     );
   });
 });

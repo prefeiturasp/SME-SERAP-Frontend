@@ -6,6 +6,7 @@
     "bootstrap": "^4.3.1",
     "date-fns": "^2.0.0-alpha.27",
     "echarts": "^4.2.1",
+    "echarts-stat": "^1.1.1",
     "fast-deep-equal": "^2.0.1",
     "jwt-decode": "^2.2.0",
     "moment": "^2.24.0",
