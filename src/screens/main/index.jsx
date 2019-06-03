@@ -92,10 +92,36 @@ export class Main extends Component {
             pedagógicas.
           </p>
         </Grid>
-        <Grid cols="7 7 7 7">
-          <CircleAndLabel label="5,94" />
-          <CircleAndLabel label="0,93" color="#FFBC0A" />
-          <CircleAndLabel label="5,2" color="#1B80D4" />
+        <Grid cols="7 7 7 7" className="row">
+          <Grid cols="3 3 3 3">
+            <CircleAndLabel
+              label="5,94"
+              topLabel="Aprendizado"
+              bottomLabel="Quanto maior a nota, maior o aprendizado"
+            />
+          </Grid>
+          <Grid cols="1 1 1 1" className="bigX">
+            <p>X</p>
+          </Grid>
+          <Grid cols="3 3 3 3">
+            <CircleAndLabel
+              label="0,93"
+              color="#FFBC0A"
+              topLabel="Fluxo"
+              bottomLabel="Quanto maior o valor, maior a aprovação"
+            />
+          </Grid>
+          <Grid cols="1 1 1 1" className="bigX">
+            <p> = </p>
+          </Grid>
+          <Grid cols="3 3 3 3">
+            <CircleAndLabel
+              label="5,2"
+              color="#1B80D4"
+              topLabel="IDEP"
+              bottomLabel="Meta 5,2"
+            />
+          </Grid>
         </Grid>
       </div>
     );

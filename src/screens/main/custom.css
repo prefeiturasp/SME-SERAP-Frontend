@@ -10,3 +10,16 @@
 .backNormal {
   background: rgb(255, 255, 255);
 }
+
+.bigX {
+  font-weight: 300;
+  font-size: 64px;
+  line-height: 128.91%;
+  /* or 82px */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #d3d3d3;
+}

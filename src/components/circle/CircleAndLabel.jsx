@@ -11,19 +11,25 @@ export default class CircleAndLabel extends Component {
 
   static defaultProps = {
     color: '#ff6c7c',
-    style: {}
+    style: {},
+    topLabel: 'topLabel',
+    bottomLabel: 'bottomLabel'
   };
 
   render() {
-    const { label, color, style } = this.props;
+    const { label, topLabel, bottomLabel, color, style } = this.props;
     const customStyle = {
       color: color,
       border: `3px solid ${color}`,
       style
     };
     return (
-      <div className={'circle'} style={customStyle}>
-        {label}
+      <div>
+        <p className='topLabel' style={{ color: color }}>{topLabel}</p>
+        <div className={'circle'} style={customStyle}>
+          {label}
+        </div>
+        <p className='bottomLabel'>{bottomLabel}</p>
       </div>
     );
   }
