@@ -11,36 +11,19 @@ export class Main extends Component {
   render() {
     return (
       <div className="row backNormal">
-        <Grid cols="5 5 5 5" className="p-5">
-          <p
-            className="ml-3"
-            align="left"
-            style={{
-              color: '#828282',
-              fontSize: '80px',
-              lineHeight: '80px',
-              width: '390px'
-            }}
-          >
-            Conheça o
-          </p>
-          <p
-            className="ml-3"
-            align="left"
-            style={{ color: '#1B80D4', fontSize: '80px', lineHeight: '80px' }}
-          >
-            IDEP
-          </p>
-          <br />
-          <p
-            className="ml-3"
-            align="left"
-            style={{ color: '#828282', width: '415.61px' }}
-          >
-            Saiba mais sobre a importância do índice, como ele é calculado e as
-            metas da sua escola
-          </p>
+        <Grid cols="5 5 5 5" className="conhecaINEP p-5">
+          <div className="p-5">
+            <span>Conheça o</span>
+            <br />
+            <span style={{ color: '#1B80D4' }}>IDEP</span>
+
+            <p className="textoPeqCinza">
+              Saiba mais sobre a importância do índice, como ele é calculado e
+              as metas da sua escola
+            </p>
+          </div>
         </Grid>
+
         <Grid cols="7 7 7 7" className="col backCustom p-3">
           <Button label="HOME" style={ButtonStyle.OutlineLight} />
           <Button
@@ -79,20 +62,20 @@ export class Main extends Component {
         </Grid>
         {/*  quebra de linha aqui */}
         <div className="w-100" />
-        <Grid cols="5 5 5 5" className="p-3">
-          <p style={{ color: '#1B80D4', fontSize: '26px' }}>
+        <Grid cols="5 5 5 5" className="p-5">
+          <p className="textoAzulNegritoItalico ml-3">
             Todos os estudantes tem direito não só à educação, mas à educação de
             qualidade.
           </p>
-          <p style={{ color: '#828282', fontSize: '14px' }}>
-            O Índice de Desenvolvimento da Educação (IDEP) foi criado para medir
-            o desempenho das escolas da Rede Municipal de Ensino, levando em
-            conta os componentes curriculares avaliados na Prova São Paulo e o
-            fluxo escolar. O IDEP, portanto, combina aspectos pedagógicos e
-            sociais, permitindo que a escola seja avaliada a partir da sua
-            realidade. A combinação dessas informações traça um perfil da Rede
-            que ajudará a identificar boas práticas e a planejar estratégias
-            pedagógicas.
+          <p className="textoPeq2 p-5">
+            <b>O Índice de Desenvolvimento da Educação (IDEP)</b> foi criado
+            para medir o desempenho das escolas da Rede Municipal de Ensino,
+            levando em conta os componentes curriculares avaliados na Prova São
+            Paulo e o fluxo escolar. O IDEP, portanto, combina aspectos
+            pedagógicos e sociais, permitindo que a escola seja avaliada a
+            partir da sua realidade. A combinação dessas informações traça um
+            perfil da Rede que ajudará a identificar boas práticas e a planejar
+            estratégias pedagógicas.
           </p>
         </Grid>
         <Grid cols="7 7 7 7" className="row">
