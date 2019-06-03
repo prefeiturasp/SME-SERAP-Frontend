@@ -57,7 +57,7 @@ export class Login extends Component {
         <Grid cols="4 4 4 4" className="container">
           <div>
             <img
-              src={'./logo.png'}
+              src={logo}
               style={{ width: '170.00px', height: '70.13px' }}
               alt="Logo"
             />

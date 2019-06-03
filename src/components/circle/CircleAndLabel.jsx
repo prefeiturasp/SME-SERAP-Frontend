@@ -5,22 +5,24 @@ import './custom.css';
 export default class CircleAndLabel extends Component {
   static propTypes = {
     label: PropTypes.string,
-    color: PropTypes.string
+    color: PropTypes.string,
+    style: PropTypes.object
   };
 
   static defaultProps = {
-    color: '#ff6c7c'
+    color: '#ff6c7c',
+    style: {}
   };
 
   render() {
     const { label, color, style } = this.props;
-    const custonStyle = {
+    const customStyle = {
       color: color,
       border: `3px solid ${color}`,
-      ...style
+      style
     };
     return (
-      <div className={'circle'} style={custonStyle}>
+      <div className={'circle'} style={customStyle}>
         {label}
       </div>
     );

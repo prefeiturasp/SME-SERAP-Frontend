@@ -94,8 +94,8 @@ export class Main extends Component {
         </Grid>
         <Grid cols="7 7 7 7">
           <CircleAndLabel label="5,94" />
-          <CircleAndLabel label="0,93" />
-          <CircleAndLabel label="5,2" />
+          <CircleAndLabel label="0,93" color="#FFBC0A" />
+          <CircleAndLabel label="5,2" color="#1B80D4" />
         </Grid>
       </div>
     );
