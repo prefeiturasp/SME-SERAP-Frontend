@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from '../../assets/logo.png';
+import logo from './logo.png';
 import BaseButton, { ButtonStyle, ButtonType } from '../../components/Button';
 import Grid from '../../components/Grid';
 import MonthPicker from '../../components/MonthPicker';
@@ -57,7 +57,7 @@ export class Login extends Component {
         <Grid cols="4 4 4 4" className="container">
           <div>
             <img
-              src={logo}
+              src={'./logo.png'}
               style={{ width: '170.00px', height: '70.13px' }}
               alt="Logo"
             />

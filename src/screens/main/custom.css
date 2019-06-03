@@ -1,0 +1,8 @@
+.bigFont {
+  fontsize: 80px;
+  lineheight: 80px;
+}
+
+.backCustom {
+  background: rgba(27, 128, 212, 0.5);
+}

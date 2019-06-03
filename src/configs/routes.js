@@ -1,11 +1,11 @@
-import EscolheEscola from "../screens/escolheEscola";
-import Login from "../screens/login/";
 import Simple from "../components/charts/Simple";
+import Login from "../screens/login/";
+import Main from "../screens/main";
 
 const routesConfig = [
   {
     path: "/",
-    component: EscolheEscola,
+    component: Main,
     exact: true
   },
   {
