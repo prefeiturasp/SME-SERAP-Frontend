@@ -12,6 +12,12 @@ body {
   text-align: left;
 }
 
+.hrCinza {
+  /* width: 658px;
+  height: 5.81px; */
+  line-height: 23px;
+  color: #c4c4c4;
+}
 .textoAzulNegritoItalico {
   font-family: Roboto;
   font-style: italic;
