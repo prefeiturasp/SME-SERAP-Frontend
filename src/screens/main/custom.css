@@ -23,3 +23,24 @@
 
   color: #d3d3d3;
 }
+
+/* footer... */
+
+.bg-cinza-escuro {
+  background: #5a5a5a;
+}
+
+.fonte-doze {
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.area-rodape .form-group .rounded-pill {
+  border-radius: 10px !important;
+}
+
+@media (max-width: 575.98px) {
+  .mb-xs-4 {
+    margin-bottom: 1.5rem !important;
+  }
+}
