@@ -1,4 +1,4 @@
-import CONFIG from "../config";
+import CONFIG from "../configs/environment";
 import authService from "./auth";
 
 const BASE_HEADER = {

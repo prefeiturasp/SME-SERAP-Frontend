@@ -1,5 +1,5 @@
 import decode from "jwt-decode";
-import CONFIG from "../config";
+import CONFIG from "../configs/environment";
 
 export const TOKEN_ALIAS = "TOKEN";
 
