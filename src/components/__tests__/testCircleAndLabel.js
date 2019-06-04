@@ -14,8 +14,7 @@ describe("test <Grid>", () => {
   it("correct div style", () => {
     expect(wrapper.find("div > div").props().style).toStrictEqual({
       color: props.color,
-      border: `3px solid ${props.color}`,
-      style: {}
+      border: `3px solid ${props.color}`
     });
   });
 
@@ -31,11 +30,7 @@ describe("test <Grid>", () => {
     wrapper = mount(<CircleAndLabel {...customProps} />);
     expect(wrapper.find("div > div").props().style).toStrictEqual({
       color: props.color,
-      border: `3px solid ${props.color}`,
-      style: {
-        fontStyle: "italic",
-        size: "15px"
-      }
+      border: `3px solid ${props.color}`
     });
   });
 });
