@@ -65,36 +65,34 @@ export class Main extends Component {
           </span>
         </Grid>
         <div className="w-100" />
-        <Grid cols="12 12 12 12" style={{ background: '#1B80D4' }}>
-          <Grid cols="4 4 4 4">
-            <span className="midWhiteHeader">
-              Entenda como são definidas as metas da sua escola
-            </span>
-            <span className="littleWhiteText">
-              As metas serão estabelecidas para os próximos cinco anos, a partir
-              dos grupos formados considerando o Índice Sócio Econômico (NSE) e
-              Indicador de Complexidade de Gestão (ICG), levando em conta
-              somente as escolas que compõem cada grupo, objetivando, assim, a
-              diminuição da desigualdade dos resultados ao longo dos anos. Dessa
-              maneira, as diferenças entre os resultados das escolas serão
-              minimizadas dentro do grupo ao qual cada uma faz parte, como
-              também, entre os grupos estabelecidos.
-            </span>
-          </Grid>
-          <Grid cols="8 8 8 8">
-            <div className="border">
+        <Grid cols="4 4 4 4" style={{ background: '#1B80D4' }}>
+          <p className="midWhiteHeader">
+            Entenda como são definidas as metas da sua escola
+          </p>
+          <p className="littleWhiteText">
+            As metas serão estabelecidas para os próximos cinco anos, a partir
+            dos grupos formados considerando o Índice Sócio Econômico (NSE) e
+            Indicador de Complexidade de Gestão (ICG), levando em conta somente
+            as escolas que compõem cada grupo, objetivando, assim, a diminuição
+            da desigualdade dos resultados ao longo dos anos. Dessa maneira, as
+            diferenças entre os resultados das escolas serão minimizadas dentro
+            do grupo ao qual cada uma faz parte, como também, entre os grupos
+            estabelecidos.
+          </p>
+        </Grid>
+        <Grid cols="8 8 8 8" style={{ background: '#1B80D4' }}>
+            <p className="littleWhiteText">
               ÍNDICE SÓCIO-ECONÔMICO (NSE) Lorem ipsum dolor sit amet,
               consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
               labore et dolore magna aliqua. Ut enim ad minim veniam, quis
               nostrud exercitation ullamco laboris nisi ut.s.
-            </div>
-            <div className="border">
+            </p>
+            <p className="littleWhiteText">
               ÍNDICE SÓCIO-ECONÔMICO (NSE) Lorem ipsum dolor sit amet,
               consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
               labore et dolore magna aliqua. Ut enim ad minim veniam, quis
               nostrud exercitation ullamco laboris nisi ut.s.
-            </div>
-          </Grid>
+            </p>
         </Grid>
 
         <Rodape />
