@@ -45,7 +45,7 @@ export default class CircleAndLabel extends Component {
         <Grid cols="12 12 12 12" className={divClassName} style={customStyle}>
           <span>{label}</span>
         </Grid>
-        <div className={`border  boxShadow ${boxClassName}`}>
+        <div className={`border text-center boxShadow ${boxClassName}`}>
           <p className="bottomLabel">{bottomLabel}</p>
         </div>
       </Grid>
