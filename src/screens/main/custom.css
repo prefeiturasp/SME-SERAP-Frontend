@@ -106,3 +106,26 @@ body {
   align-items: center;
   text-align: center;
 }
+
+.midWhiteHeader {
+  font-family: Roboto;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 26px;
+  /* line-height: 128.91%; */
+  /* or 34px */
+
+  /* display: flex; */
+  align-items: center;
+
+  color: #ffffff;
+}
+
+.littleWhiteText {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  /* line-height: 22px; */
+  color: #ffffff;
+}
