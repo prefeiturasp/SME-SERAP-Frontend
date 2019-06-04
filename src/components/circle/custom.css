@@ -11,6 +11,15 @@
   background: rgb(255, 255, 255);
 }
 
+.boxCircle {
+  width: 160px;
+}
+
+.boxShadow {
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+}
+
 .circleFilled {
   width: 220px;
   height: 220px;
@@ -29,6 +38,10 @@
   background: rgb(255, 255, 255);
 }
 
+.boxCircleFilled {
+  width: 220px;
+}
+
 .topLabel {
   font-size: 20px;
   width: 160px;
@@ -37,4 +50,8 @@
 .bottomLabel {
   color: #828282;
   width: 160px;
+}
+
+.allignMiddle {
+  vertical-align: middle;
 }

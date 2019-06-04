@@ -1,6 +1,8 @@
 import React from 'react';
 import Button, { ButtonStyle } from '../../components/Button';
-import CircleAndLabel, { CIRCLE_MODE } from '../../components/circle/CircleAndLabel';
+import CircleAndLabel, {
+  CIRCLE_MODE
+} from '../../components/circle/CircleAndLabel';
 import Grid from '../../components/Grid';
 
 export default function Quad5() {
@@ -42,7 +44,7 @@ export default function Quad5() {
           bottomLabel="CRITÉRIOS: Reprovação Abandono Aprovação"
         />
       </Grid>
-      <Button label="Nota técnica" style={ButtonStyle.OutlinePrimary59} />
+      <Button label="Nota técnica" style={ButtonStyle.OutlinePrimary} />
     </Grid>
   );
 }
