@@ -1,0 +1,22 @@
+.circle {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  font-size: 54px;
+  color: #ff6c7c;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  border: 3px solid #ff6c7c;
+  background: rgb(255, 255, 255);
+}
+
+.topLabel {
+  font-size: 20px;
+  width: 160px;
+}
+
+.bottomLabel {
+  color: #828282;
+  width: 160px;
+}

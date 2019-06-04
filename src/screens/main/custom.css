@@ -1,0 +1,90 @@
+body {
+  font-family: Roboto;
+}
+.conhecaINEP {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 80px;
+  line-height: 80px;
+  color: #828282;
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+
+.hrCinza {
+  /* width: 658px;
+  height: 5.81px; */
+  line-height: 23px;
+  color: #c4c4c4;
+}
+.textoAzulNegritoItalico {
+  font-family: Roboto;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 128.91%;
+  display: flex;
+  align-items: center;
+  color: #1b80d4;
+}
+
+.textoPeqCinza {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 23px;
+  color: #828282;
+  text-align: left;
+}
+
+.textoPeq2 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  text-align: left;
+  line-height: 22px;
+  color: #828282;
+}
+
+.backCustom {
+  background: rgba(27, 128, 212, 0.5);
+}
+
+.backNormal {
+  background: rgb(255, 255, 255);
+}
+
+.bigX {
+  font-weight: 300;
+  font-size: 64px;
+  line-height: 128.91%;
+  /* or 82px */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #d3d3d3;
+}
+
+/* footer... */
+
+.bg-cinza-escuro {
+  background: #5a5a5a;
+}
+
+.fonte-doze {
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.area-rodape .form-group .rounded-pill {
+  border-radius: 10px !important;
+}
+
+@media (max-width: 575.98px) {
+  .mb-xs-4 {
+    margin-bottom: 1.5rem !important;
+  }
+}
