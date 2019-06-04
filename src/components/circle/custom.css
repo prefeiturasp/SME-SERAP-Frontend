@@ -11,6 +11,41 @@
   background: rgb(255, 255, 255);
 }
 
+.boxCircle {
+  width: 160px;
+}
+
+.boxShadow {
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+  text-align: left;
+  display: flex;
+  vertical-align: middle;
+  line-height: normal;
+}
+
+.circleFilled {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #ff6c7c;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  border: 3px solid #ff6c7c;
+  background: rgb(255, 255, 255);
+}
+
+.boxCircleFilled {
+  width: 220px;
+}
+
 .topLabel {
   font-size: 20px;
   width: 160px;
@@ -19,4 +54,8 @@
 .bottomLabel {
   color: #828282;
   width: 160px;
+}
+
+.allignMiddle {
+  vertical-align: middle;
 }

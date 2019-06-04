@@ -88,3 +88,44 @@ body {
     margin-bottom: 1.5rem !important;
   }
 }
+
+.blueDiv {
+  height: 122px;
+  background: rgba(27, 128, 212, 0.5);
+}
+
+.bigWhiteLabel {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 56px;
+  line-height: 80px;
+  height: 122px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.midWhiteHeader {
+  font-family: Roboto;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 26px;
+  /* line-height: 128.91%; */
+  /* or 34px */
+
+  /* display: flex; */
+  align-items: center;
+
+  color: #ffffff;
+}
+
+.littleWhiteText {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  /* line-height: 22px; */
+  color: #ffffff;
+}
