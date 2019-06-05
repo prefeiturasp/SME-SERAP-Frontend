@@ -61,6 +61,14 @@
   width: 7em;
   height: 7em;
   text-align: center;
+  position: "relative";
+}
+
+.circuloFill {
+  width: 9em;
+  height: 9em;
+  text-align: center;
+  position: "relative";
 }
 
 .topColoredLabel {
@@ -72,6 +80,7 @@
   left: 0;
   position: absolute;
   text-align: center;
-  top: 6em;
+  top: 2em;
   width: 100%;
+  font-size: 2.5em;
 }

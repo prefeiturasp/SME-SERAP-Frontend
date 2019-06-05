@@ -4,9 +4,11 @@ import './custom.css';
 import Informativo from './Informativo';
 import Quad1 from './Quad1';
 import Quad2 from './Quad2';
+import CirculosAnos from './CirculosAnos';
 import Quad3 from './Quad3';
 import Quad4 from './Quad4';
 import SeuGrupoHeader from './SeuGrupoHeader';
+import { anosInicial, anosFinal } from './aux';
 export class Main extends Component {
   render() {
     return (
@@ -21,9 +23,11 @@ export class Main extends Component {
         </div>
         <div className="row">
           <AnosHeader label="Anos Iniciais" />
+          <CirculosAnos params={anosInicial} />
         </div>
         <div className="row">
           <AnosHeader label="Anos Finais" />
+          <CirculosAnos params={anosFinal} />
         </div>
         <Informativo />
         <SeuGrupoHeader />

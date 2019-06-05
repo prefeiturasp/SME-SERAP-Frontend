@@ -1,14 +1,14 @@
 import React from 'react';
-import CircleAndLabel, {
+import CircleAndLabelOutline, {
   CIRCLE_COLOR
-} from '../../components/circle/CircleAndLabel';
+} from '../../components/circle/CircleAndLabelOutline';
 import Grid from '../../components/Grid';
 
 export default function Quad4() {
   return (
     <Grid cols="7 7 7 7" className="row justify-content-between">
       <Grid cols="4 4 4 4">
-        <CircleAndLabel
+        <CircleAndLabelOutline
           label="5,94"
           color={CIRCLE_COLOR.ROSA}
           topLabel="Aprendizado"
@@ -16,7 +16,7 @@ export default function Quad4() {
         />
       </Grid>
       <Grid cols="4 4 4 4">
-        <CircleAndLabel
+        <CircleAndLabelOutline
           label="0,93"
           color={CIRCLE_COLOR.AMARELO}
           topLabel="Fluxo"
@@ -24,7 +24,7 @@ export default function Quad4() {
         />
       </Grid>
       <Grid cols="4 4 4 4">
-        <CircleAndLabel
+        <CircleAndLabelOutline
           label="5,2"
           color={CIRCLE_COLOR.AZUL}
           topLabel="IDEP"

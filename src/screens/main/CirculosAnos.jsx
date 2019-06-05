@@ -1,50 +1,46 @@
 import React from 'react';
-import CircleAndLabel, {
-  CIRCLE_MODE
-} from '../../components/circle/CircleAndLabel';
+
 import Grid from '../../components/Grid';
+import CircleAndLabelFill, {
+  CIRCLE_COLOR
+} from '../../components/circle/CircleAndLabelFill.1';
 
 export default function CirculosAnos(props) {
   const { params } = props;
   return (
     <Grid cols="12 12 12 12" className="row p-5">
       <Grid cols="3 3 3 3">
-        <CircleAndLabel
+        <CircleAndLabelFill
           label={params.first.label}
-          mode={CIRCLE_MODE.FILLED}
-          color="#FF6C7C"
+          color={CIRCLE_COLOR.ROSA}
           topLabel=""
           bottomLabel={params.first.bottomLabel}
         />
       </Grid>
       <Grid cols="3 3 3 3">
-        <CircleAndLabel
+        <CircleAndLabelFill
           label={params.second.label}
-          mode={CIRCLE_MODE.FILLED}
-          color="#FFBC0A"
+          color={CIRCLE_COLOR.AMARELO}
           topLabel=""
           bottomLabel={params.second.bottomLabel}
         />
       </Grid>
       <Grid cols="3 3 3 3">
-        <CircleAndLabel
+        <CircleAndLabelFill
           label={params.third.label}
-          mode={CIRCLE_MODE.FILLED}
-          color="#1B80D4"
+          color={CIRCLE_COLOR.AZUL}
           topLabel=""
           bottomLabel={params.third.bottomLabel}
         />
       </Grid>
       <Grid cols="3 3 3 3">
-        <CircleAndLabel
+        <CircleAndLabelFill
           label={params.forth.label}
-          mode={CIRCLE_MODE.FILLED}
-          color="#422593"
+          color={CIRCLE_COLOR.ROXO}
           topLabel=""
           bottomLabel={params.forth.bottomLabel}
         />
       </Grid>
-      {/* <Button label="Nota técnica" style={ButtonStyle.OutlinePrimary} /> */}
     </Grid>
   );
 }

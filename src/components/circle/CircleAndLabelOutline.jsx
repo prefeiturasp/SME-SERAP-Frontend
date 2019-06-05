@@ -16,7 +16,7 @@ export const CIRCLE_COLOR = {
   AZUL: 'AZUL'
 };
 
-export default class CircleAndLabel extends Component {
+export default class CircleAndLabelOutline extends Component {
   static propTypes = {
     label: PropTypes.string,
     color: PropTypes.string,
@@ -70,10 +70,14 @@ export default class CircleAndLabel extends Component {
           <img
             src={circleSelected}
             alt="circuloOutline"
-            style={{ position: 'relative' }}
             className="circuloOutline"
           />
-          <span className="textoNoMeioDoCirculoOutline">Centered</span>
+          <span
+            className="textoNoMeioDoCirculoOutline"
+            style={{ color: letterColor }}
+          >
+            {label}
+          </span>
         </div>
         <div class="w-100" />
         <div>
