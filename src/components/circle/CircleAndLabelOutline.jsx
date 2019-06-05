@@ -61,7 +61,7 @@ export default class CircleAndLabelOutline extends Component {
       customStyle.background = color;
     }
     return (
-      <div className="border">
+      <div className="">
         <div className="topColoredLabel" style={{ color: letterColor }}>
           <p>{topLabel}</p>
         </div>
@@ -80,7 +80,7 @@ export default class CircleAndLabelOutline extends Component {
           </span>
         </div>
         <div class="w-100" />
-        <div>
+        <div class="mt-3">
           <span className="bottomLabel">{bottomLabel}</span>
         </div>
       </div>

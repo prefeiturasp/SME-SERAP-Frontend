@@ -59,7 +59,7 @@ export default class CircleAndLabelFill extends Component {
     }
 
     return (
-      <div className="border">
+      <div className="">
         <div className="container">
           <img src={circleSelected} alt="circuloFill" className="circuloFill" />
           <div className="textoNoMeioDocirculoFill text-center p-5">
@@ -76,7 +76,8 @@ export default class CircleAndLabelFill extends Component {
         <div className="pontos" style={{ color: dotsColor }}>
           .
         </div>
-        <div>
+        <div class="w-100" />
+        <div class="card infoCard">
           <span className="bottomLabel mt-4">{bottomLabel}</span>
         </div>
       </div>
