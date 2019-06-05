@@ -5,37 +5,38 @@ import livros from './img/livros.png';
 
 export default function Quad2() {
   return (
-    <Grid cols="7 7 7 7" className="col backCustom p-3">
-      <Button label="HOME" style={ButtonStyle.OutlineLight} />
-      <Button
-        label="SEU GRUPO"
-        style={ButtonStyle.OutlineLight}
-        className="ml-3"
-      />
-      <Button
-        label="SUA ESCOLA"
-        style={ButtonStyle.OutlineLight}
-        className="ml-3"
-      />
-      <Button label="METAS" style={ButtonStyle.OutlineLight} className="ml-3" />
-      <img
-        src={livros}
-        style={{
-          left: '51.46%',
-          right: '7.87%',
-          top: '4.06%',
-          bottom: '89.57%',
-          width: '440.00px',
-          height: '370.13px'
-        }}
-        alt="Logo"
-      />
-      <Button
-        label="CÁLCULO"
-        style={ButtonStyle.OutlineLight}
-        className="ml-3"
-        buttonStyle={{ fontSize: '56px', lineheight: '80px' }}
-      />
+    <Grid cols="8 8 8 8" className="backGroundCustom">
+      <Grid
+        cols="12 12 12 12"
+        className="row align-items-center justify-content-between p-4"
+      >
+        <Button
+          label="HOME"
+          style={ButtonStyle.OutlineLight}
+          className="ml-3"
+        />
+        <Button
+          label="CÁLCULO"
+          style={ButtonStyle.OutlineLight}
+          className="ml-3"
+        />
+        <Button
+          label="SEU GRUPO"
+          style={ButtonStyle.OutlineLight}
+          className="ml-3"
+        />
+        <Button
+          label="METAS"
+          style={ButtonStyle.OutlineLight}
+          className="ml-3"
+        />
+        <Button
+          label="SUA ESCOLA"
+          style={ButtonStyle.OutlineLight}
+          className="ml-3"
+        />
+      </Grid>
+      <img className="imagemPrincipal img-fluid mb-3 mt-1" src={livros} alt="Logo" />
     </Grid>
   );
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import If from './layout';
+// import If from './If';
 
-// https://getbootstrap.com/docs/4.0/components/buttons/
 export var ButtonStyle = {
   Primary: 'primary',
   Secondary: 'secondary',
@@ -29,7 +30,9 @@ export var ButtonIcon = {
   EDIT: 'edit',
   CLOSE: 'close',
   FOLDER: 'folder',
-  POWER_OFF: 'power-off'
+  POWER_OFF: 'power-off',
+  ARROW_DOWN: 'arrow-down',
+  ANGLE_DOWN: 'angle-down'
 };
 
 export var ButtonType = {
@@ -40,15 +43,28 @@ export var ButtonType = {
 
 export default class Button extends Component {
   render() {
+    const {
+      type,
+      style,
+      className,
+      buttonStyle,
+      disabled,
+      label,
+      icon,
+      onClick
+    } = this.props;
     return (
       <button
-        type={this.props.type || ButtonType.BUTTON}
-        className={`btn btn-${this.props.style} ${this.props.className}`}
-        onClick={this.props.onClick}
-        style={this.props.buttonStyle}
-        disabled={this.props.disabled}
+        type={type || ButtonType.BUTTON}
+        className={`btn btn-${style} ${className}`}
+        onClick={onClick}
+        style={buttonStyle}
+        disabled={disabled}
       >
-        {this.props.label}
+        {label}
+        <If isVisible={true}>
+          <i class={`fa fa-${icon}`} />
+        </If>
       </button>
     );
   }

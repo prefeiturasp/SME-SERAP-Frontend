@@ -29,15 +29,6 @@ body {
   color: #1b80d4;
 }
 
-.textoPeqCinza {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 23px;
-  color: #828282;
-  text-align: left;
-}
-
 .textoPeq2 {
   font-style: normal;
   font-weight: normal;
@@ -45,10 +36,6 @@ body {
   text-align: left;
   line-height: 22px;
   color: #828282;
-}
-
-.backCustom {
-  background: rgba(27, 128, 212, 0.5);
 }
 
 .backNormal {
@@ -128,4 +115,38 @@ body {
   font-size: 14px;
   /* line-height: 22px; */
   color: #ffffff;
+}
+
+/* NOVOOO */
+
+.idepAzulGrande {
+  font-style: normal;
+  font-weight: 900;
+  font-size: 6em;
+  line-height: 1em;
+  color: #1b80d4;
+}
+
+.idepCinzaGrande {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 5em;
+  line-height: 1em;
+  color: #828282;
+}
+
+.textoPeqCinza {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1em;
+  line-height: 1em;
+  color: #828282;
+}
+
+.backGroundCustom {
+  background: rgba(27, 128, 212, 0.5);
+}
+
+.imagemPrincipal{
+  
 }
