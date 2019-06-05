@@ -81,6 +81,12 @@ body {
 }
 
 /* NOVOOO */
+.cardTitulo {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.5em;
+  color: #1b80d4;
+}
 
 .idepAzulGrande {
   font-style: normal;

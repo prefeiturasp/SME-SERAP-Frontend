@@ -6,8 +6,8 @@ const roundNumber = number => {
   return parseFloat(Number(number).toFixed(2));
 };
 
-export const getHistogramOption = async () => {
-  const meta = await getIncidesAnoInicial(191);
+export const getHistogramOption = async codEOL => {
+  const meta = await getIncidesAnoInicial(codEOL);
 
   const { indices, indice_da_escola } = meta;
   let bins = ecStat.histogram(indices);
