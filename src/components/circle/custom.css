@@ -1,18 +1,18 @@
 .circle {
-  width: 160px;
-  height: 160px;
+  width: 10em;
+  height: 2.5em;
   border-radius: 50%;
   font-size: 54px;
   color: #ff6c7c;
   text-align: center;
   display: table-cell;
   vertical-align: middle;
-  border: 3px solid #ff6c7c;
+  border: 1em solid #ff6c7c;
   background: rgb(255, 255, 255);
 }
 
 .boxCircle {
-  width: 160px;
+  width: 10em;
 }
 
 .boxShadow {
@@ -47,13 +47,12 @@
 }
 
 .topLabel {
-  font-size: 20px;
-  width: 160px;
+  font-size: 1.5em;
 }
 
 .bottomLabel {
   color: #828282;
-  width: 160px;
+  font-size: 1em;
 }
 
 .allignMiddle {

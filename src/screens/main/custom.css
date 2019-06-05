@@ -89,6 +89,14 @@ body {
   line-height: 1em;
   color: #1b80d4;
 }
+.textoAzulMedio {
+  font-style: normal;
+  font-weight: 900;
+  font-size: 3em;
+  line-height: 1em;
+  color: #1b80d4;
+  font-weight: 300;
+}
 
 .idepCinzaGrande {
   font-style: normal;
@@ -116,6 +124,7 @@ body {
   font-size: 2em;
   line-height: 1em;
   align-items: center;
+  float: right;
   color: #1b80d4;
 }
 
@@ -161,4 +170,10 @@ body {
   height: 6.5em;
   width: 6.5em;
   float: right;
+}
+
+.iconeSeta {
+  height: 6.5em;
+  width: 20em;
+  float: left;
 }

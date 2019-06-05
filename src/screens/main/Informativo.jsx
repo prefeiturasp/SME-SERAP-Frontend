@@ -5,8 +5,8 @@ import nse from './img/Icon_NSE.png';
 
 export default function Informativo() {
   return (
-    <Grid cols="12 12 12 12" className="row fundoAzulEscuro text-justify">
-      <Grid cols="4 4 4 4">
+    <div className="row">
+      <Grid cols="4 4 4 4" className="fundoAzulEscuro text-justify">
         <span className="headerBrancoItalico">
           Entenda como são definidas as metas da sua escola
         </span>
@@ -23,8 +23,10 @@ export default function Informativo() {
           estabelecidos.
         </span>
       </Grid>
-
-      <Grid cols="8 8 8 8" className="fontePeqBranca">
+      <Grid
+        cols="8 8 8 8"
+        className="fontePeqBranca fundoAzulEscuro text-justify"
+      >
         <div className="row mt-4">
           <Grid cols="3 3 3 3">
             <img src={nse} alt="nse" className="iconePeq" />
@@ -51,15 +53,7 @@ export default function Informativo() {
             </span>
           </Grid>
         </div>
-        {/* <br />
-        <br /> */}
-        {/* <span className="border">
-          <b>INDICADOR DE COMPLEXIDADE DE GESTÃO (ICG)</b> Lorem ipsum dolor sit
-          amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-          exercitation ullamco laboris nisi ut.s.
-        </span> */}
       </Grid>
-    </Grid>
+    </div>
   );
 }
