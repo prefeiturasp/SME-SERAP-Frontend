@@ -35,19 +35,23 @@ export default class CircleAndLabelFill extends Component {
 
   render() {
     const { label, bottomLabel, color } = this.props;
-
+    let dotsColor = '';
     let circleSelected = '';
     switch (color) {
       case CIRCLE_COLOR.ROSA:
+        dotsColor = '#FF6C7C';
         circleSelected = outlineRosaCircle;
         break;
       case CIRCLE_COLOR.AMARELO:
+        dotsColor = '#FFBC0A';
         circleSelected = outlineAmareloCircle;
         break;
       case CIRCLE_COLOR.AZUL:
+        dotsColor = '#1B80D4';
         circleSelected = outlineAzulCircle;
         break;
       case CIRCLE_COLOR.ROXO:
+        dotsColor = '#422593';
         circleSelected = outlineRoxoCircle;
         break;
       default:
@@ -58,16 +62,22 @@ export default class CircleAndLabelFill extends Component {
       <div className="border">
         <div className="container">
           <img src={circleSelected} alt="circuloFill" className="circuloFill" />
-          <span
-            className="textoNoMeioDocirculoFill"
-            style={{ color: '#FFFFFF' }}
-          >
-            {label}
-          </span>
+          <div className="textoNoMeioDocirculoFill text-center p-5">
+            <span style={{ color: '#FFFFFF' }}>{label}</span>
+          </div>
         </div>
         <div class="w-100" />
+        <div className="pontos" style={{ color: dotsColor }}>
+          .
+        </div>
+        <div className="pontos" style={{ color: dotsColor }}>
+          .
+        </div>
+        <div className="pontos" style={{ color: dotsColor }}>
+          .
+        </div>
         <div>
-          <span className="bottomLabel">{bottomLabel}</span>
+          <span className="bottomLabel mt-4">{bottomLabel}</span>
         </div>
       </div>
     );

@@ -147,9 +147,10 @@ body {
 }
 
 .labelGrandeAmarelo {
-  font-size: 5em;
-  text-align: right;
+  font-size: 2em;
   color: #ffbc0a;
+  font-weight: 300;
+  float: right;
 }
 
 .headerBrancoItalico {

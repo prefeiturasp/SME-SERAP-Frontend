@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
+import Grid from '../../components/Grid';
 import AnosHeader from './AnosHeader';
+import { anosFinal, anosInicial } from './aux';
+import CirculosAnos from './CirculosAnos';
 import './custom.css';
 import Informativo from './Informativo';
 import Quad1 from './Quad1';
 import Quad2 from './Quad2';
-import CirculosAnos from './CirculosAnos';
 import Quad3 from './Quad3';
 import Quad4 from './Quad4';
 import SeuGrupoHeader from './SeuGrupoHeader';
-import { anosInicial, anosFinal } from './aux';
+import Rodape from './rodape';
 export class Main extends Component {
   render() {
     return (
@@ -29,8 +31,17 @@ export class Main extends Component {
           <AnosHeader label="Anos Finais" />
           <CirculosAnos params={anosFinal} />
         </div>
+        <div className="row fundoAzulEscuro">
+          <Grid cols="4 4 4 4" />
+          <Grid cols="8 8 8 8">
+            <Grid cols="11 11 11 11">
+              <span className="labelGrandeAmarelo">................. META</span>
+            </Grid>
+          </Grid>
+        </div>
         <Informativo />
         <SeuGrupoHeader />
+        <Rodape />
       </div>
     );
   }
