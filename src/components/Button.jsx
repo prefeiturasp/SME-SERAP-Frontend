@@ -63,7 +63,7 @@ export default class Button extends Component {
       >
         {label}
         <If isVisible={true}>
-          <i class={`fa fa-${icon}`} />
+          <i className={`fa fa-${icon}`} />
         </If>
       </button>
     );

@@ -11,12 +11,23 @@ import Quad3 from './Quad3';
 import Quad4 from './Quad4';
 import SeuGrupoHeader from './SeuGrupoHeader';
 import Rodape from './rodape';
+
 export class Main extends Component {
+  state = {
+    escolaSelecionada: ''
+  };
+
+  onEscolaSelecionada(e) {
+    console.log(e);
+  }
+
   render() {
     return (
       <div className="container">
         <div className="row">
-          <Quad1 />
+          <Quad1
+            onEscolaSelecionada={e => this.onEscolaSelecionada(e)}
+          />
           <Quad2 />
         </div>
         <div className="row">

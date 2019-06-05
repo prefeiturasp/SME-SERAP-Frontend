@@ -1,18 +1,34 @@
 import React, { Component } from 'react';
-import Button, { ButtonIcon, ButtonStyle } from '../../components/Button';
+import Select from 'react-select';
 import Grid from '../../components/Grid';
 import { getEscolas } from '../../services/idep';
 
 export default class Quad1 extends Component {
   state = {
-    escolas: []
+    options: []
   };
 
   componentDidMount() {
     getEscolas().then(escolas => {
-      this.setState({ escolas });
+      let options = this.transformData(escolas);
+      this.setState({ options });
     });
   }
+
+  transformData(escolas) {
+    let options = [];
+    escolas.map(escola => {
+      const { cd_unidade_educacao_atual, tipoesc, nomesc } = escola;
+      const option = {
+        label: `${cd_unidade_educacao_atual} ${tipoesc} ${nomesc}`,
+        value: escola
+      };
+      options.push(option);
+      return null;
+    });
+    return options;
+  }
+
   render() {
     return (
       <Grid cols="4 4 4 4" className="text-left">
@@ -26,27 +42,19 @@ export default class Quad1 extends Component {
           </p>
         </div>
         <div className="">
-          <div className="form-group" />
-          {this.state.escolas.map(escola => {
-            const { cd_unidade_educacao_atual, tipoesc, nomesc } = escola;
-            return (
-              <Button
-                key={cd_unidade_educacao_atual}
-                style={ButtonStyle.OutlineDark}
-                onClick={() => alert(cd_unidade_educacao_atual)}
-                label={`${cd_unidade_educacao_atual} ${tipoesc} ${nomesc}`}
-                className="btn-block"
-              />
-            );
-          })}
+          <Select
+            placeholder="Selecione sua escola"
+            options={this.state.options}
+            onChange={e => this.props.onEscolaSelecionada(e)}
+          />
         </div>
-        <div>
+        {/* <div>
           <Button
             style={ButtonStyle.OutlinePrimary}
             label=""
             icon={ButtonIcon.ANGLE_DOWN}
           />
-        </div>
+        </div> */}
       </Grid>
     );
   }
