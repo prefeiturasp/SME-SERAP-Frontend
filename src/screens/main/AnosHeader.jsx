@@ -3,8 +3,8 @@ import Grid from '../../components/Grid';
 
 export default function AnosHeader(props) {
   return (
-    <Grid cols="12 12 12 12" className="blueDiv ml-3">
-      <span className="bigWhiteLabel align-middle">{props.label}</span>
+    <Grid cols="12 12 12 12" className="divComFundoAzul ml-3">
+      <span className="fonteBrancaGrande">{props.label}</span>
     </Grid>
   );
 }
