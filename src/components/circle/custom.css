@@ -46,10 +46,6 @@
   width: 220px;
 }
 
-.topLabel {
-  font-size: 1.5em;
-}
-
 .bottomLabel {
   color: #828282;
   font-size: 1em;
@@ -57,4 +53,25 @@
 
 .allignMiddle {
   vertical-align: middle;
+}
+
+/* NOVO */
+
+.circuloOutline {
+  width: 7em;
+  height: 7em;
+  text-align: center;
+}
+
+.topColoredLabel {
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.textoNoMeioDoCirculoOutline {
+  left: 0;
+  position: absolute;
+  text-align: center;
+  top: 6em;
+  width: 100%;
 }

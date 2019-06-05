@@ -1,11 +1,19 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import Grid from '../Grid';
 import './custom.css';
+import outlineAmareloCircle from './img/Shape_Criculo stroke_amarelo.png';
+import outlineAzulCircle from './img/Shape_Criculo stroke_azul.png';
+import outlineRosaCircle from './img/Shape_Criculo stroke_rosa.png';
 
 export const CIRCLE_MODE = {
   NORMAL: 'NORMAL',
   FILLED: 'FILLED'
+};
+
+export const CIRCLE_COLOR = {
+  ROSA: 'ROSA',
+  AMARELO: 'AMARELO',
+  AZUL: 'AZUL'
 };
 
 export default class CircleAndLabel extends Component {
@@ -17,7 +25,7 @@ export default class CircleAndLabel extends Component {
   };
 
   static defaultProps = {
-    color: '#ff6c7c',
+    color: CIRCLE_COLOR.ROSA,
     topLabel: 'topLabel',
     bottomLabel: 'bottomLabel',
     mode: CIRCLE_MODE.NORMAL
@@ -29,26 +37,49 @@ export default class CircleAndLabel extends Component {
       color: color,
       border: `3px solid ${color}`
     };
-    let divClassName = 'circle';
-    let boxClassName = 'boxCircle';
+
+    let letterColor = '';
+    let circleSelected = '';
+    switch (color) {
+      case CIRCLE_COLOR.ROSA:
+        letterColor = '#FF6C7C';
+        circleSelected = outlineRosaCircle;
+        break;
+      case CIRCLE_COLOR.AMARELO:
+        letterColor = '#FFBC0A';
+        circleSelected = outlineAmareloCircle;
+        break;
+      case CIRCLE_COLOR.AZUL:
+        letterColor = '#1B80D4';
+        circleSelected = outlineAzulCircle;
+        break;
+      default:
+        break;
+    }
     if (mode === CIRCLE_MODE.FILLED) {
       customStyle.color = '#FFFFFF';
       customStyle.background = color;
-      divClassName = 'circleFilled';
-      boxClassName = 'boxCircleFilled';
     }
     return (
-      <Grid cols="12 12 12 12">
-        <p className="topLabel" style={{ color: color }}>
-          {topLabel}
-        </p>
-        <Grid cols="12 12 12 12" className={divClassName} style={customStyle}>
-          <span>{label}</span>
-        </Grid>
-        <div className={`border text-center boxShadow ${boxClassName} p-1`}>
-          <p className="bottomLabel">{bottomLabel}</p>
+      <div className="border">
+        <div className="topColoredLabel" style={{ color: letterColor }}>
+          <p>{topLabel}</p>
         </div>
-      </Grid>
+        <div class="w-100" />
+        <div className="container">
+          <img
+            src={circleSelected}
+            alt="circuloOutline"
+            style={{ position: 'relative' }}
+            className="circuloOutline"
+          />
+          <span className="textoNoMeioDoCirculoOutline">Centered</span>
+        </div>
+        <div class="w-100" />
+        <div>
+          <span className="bottomLabel">{bottomLabel}</span>
+        </div>
+      </div>
     );
   }
 }
