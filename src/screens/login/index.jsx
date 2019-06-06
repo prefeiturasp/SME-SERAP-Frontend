@@ -73,6 +73,7 @@ export class Login extends Component {
                   <input
                     className="form-control"
                     name="rf"
+                    type="number"
                     id="rf"
                     onChange={e => this.onRfChanged(e)}
                     placeholder={'RF'}
@@ -82,6 +83,7 @@ export class Login extends Component {
                   <input
                     className="form-control"
                     name="cpf"
+                    type="number"
                     id="cpf"
                     onChange={e => this.onCPFChanged(e)}
                     placeholder={'CPF'}

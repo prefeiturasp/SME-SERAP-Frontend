@@ -78,7 +78,7 @@ export default class CircleAndLabelFill extends Component {
         </div>
         <div class="w-100" />
         <div class="card infoCard">
-          <span className="bottomLabel mt-4">{bottomLabel}</span>
+          <span className="bottomLabel mt-1 p-2">{bottomLabel}</span>
         </div>
       </div>
     );

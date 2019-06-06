@@ -1,7 +1,6 @@
 import React from 'react';
-import CircleAndLabelOutline, {
-  CIRCLE_COLOR
-} from '../../components/circle/CircleAndLabelOutline';
+import Button, { ButtonStyle } from '../../components/Button';
+import CircleAndLabelOutline, { CIRCLE_COLOR } from '../../components/circle/CircleAndLabelOutline';
 import Grid from '../../components/Grid';
 
 export default function Quad4() {
@@ -29,6 +28,15 @@ export default function Quad4() {
           color={CIRCLE_COLOR.AZUL}
           topLabel="IDEP"
           bottomLabel="Meta 5,2"
+        />
+      </Grid>
+      <Grid cols="12 12 12 12" className="mt-3">
+        <hr style={{ backgroundColor: '#C4C4C4' }} />
+      </Grid>
+      <Grid cols="12 12 12 12" className="mt-3 mb-3">
+        <Button
+          style={ButtonStyle.OutlinePrimary}
+          label="confira mais detalhes na nota técnica"
         />
       </Grid>
     </Grid>

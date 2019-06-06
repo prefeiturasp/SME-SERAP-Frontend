@@ -3,7 +3,7 @@ import Grid from '../../components/Grid';
 
 export default function Quad3() {
   return (
-    <Grid cols="4 4 4 4" className="p-3 text-justify">
+    <Grid cols="5 5 5 5" className="p-3 text-justify">
       <p className="textoAzulNegritoItalico">
         Todos os estudantes tem direito não só à educação, mas à educação de
         qualidade.

@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import ChartContainer from '../../components/charts/ChartContainer';
-import { getHistogramOption, getMetasIniciaisOption } from '../../components/charts/utils';
+import {
+  getHistogramOption,
+  getMetasIniciaisOption
+} from '../../components/charts/utils';
 import Grid from '../../components/Grid';
 import If from '../../components/layout';
 import AnosHeader from './AnosHeader';
@@ -86,12 +89,12 @@ export class Main extends Component {
           <AnosHeader label="Anos Finais" />
           <CirculosAnos params={anosFinal} />
         </div>
-        <div className="row fundoAzulEscuro">
-          <Grid cols="4 4 4 4" />
-          <Grid cols="8 8 8 8">
-            <Grid cols="11 11 11 11">
-              <span className="labelGrandeAmarelo">................. META</span>
-            </Grid>
+        <div className="row fundoAzulEscuro pt-5">
+          <Grid cols="11 11 11 11 " className="">
+            <hr style={{ backgroundColor: '#FFBC0A' }} />
+          </Grid>
+          <Grid cols="1 1 1 1" className="d-flex align-items-end flex-column">
+            <span className="labelGrandeAmarelo">META</span>
           </Grid>
         </div>
         <Informativo />
