@@ -3,7 +3,7 @@ import Grid from '../../components/Grid';
 import './custom.css';
 import setaVermelha from './img/Icon_arrow_red.png';
 
-export default function SeuGrupoHeader() {
+export default function SeuGrupoHeader(prps) {
   return (
     <div className="row mt-5">
       <Grid cols="7 7 7 7">

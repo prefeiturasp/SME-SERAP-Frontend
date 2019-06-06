@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import ChartContainer from '../../components/charts/ChartContainer';
-import {
-  getHistogramOption,
-  getMetasIniciaisOption
-} from '../../components/charts/utils';
+import { getHistogramOption, getMetasIniciaisOption } from '../../components/charts/utils';
 import Grid from '../../components/Grid';
 import If from '../../components/layout';
 import AnosHeader from './AnosHeader';
@@ -15,6 +12,7 @@ import Quad1 from './Quad1';
 import Quad2 from './Quad2';
 import Quad3 from './Quad3';
 import Quad4 from './Quad4';
+import Rodape from './Rodape';
 import SeuGrupoHeader from './SeuGrupoHeader';
 
 export class Main extends Component {
@@ -26,10 +24,10 @@ export class Main extends Component {
       metasOptions: ''
     };
     this.calculoRef = React.createRef();
-  }
-
-  onCalculoButtonClicked() {
-    this.handleScrollToElement(this.calculoRef);
+    this.seuGrupoRef = React.createRef();
+    this.metasRef = React.createRef();
+    this.homeRef = React.createRef();
+    this.suaEscolaREf = React.createRef();
   }
 
   handleScrollToElement(ref) {
@@ -52,22 +50,35 @@ export class Main extends Component {
 
     getMetasIniciaisOption(codEol).then(response => {
       this.setState({ metasOptions: response });
-      // console.log('getMetasIniciaisOption', response);
     });
   }
 
   render() {
     return (
       <div className="container">
-        <div className="row">
+        <div className="row" ref={this.homeRef}>
           <Quad1 onEscolaSelecionada={e => this.onEscolaSelecionada(e)} />
-          <Quad2 onCalculoButtonClicked={() => this.onCalculoButtonClicked()} />
+          <Quad2
+            onHomeButtonClicked={() => this.handleScrollToElement(this.homeRef)}
+            onCalculoButtonClicked={() =>
+              this.handleScrollToElement(this.calculoRef)
+            }
+            onSeuGrupoButtonClicked={() =>
+              this.handleScrollToElement(this.seuGrupoRef)
+            }
+            onMetasButtonClicked={() => {
+              this.handleScrollToElement(this.metasRef);
+            }}
+            onSuaEscolaButtonClicked={() =>
+              this.handleScrollToElement(this.seuGrupoRef)
+            }
+          />
         </div>
         <div className="row" ref={this.calculoRef}>
           <Quad3 />
           <Quad4 />
         </div>
-        <div className="row">
+        <div className="row" ref={this.metasRef}>
           <AnosHeader label="Anos Iniciais" />
           <CirculosAnos params={anosInicial} />
         </div>
@@ -85,7 +96,7 @@ export class Main extends Component {
         </div>
         <Informativo />
         <SeuGrupoHeader />
-        <div className="row mt-3">
+        <div className="row mt-3" ref={this.seuGrupoRef}>
           <Grid cols="6 6 6 6" className="card infoCard">
             <div className="card-body">
               <h5 class="card-title cardTitulo">
@@ -104,7 +115,7 @@ export class Main extends Component {
             </If>
           </Grid>
         </div>
-        <div className="row mt-3">
+        <div className="row mt-3" ref={this.suaEscolaREf}>
           <Grid cols="6 6 6 6">
             <If isVisible={this.state.histogramOptions}>
               <ChartContainer options={this.state.metasOptions} />
@@ -128,7 +139,7 @@ export class Main extends Component {
             </div>
           </Grid>
         </div>
-        {/* <Rodape /> */}
+        <Rodape />
       </div>
     );
   }

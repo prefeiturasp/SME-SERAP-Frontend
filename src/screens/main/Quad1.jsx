@@ -31,8 +31,8 @@ export default class Quad1 extends Component {
 
   render() {
     return (
-      <Grid cols="4 4 4 4" className="text-left">
-        <div>
+      <Grid cols="5 5 5 5" className="text-left d-flex align-items-center">
+        <Grid cols="12 12 12 12">
           <span className="idepCinzaGrande">Conheça o</span>
           <br />
           <span className="idepAzulGrande">IDEP</span>
@@ -40,21 +40,12 @@ export default class Quad1 extends Component {
             Saiba mais sobre a importância do índice, como ele é calculado e as
             metas da sua escola
           </p>
-        </div>
-        <div className="">
           <Select
             placeholder="Selecione sua escola"
             options={this.state.options}
             onChange={e => this.props.onEscolaSelecionada(e)}
           />
-        </div>
-        {/* <div>
-          <Button
-            style={ButtonStyle.OutlinePrimary}
-            label=""
-            icon={ButtonIcon.ANGLE_DOWN}
-          />
-        </div> */}
+        </Grid>
       </Grid>
     );
   }
