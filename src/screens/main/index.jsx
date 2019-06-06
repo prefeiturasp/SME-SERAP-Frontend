@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ChartContainer from '../../components/charts/ChartContainer';
 import { getHistogramOption } from '../../components/charts/utils';
 import Grid from '../../components/Grid';
 import AnosHeader from './AnosHeader';
@@ -11,13 +12,14 @@ import Quad2 from './Quad2';
 import Quad3 from './Quad3';
 import Quad4 from './Quad4';
 import SeuGrupoHeader from './SeuGrupoHeader';
+import If from '../../components/layout';
 
 export class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
       escolaSelecionada: '',
-      histogramData: ''
+      histogramOptions: ''
     };
     this.calculoRef = React.createRef();
   }
@@ -38,6 +40,7 @@ export class Main extends Component {
       response => {
         if (typeof response === 'object') {
           console.log('response ok', response);
+          this.setState({ histogramOptions: response });
         } else {
           alert(response);
         }
@@ -87,7 +90,11 @@ export class Main extends Component {
               </p>
             </div>
           </Grid>
-          <Grid cols="6 6 6 6">teste</Grid>
+          <Grid cols="6 6 6 6">
+            <If isVisible={this.state.histogramOptions}>
+              <ChartContainer histogramOptions={this.state.histogramOptions} />
+            </If>
+          </Grid>
         </div>
         {/* <Rodape /> */}
       </div>

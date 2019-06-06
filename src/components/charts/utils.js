@@ -15,8 +15,8 @@ export const getHistogramOption = async codEOL => {
   }
 
   let bins = ecStat.histogram(indices);
-  const colorAll = "#7C7772";
-  const colorSelected = "#E47A16";
+  const colorAll = "#75BCFC";
+  const colorSelected = "#FF6C7B";
 
   let interval;
   let min = Infinity;
@@ -60,13 +60,6 @@ export const getHistogramOption = async codEOL => {
   // Aqui é a variavel que interessa...
 
   let histogramOption = {
-    title: {
-      text: "Girths of Black Cherry Trees",
-      subtext: "By ecStat.histogram",
-      sublink: "https://github.com/ecomfe/echarts-stat",
-      left: "center",
-      top: 10
-    },
     color: colorAll,
     grid: {
       top: 80,
@@ -77,12 +70,18 @@ export const getHistogramOption = async codEOL => {
         type: "value",
         min: min,
         max: max,
-        interval: interval
+        interval: interval,
+        name: "Meta",
+        nameLocation: "middle",
+        nameGap: 30
       }
     ],
     yAxis: [
       {
-        type: "value"
+        type: "value",
+        name: "Número de escolas",
+        nameLocation: "middle",
+        nameGap: 30
       }
     ],
     series: [
