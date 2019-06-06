@@ -1,6 +1,10 @@
 import echarts from "echarts";
 import ecStat from "echarts-stat";
-import { ANOS_META, getIndicesAnoInicial, getMetaAnos } from "../../services/idep";
+import {
+  ANOS_META,
+  getIndicesAnoInicial,
+  getMetaAnos
+} from "../../services/idep";
 
 const roundNumber = number => {
   return parseFloat(Number(number).toFixed(2));
@@ -183,13 +187,19 @@ let metaOption = {
 
 export const getMetasIniciaisOption = async codEol => {
   getMetaAnos(parseInt(codEol), ANOS_META.INICIAIS).then(inicial => {
-    metaOption.series[0].data = inicial.metas;
+    // para tirar o primeiro elemento e concatenar com zeros...
+    // necessario por motivo de endpoint insuficiente
+    metaOption.series[0].data = inicial.metas
+      .slice(0, 1)
+      .concat([0, 0, 0, 0, 0]);
     metaOption.series[1].data = inicial.metas;
     metaOption.xAxis[0].data = inicial.anos;
   });
-  
+
   getMetaAnos(parseInt(codEol), ANOS_META.FINAIS).then(final => {
-    metaOption.series[2].data = final.metas;
+    // para tirar o primeiro elemento e concatenar com zeros...
+    // necessario por motivo de endpoint insuficiente
+    metaOption.series[2].data = final.metas.slice(0, 1).concat([0, 0, 0, 0, 0]);
     metaOption.series[3].data = final.metas;
   });
 
