@@ -13,10 +13,22 @@ import Quad4 from './Quad4';
 import SeuGrupoHeader from './SeuGrupoHeader';
 
 export class Main extends Component {
-  state = {
-    escolaSelecionada: '',
-    histogramData: ''
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      escolaSelecionada: '',
+      histogramData: ''
+    };
+    this.calculoRef = React.createRef();
+  }
+
+  onCalculoButtonClicked() {
+    this.handleScrollToElement(this.calculoRef);
+  }
+
+  handleScrollToElement(ref) {
+    window.scrollTo(0, ref.current.offsetTop);
+  }
 
   onEscolaSelecionada(e) {
     console.log(e);
@@ -24,7 +36,11 @@ export class Main extends Component {
     this.setState({ escolaSelecionada });
     getHistogramOption(escolaSelecionada.cd_unidade_educacao_atual).then(
       response => {
-        console.log('response', response);
+        if (typeof response === 'object') {
+          console.log('response ok', response);
+        } else {
+          alert(response);
+        }
       }
     );
   }
@@ -34,9 +50,9 @@ export class Main extends Component {
       <div className="container">
         <div className="row">
           <Quad1 onEscolaSelecionada={e => this.onEscolaSelecionada(e)} />
-          <Quad2 />
+          <Quad2 onCalculoButtonClicked={() => this.onCalculoButtonClicked()} />
         </div>
-        <div className="row">
+        <div className="row" ref={this.calculoRef}>
           <Quad3 />
           <Quad4 />
         </div>

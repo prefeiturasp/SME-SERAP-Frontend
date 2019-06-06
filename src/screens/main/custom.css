@@ -179,6 +179,12 @@ body {
   float: right;
 }
 
+@media (max-width: 400px) {
+  .iconePeq {
+    float: none;
+  }
+}
+
 .iconeSeta {
   height: 6.5em;
   width: 20em;

@@ -28,7 +28,7 @@ export default function Informativo() {
         className="fontePeqBranca fundoAzulEscuro text-justify"
       >
         <div className="row mt-4">
-          <Grid cols="3 3 3 3">
+          <Grid cols="3 3 3 3" className="d-flex justify-content-center">
             <img src={nse} alt="nse" className="iconePeq" />
           </Grid>
           <Grid cols="8 8 8 8">
@@ -41,7 +41,7 @@ export default function Informativo() {
           </Grid>
         </div>
         <div className="row mt-4">
-          <Grid cols="3 3 3 3">
+          <Grid cols="3 3 3 3" className="d-flex justify-content-center">
             <img src={icg} alt="icg" className="iconePeq" />
           </Grid>
           <Grid cols="8 8 8 8">

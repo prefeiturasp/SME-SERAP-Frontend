@@ -9,7 +9,11 @@ const roundNumber = number => {
 export const getHistogramOption = async codEOL => {
   const meta = await getIncidesAnoInicial(codEOL);
 
-  const { indices, indice_da_escola } = meta;
+  const { indices, indice_da_escola, erro } = meta;
+  if (!indices && !indice_da_escola) {
+    return `Erro: ${erro}`;
+  }
+
   let bins = ecStat.histogram(indices);
   const colorAll = "#7C7772";
   const colorSelected = "#E47A16";
@@ -52,6 +56,8 @@ export const getHistogramOption = async codEOL => {
       style: style
     };
   };
+
+  // Aqui é a variavel que interessa...
 
   let histogramOption = {
     title: {

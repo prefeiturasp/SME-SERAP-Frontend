@@ -3,7 +3,7 @@ import Button, { ButtonStyle } from '../../components/Button';
 import Grid from '../../components/Grid';
 import livros from './img/livros.png';
 
-export default function Quad2() {
+export default function Quad2(props) {
   return (
     <Grid cols="8 8 8 8" className="backGroundCustom">
       <Grid
@@ -13,11 +13,13 @@ export default function Quad2() {
         <Button
           label="HOME"
           style={ButtonStyle.OutlineLight}
+          // onClick={() => this.props.onHomeButtonClicked()}
           className="ml-3"
         />
         <Button
           label="CÁLCULO"
           style={ButtonStyle.OutlineLight}
+          onClick={() => props.onCalculoButtonClicked()}
           className="ml-3"
         />
         <Button
@@ -36,7 +38,11 @@ export default function Quad2() {
           className="ml-3"
         />
       </Grid>
-      <img className="imagemPrincipal img-fluid mb-3 mt-1" src={livros} alt="Logo" />
+      <img
+        className="imagemPrincipal img-fluid mb-3 mt-1"
+        src={livros}
+        alt="Logo"
+      />
     </Grid>
   );
 }
