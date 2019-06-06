@@ -10,9 +10,9 @@ export default function SeuGrupoHeader(prps) {
         <img className="iconeSeta" src={setaVermelha} alt="setaVermelha" />
       </Grid>
       <Grid cols="5 5 5 5">
-        <div className="row text-right">
-          <span className="textoAzulMedio">SEU GRUPO</span>
-          <span className="textoPeqCinza">
+        <div className="d-flex align-items-end flex-column">
+          <span className="textoAzulMedio p-2">SEU GRUPO</span>
+          <span className="textoPeqCinza p-2">
             Confira como está a posição da sua escola comparadas às escolas do
             mesmo grupo e seus respectivos desempenhos
           </span>

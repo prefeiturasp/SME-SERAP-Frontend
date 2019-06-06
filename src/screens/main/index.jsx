@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import ChartContainer from '../../components/charts/ChartContainer';
-import {
-  getHistogramOption,
-  getMetasIniciaisOption
-} from '../../components/charts/utils';
+import { getHistogramOption, getMetasIniciaisOption } from '../../components/charts/utils';
 import Grid from '../../components/Grid';
 import If from '../../components/layout';
 import AnosHeader from './AnosHeader';
@@ -100,7 +97,7 @@ export class Main extends Component {
         <Informativo />
         <SeuGrupoHeader />
         <div className="row mt-3" ref={this.seuGrupoRef}>
-          <Grid cols="6 6 6 6" className="card infoCard">
+          <Grid cols="4 4 4 4" className="card infoCard">
             <div className="card-body">
               <h5 class="card-title cardTitulo">
                 092797 EMEF Prof. Olavo Pezzotti
@@ -112,19 +109,19 @@ export class Main extends Component {
               </p>
             </div>
           </Grid>
-          <Grid cols="6 6 6 6">
+          <Grid cols="8 8 8 8">
             <If isVisible={this.state.histogramOptions}>
               <ChartContainer options={this.state.histogramOptions} />
             </If>
           </Grid>
         </div>
         <div className="row mt-3" ref={this.suaEscolaREf}>
-          <Grid cols="6 6 6 6">
+          <Grid cols="8 8 8 8">
             <If isVisible={this.state.histogramOptions}>
               <ChartContainer options={this.state.metasOptions} />
             </If>
           </Grid>
-          <Grid cols="6 6 6 6" className="card infoCard">
+          <Grid cols="4 4 4 4" className="card infoCard">
             <div className="card-body">
               <h5 class="card-title cardTitulo">
                 092797 EMEF Prof. Olavo Pezzotti
