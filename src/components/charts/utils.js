@@ -1,13 +1,17 @@
 import echarts from "echarts";
 import ecStat from "echarts-stat";
-import { getIncidesAnoInicial } from "../../services/idep";
+import {
+  ANOS_META,
+  getIndicesAnoInicial,
+  getMetaAnos
+} from "../../services/idep";
 
 const roundNumber = number => {
   return parseFloat(Number(number).toFixed(2));
 };
 
 export const getHistogramOption = async codEOL => {
-  const meta = await getIncidesAnoInicial(codEOL);
+  const meta = await getIndicesAnoInicial(codEOL);
 
   const { indices, indice_da_escola, erro } = meta;
   if (!indices && !indice_da_escola) {
@@ -106,4 +110,192 @@ export const getHistogramOption = async codEOL => {
     ]
   };
   return histogramOption;
+};
+
+// const metaOption = {
+//   tooltip: {
+//     trigger: "axis",
+//     axisPointer: {
+//       type: "cross",
+//       crossStyle: {
+//         color: "#c4c4c4"
+//       }
+//     }
+//   },
+//   toolbox: {
+//     orient: "vertical",
+//     feature: {
+//       saveAsImage: { show: true, title: "Baixar gráfico" }
+//     }
+//   },
+//   legend: {
+//     data: ["Alcançado", "Meta"]
+//   },
+//   xAxis: [
+//     {
+//       type: "category",
+//       data: [],
+//       axisPointer: {
+//         type: "shadow"
+//       }
+//     }
+//   ],
+//   yAxis: [
+//     {
+//       type: "value",
+//       name: "Meta",
+//       min: 0,
+//       max: 10,
+//       interval: 1
+//     }
+//   ],
+//   series: [
+//     {
+//       name: "Alcançado inicial",
+//       type: "bar",
+//       data: [2.0, 4.9, 7.0, 5, 6, 4],
+//       color: "#75BCFC",
+//       barMaxWidth: 50
+//     },
+//     {
+//       name: "Meta inicial",
+//       type: "line",
+//       data: [],
+//       color: "#5E239D"
+//     },
+//     {
+//       name: "Alcançado final",
+//       type: "bar",
+//       data: [2.0, 7.9, 2.0, 5, 6, 4],
+//       color: "#1B80D4",
+//       barMaxWidth: 50
+//     }
+//     // {
+//     //   name: "Meta final",
+//     //   type: "line",
+//     //   data: [],
+//     //   color: "#FF6C7B"
+//     // }
+//   ]
+// };
+let colors = ["#5793f3", "#d14a61", "#675bba"];
+
+let metaOption = {
+  color: colors,
+
+  tooltip: {
+    trigger: "axis",
+    axisPointer: {
+      type: "cross"
+    }
+  },
+  grid: {
+    right: "20%"
+  },
+  toolbox: {
+    feature: {
+      dataView: { show: true, readOnly: false },
+      restore: { show: true },
+      saveAsImage: { show: true }
+    }
+  },
+  legend: {
+    data: ["Inicial", "Final", "Meta inicial", "Meta final"]
+  },
+  xAxis: [
+    {
+      type: "category",
+      axisTick: {
+        alignWithLabel: true
+      },
+      data: ["2018", "2019", "2020", "2021", "2022", "2023"]
+    }
+  ],
+  yAxis: [
+    {
+      type: "value",
+      name: "meta",
+      min: 0,
+      max: 250,
+      position: "right",
+      axisLine: {
+        lineStyle: {
+          color: colors[0]
+        }
+      },
+      axisLabel: {
+        formatter: "{value} ml"
+      }
+    },
+    {
+      type: "value",
+      name: "Final",
+      min: 0,
+      max: 250,
+      position: "right",
+      offset: 80,
+      axisLine: {
+        lineStyle: {
+          color: colors[1]
+        }
+      },
+      axisLabel: {
+        formatter: "{value} ml"
+      }
+    },
+    {
+      type: "value",
+      name: "温度",
+      min: 0,
+      max: 25,
+      position: "left",
+      axisLine: {
+        lineStyle: {
+          color: colors[2]
+        }
+      },
+      axisLabel: {
+        formatter: "{value} °C"
+      }
+    }
+  ],
+  series: [
+    {
+      name: "Inicial",
+      type: "bar",
+      data: [2.0, 4.9, 7.0, 23.2, 25.6, 4]
+    },
+    {
+      name: "Meta inicial",
+      type: "line",
+      data: [2.0, 2.2, 3.3, 4.5, 6.3, 10.2]
+    },
+    {
+      name: "Final",
+      type: "bar",
+      data: [2.6, 5.9, 9.0, 26.4, 28.7, 70.7]
+    },
+
+    {
+      name: "Meta final",
+      type: "line",
+      data: [2.0, 2.2, 3.3, 4.5, 7.3, 9.2]
+    }
+  ]
+};
+
+export const getMetasIniciaisOption = async codEol => {
+  getMetaAnos(parseInt(codEol), ANOS_META.INICIAIS).then(inicial => {
+    metaOption.series[0].data = inicial.metas;
+    metaOption.series[1].data = inicial.metas;
+    metaOption.xAxis[0].data = inicial.anos;
+  });
+  // debugger;
+
+  getMetaAnos(parseInt(codEol), ANOS_META.FINAIS).then(final => {
+    metaOption.series[2].data = final.metas;
+    metaOption.series[3].data = final.metas;
+  });
+  // console.log("finalll", final);
+  return metaOption;
 };
