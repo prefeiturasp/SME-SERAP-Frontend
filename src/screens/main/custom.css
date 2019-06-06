@@ -18,38 +18,6 @@ body {
   line-height: 23px;
   color: #c4c4c4;
 }
-.textoAzulNegritoItalico {
-  font-family: Roboto;
-  font-style: italic;
-  font-weight: bold;
-  font-size: 26px;
-  line-height: 128.91%;
-  display: flex;
-  align-items: center;
-  color: #1b80d4;
-}
-
-.textoPeqCinza {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 23px;
-  color: #828282;
-  text-align: left;
-}
-
-.textoPeq2 {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  text-align: left;
-  line-height: 22px;
-  color: #828282;
-}
-
-.backCustom {
-  background: rgba(27, 128, 212, 0.5);
-}
 
 .backNormal {
   background: rgb(255, 255, 255);
@@ -89,24 +57,6 @@ body {
   }
 }
 
-.blueDiv {
-  height: 122px;
-  background: rgba(27, 128, 212, 0.5);
-}
-
-.bigWhiteLabel {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 56px;
-  line-height: 80px;
-  height: 122px;
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  text-align: center;
-}
-
 .midWhiteHeader {
   font-family: Roboto;
   font-style: italic;
@@ -128,4 +78,115 @@ body {
   font-size: 14px;
   /* line-height: 22px; */
   color: #ffffff;
+}
+
+/* NOVOOO */
+.cardTitulo {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.5em;
+  color: #1b80d4;
+}
+
+.idepAzulGrande {
+  font-style: normal;
+  font-weight: 900;
+  font-size: 6em;
+  line-height: 1em;
+  color: #1b80d4;
+}
+.textoAzulMedio {
+  font-style: normal;
+  font-weight: 900;
+  font-size: 3em;
+  line-height: 1em;
+  color: #1b80d4;
+  font-weight: 300;
+}
+
+.idepCinzaGrande {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 5em;
+  line-height: 1em;
+  color: #828282;
+}
+
+.textoPeqCinza {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1em;
+  line-height: 1em;
+  color: #828282;
+}
+
+.backGroundCustom {
+  background: rgba(27, 128, 212, 0.5);
+}
+
+.textoAzulNegritoItalico {
+  font-style: italic;
+  font-weight: bold;
+  font-size: 2em;
+  line-height: 1em;
+  align-items: center;
+  float: right;
+  color: #1b80d4;
+}
+
+.divComFundoAzul {
+  height: 7em;
+  background: rgba(27, 128, 212, 0.5);
+}
+
+.fonteBrancaGrande {
+  font-style: normal;
+  font-size: 3em;
+  line-height: 2em;
+  height: 1em;
+  color: #ffffff;
+  text-align: left;
+}
+
+.fundoAzulEscuro {
+  background: #1b80d4;
+}
+
+.labelGrandeAmarelo {
+  font-size: 2em;
+  color: #ffbc0a;
+  font-weight: 300;
+  float: right;
+}
+
+.headerBrancoItalico {
+  font-style: italic;
+  font-weight: bold;
+  font-size: 2em;
+  line-height: 1em;
+  color: #ffffff;
+}
+
+.fontePeqBranca {
+  font-size: 1em;
+  line-height: 1em;
+  color: #ffffff;
+}
+
+.iconePeq {
+  height: 6.5em;
+  width: 6.5em;
+  float: right;
+}
+
+@media (max-width: 400px) {
+  .iconePeq {
+    float: none;
+  }
+}
+
+.iconeSeta {
+  height: 6.5em;
+  width: 20em;
+  float: left;
 }

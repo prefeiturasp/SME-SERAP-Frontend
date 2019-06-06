@@ -1,18 +1,26 @@
 import echarts from "echarts";
 import ecStat from "echarts-stat";
-import { getIncidesAnoInicial } from "../../services/idep";
+import {
+  ANOS_META,
+  getIndicesAnoInicial,
+  getMetaAnos
+} from "../../services/idep";
 
 const roundNumber = number => {
   return parseFloat(Number(number).toFixed(2));
 };
 
-export const getHistogramOption = async () => {
-  const meta = await getIncidesAnoInicial(191);
+export const getHistogramOption = async codEOL => {
+  const meta = await getIndicesAnoInicial(codEOL);
 
-  const { indices, indice_da_escola } = meta;
+  const { indices, indice_da_escola, erro } = meta;
+  if (!indices && !indice_da_escola) {
+    return `Erro: ${erro}`;
+  }
+
   let bins = ecStat.histogram(indices);
-  const colorAll = "#7C7772";
-  const colorSelected = "#E47A16";
+  const colorAll = "#75BCFC";
+  const colorSelected = "#FF6C7B";
 
   let interval;
   let min = Infinity;
@@ -53,13 +61,13 @@ export const getHistogramOption = async () => {
     };
   };
 
+  // Aqui é a variavel que interessa...
+
   let histogramOption = {
-    title: {
-      text: "Girths of Black Cherry Trees",
-      subtext: "By ecStat.histogram",
-      sublink: "https://github.com/ecomfe/echarts-stat",
-      left: "center",
-      top: 10
+    toolbox: {
+      feature: {
+        saveAsImage: { show: true, name: "metas", title: "Salvar" }
+      }
     },
     color: colorAll,
     grid: {
@@ -71,12 +79,18 @@ export const getHistogramOption = async () => {
         type: "value",
         min: min,
         max: max,
-        interval: interval
+        interval: interval,
+        name: "Meta",
+        nameLocation: "middle",
+        nameGap: 30
       }
     ],
     yAxis: [
       {
-        type: "value"
+        type: "value",
+        name: "Número de escolas",
+        nameLocation: "middle",
+        nameGap: 30
       }
     ],
     series: [
@@ -101,4 +115,93 @@ export const getHistogramOption = async () => {
     ]
   };
   return histogramOption;
+};
+
+let metaOption = {
+  color: ["#75BCFC", "#1B80D4", "#FF6C7C", "#422593"],
+
+  tooltip: {
+    trigger: "axis",
+    axisPointer: {
+      type: "cross"
+    }
+  },
+  grid: {
+    right: "20%"
+  },
+  toolbox: {
+    feature: {
+      saveAsImage: { show: true, name: "histograma", title: "Salvar" }
+    }
+  },
+  legend: {
+    data: ["Inicial", "Final", "Meta inicial", "Meta final"]
+  },
+  xAxis: [
+    {
+      type: "category",
+      axisTick: {
+        alignWithLabel: true
+      },
+      data: ["2018", "2019", "2020", "2021", "2022", "2023"],
+      name: "Ano",
+      nameLocation: "middle",
+      nameGap: 30
+    }
+  ],
+  yAxis: [
+    {
+      type: "value",
+      name: "Meta",
+      min: 0,
+      max: 10,
+      position: "left",
+      nameLocation: "middle",
+      nameGap: 30
+    }
+  ],
+  series: [
+    {
+      name: "Inicial",
+      type: "bar",
+      data: []
+    },
+    {
+      name: "Meta inicial",
+      type: "line",
+      data: []
+    },
+    {
+      name: "Final",
+      type: "bar",
+      data: []
+    },
+
+    {
+      name: "Meta final",
+      type: "line",
+      data: []
+    }
+  ]
+};
+
+export const getMetasIniciaisOption = async codEol => {
+  getMetaAnos(parseInt(codEol), ANOS_META.INICIAIS).then(inicial => {
+    // para tirar o primeiro elemento e concatenar com zeros...
+    // necessario por motivo de endpoint insuficiente
+    metaOption.series[0].data = inicial.metas
+      .slice(0, 1)
+      .concat([0, 0, 0, 0, 0]);
+    metaOption.series[1].data = inicial.metas;
+    metaOption.xAxis[0].data = inicial.anos;
+  });
+
+  getMetaAnos(parseInt(codEol), ANOS_META.FINAIS).then(final => {
+    // para tirar o primeiro elemento e concatenar com zeros...
+    // necessario por motivo de endpoint insuficiente
+    metaOption.series[2].data = final.metas.slice(0, 1).concat([0, 0, 0, 0, 0]);
+    metaOption.series[3].data = final.metas;
+  });
+
+  return metaOption;
 };

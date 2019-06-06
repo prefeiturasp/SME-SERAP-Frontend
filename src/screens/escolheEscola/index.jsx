@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from '../../assets/logo.png';
+import logo from './logo.png';
 import BaseButton, { ButtonStyle, ButtonType } from '../../components/Button';
 import Grid from '../../components/Grid';
 import { getEscolas } from '../../services/idep';

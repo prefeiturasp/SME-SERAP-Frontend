@@ -1,18 +1,18 @@
 .circle {
-  width: 160px;
-  height: 160px;
+  width: 10em;
+  height: 2.5em;
   border-radius: 50%;
   font-size: 54px;
   color: #ff6c7c;
   text-align: center;
   display: table-cell;
   vertical-align: middle;
-  border: 3px solid #ff6c7c;
+  border: 1em solid #ff6c7c;
   background: rgb(255, 255, 255);
 }
 
 .boxCircle {
-  width: 160px;
+  width: 10em;
 }
 
 .boxShadow {
@@ -46,16 +46,63 @@
   width: 220px;
 }
 
-.topLabel {
-  font-size: 20px;
-  width: 160px;
-}
-
 .bottomLabel {
   color: #828282;
-  width: 160px;
+  font-size: 1em;
 }
 
 .allignMiddle {
   vertical-align: middle;
+}
+
+/* NOVO */
+
+.circuloOutline {
+  width: 7em;
+  height: 7em;
+  text-align: center;
+  position: "relative";
+}
+
+.circuloFill {
+  width: 13em;
+  height: 13em;
+  /* text-align: center; */
+  /* position: "relative"; */
+}
+
+.textoNoMeioDocirculoFill {
+  left: 1.5em;
+  top: 0em;
+  position: absolute;
+  text-align: center;
+  width: 7em;
+  font-size: 1.6em;
+}
+
+.topColoredLabel {
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.textoNoMeioDoCirculoOutline {
+  left: 0;
+  position: absolute;
+  text-align: center;
+  top: 2em;
+  width: 100%;
+  font-size: 2.5em;
+}
+
+.pontos {
+  text-align: center;
+  top: 2em;
+  width: 100%;
+  line-height: 0.5em;
+  font-size: 2em;
+}
+
+.infoCard {
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 0.3em;
 }

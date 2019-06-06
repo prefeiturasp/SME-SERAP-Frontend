@@ -12,7 +12,7 @@ const rf = authService.getRF();
 
 export const ANOS_META = {
   INICIAIS: "meta_ano_inicial",
-  FINAIS: "final"
+  FINAIS: "meta_ano_final"
 };
 
 export const getMetaAnos = async (codEol, tipo = ANOS_META.INICIAIS) => {
@@ -23,13 +23,16 @@ export const getMetaAnos = async (codEol, tipo = ANOS_META.INICIAIS) => {
 };
 
 // 10.49.23.85:8080/indices_ano_inicial/17973
-export const getIncidesAnoInicial = async (codEol) => {
+export const getIndicesAnoInicial = async codEol => {
   const header = { ...BASE_HEADER };
-  const response = await fetch(`${CONFIG.API_URL}/indices_ano_inicial/${codEol}`, header);
+
+  const response = await fetch(
+    `${CONFIG.API_URL}/indices_ano_inicial/${parseInt(codEol)}`,
+    header
+  );
   const data = await response.json();
   return data.result;
 };
-
 
 export const getEscolas = async () => {
   let header = { ...BASE_HEADER };
@@ -59,58 +62,4 @@ export const getPorIndiceComplexidadeGestao = async (
   const response = await fetch(`${CONFIG.API_URL}/${tipo}/?icg=${icg}`, header);
   const json = await response.json();
   return json;
-};
-
-const option = {
-  tooltip: {
-    trigger: "axis",
-    axisPointer: {
-      type: "cross",
-      crossStyle: {
-        color: "#c4c4c4"
-      }
-    }
-  },
-  toolbox: {
-    orient: "vertical",
-    feature: {
-      saveAsImage: { show: true, title: "Baixar gráfico" }
-    }
-  },
-  legend: {
-    data: ["Alcançado", "Meta"]
-  },
-  xAxis: [
-    {
-      type: "category",
-      data: [],
-      axisPointer: {
-        type: "shadow"
-      }
-    }
-  ],
-  yAxis: [
-    {
-      type: "value",
-      name: "Meta",
-      min: 0,
-      max: 10,
-      interval: 1
-    }
-  ],
-  series: [
-    {
-      name: "Alcançado",
-      type: "bar",
-      data: [2.0, 4.9, 7.0, 5, 6, 4],
-      color: "#d48265",
-      barMaxWidth: 50
-    },
-    {
-      name: "Meta",
-      type: "line",
-      data: [],
-      color: "#91c7ae"
-    }
-  ]
 };
