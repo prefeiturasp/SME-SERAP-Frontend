@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import ChartContainer from '../../components/charts/ChartContainer';
-import {
-  getHistogramOption,
-  getMetasIniciaisOption
-} from '../../components/charts/utils';
+import { getMetasIniciaisOption } from '../../components/charts/utils';
 import Grid from '../../components/Grid';
 import If from '../../components/layout';
 import AnosHeader from './AnosHeader';
@@ -24,7 +21,7 @@ export class Main extends Component {
     this.state = {
       escolaSelecionada: '',
       histogramOptions: '',
-      metasOptions: ''
+      metasIniciaisOptions: ''
     };
     this.calculoRef = React.createRef();
     this.seuGrupoRef = React.createRef();
@@ -38,21 +35,27 @@ export class Main extends Component {
   }
 
   onEscolaSelecionada(e) {
-    console.log(e, 'escolaa');
+    // console.log(e, 'escolaa');
     const escolaSelecionada = e.value;
     const codEol = escolaSelecionada.cd_unidade_educacao_atual;
-    this.setState({ escolaSelecionada });
-    getHistogramOption(codEol).then(response => {
-      if (typeof response === 'object') {
-        console.log('response ok', response);
-        this.setState({ histogramOptions: response });
-      } else {
-        alert(response);
-      }
-    });
+    // this.setState({ escolaSelecionada });
+    // getHistogramOption(codEol).then(response => {
+    //   if (typeof response === 'object') {
+    //     console.log('response ok', response);
+    //     this.setState({ histogramOptions: response });
+    //   } else {
+    //     alert(response);
+    //   }
+    // });
 
-    getMetasIniciaisOption(codEol).then(response => {
-      this.setState({ metasOptions: response });
+    getMetasIniciaisOption('017973').then(metasIniciaisOptions => {
+      console.log('veiooo', metasIniciaisOptions);
+      if (typeof metasIniciaisOptions === 'object') {
+        console.log('response ok', metasIniciaisOptions);
+        this.setState({ metasIniciaisOptions });
+      } else {
+        alert(metasIniciaisOptions);
+      }
     });
   }
 
@@ -120,8 +123,8 @@ export class Main extends Component {
         </div>
         <div className="row mt-3" ref={this.suaEscolaREf}>
           <Grid cols="8 8 8 8">
-            <If isVisible={this.state.histogramOptions}>
-              <ChartContainer options={this.state.metasOptions} />
+            <If isVisible={this.state.metasIniciaisOptions}>
+              <ChartContainer options={this.state.metasIniciaisOptions} />
             </If>
           </Grid>
           <Grid cols="4 4 4 4" className="card info-card">
