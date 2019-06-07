@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import ChartContainer from '../../components/charts/ChartContainer';
-import { getMetasIniciaisOption } from '../../components/charts/utils';
+import {
+  getMetasFinaisOption,
+  getMetasIniciaisOption
+} from '../../components/charts/utils';
 import Grid from '../../components/Grid';
 import If from '../../components/layout';
 import AnosHeader from './AnosHeader';
@@ -21,7 +24,8 @@ export class Main extends Component {
     this.state = {
       escolaSelecionada: '',
       histogramOptions: '',
-      metasIniciaisOptions: ''
+      metasIniciaisOptions: '',
+      metasFinaisOptions: ''
     };
     this.calculoRef = React.createRef();
     this.seuGrupoRef = React.createRef();
@@ -49,12 +53,22 @@ export class Main extends Component {
     // });
 
     getMetasIniciaisOption('017973').then(metasIniciaisOptions => {
-      console.log('veiooo', metasIniciaisOptions);
+      console.log('veiooo iniciais', metasIniciaisOptions);
       if (typeof metasIniciaisOptions === 'object') {
         console.log('response ok', metasIniciaisOptions);
         this.setState({ metasIniciaisOptions });
       } else {
         alert(metasIniciaisOptions);
+      }
+    });
+
+    getMetasFinaisOption('017973').then(metasFinaisOptions => {
+      console.log('veiooo finais', metasFinaisOptions);
+      if (typeof metasFinaisOptions === 'object') {
+        console.log('response ok', metasFinaisOptions);
+        this.setState({ metasFinaisOptions });
+      } else {
+        alert(metasFinaisOptions);
       }
     });
   }
@@ -125,6 +139,30 @@ export class Main extends Component {
           <Grid cols="8 8 8 8">
             <If isVisible={this.state.metasIniciaisOptions}>
               <ChartContainer options={this.state.metasIniciaisOptions} />
+            </If>
+          </Grid>
+          <Grid cols="4 4 4 4" className="card info-card">
+            <div className="card-body">
+              <h5 class="card-title card-titulo">
+                {this.state.escolaSelecionada.label}
+              </h5>
+              <h6 class="card-subtitle mb-2 text-muted">Grupo 3</h6>
+              <p class="card-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+          </Grid>
+        </div>
+        <div className="row mt-3">
+          <Grid cols="8 8 8 8">
+            <If isVisible={this.state.metasFinaisOptions}>
+              <ChartContainer options={this.state.metasFinaisOptions} />
             </If>
           </Grid>
           <Grid cols="4 4 4 4" className="card info-card">

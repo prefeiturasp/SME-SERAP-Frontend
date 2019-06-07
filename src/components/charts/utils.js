@@ -114,7 +114,7 @@ export const getHistogramOption = async codEOL => {
 };
 
 let metaOption = {
-  color: ["#75BCFC", "#1B80D4"],
+  color: ["#75BCFC", "#5E239D"],
 
   tooltip: {
     trigger: "axis",
@@ -182,12 +182,34 @@ const getValorAlcancadoFinal = r => {
   return [r.ano_final.indices.indices[0]].concat([0, 0, 0, 0, 0]);
 };
 
-export const getMetasIniciaisOption = async codEol => {
+export const getMetasFinaisOption = async codEol => {
   const meta = await getMetaAnos(codEol);
   console.log("metaaaa", meta);
   if (meta.erro) return meta.erro;
   metaOption.series[0].data = getValorAlcancadoFinal(meta); // valor alcancado
   metaOption.series[1].data = getMetaFinal(meta); // meta
   metaOption.xAxis[0].data = getAnosFinal(meta);
+  metaOption.color[0] = "#1B80D4";
+  metaOption.color[1] = "#FF6C7B";
+  return metaOption;
+};
+
+const getAnosInicial = r => {
+  return [r.ano_inicial.indices.anos[0]].concat(r.ano_inicial.metas.anos);
+};
+const getMetaInicial = r => {
+  return [r.ano_inicial.indices.indices[0]].concat(r.ano_inicial.metas.metas);
+};
+const getValorAlcancadoInicial = r => {
+  return [r.ano_inicial.indices.indices[0]].concat([0, 0, 0, 0, 0, 0]);
+};
+
+export const getMetasIniciaisOption = async codEol => {
+  const meta = await getMetaAnos(codEol);
+  console.log("metaaaa final", meta);
+  if (meta.erro) return meta.erro;
+  metaOption.series[0].data = getValorAlcancadoInicial(meta); // valor alcancado
+  metaOption.series[1].data = getMetaInicial(meta); // meta
+  metaOption.xAxis[0].data = getAnosInicial(meta);
   return metaOption;
 };
