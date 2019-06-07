@@ -62,18 +62,18 @@ export default class CircleAndLabelOutline extends Component {
     }
     return (
       <div className="">
-        <div className="topColoredLabel" style={{ color: letterColor }}>
+        <div className="label-cor-topo" style={{ color: letterColor }}>
           <p>{topLabel}</p>
         </div>
         <div class="w-100" />
         <div className="container">
           <img
             src={circleSelected}
-            alt="circuloOutline"
-            className="circuloOutline"
+            alt="circulo-outline"
+            className="circulo-outline"
           />
           <span
-            className="textoNoMeioDoCirculoOutline"
+            className="texto-meio-circulo-outline"
             style={{ color: letterColor }}
           >
             {label}

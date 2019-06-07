@@ -5,7 +5,7 @@ import livros from './img/livros.png';
 
 export default function Quad2(props) {
   return (
-    <Grid cols="7 7 7 7" className="backGroundCustom">
+    <Grid cols="7 7 7 7" className="bg-azul-escuro">
       <Grid
         cols="12 12 12 12"
         className="row align-items-center justify-content-between p-3"

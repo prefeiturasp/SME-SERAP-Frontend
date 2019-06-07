@@ -33,10 +33,10 @@ export default class Quad1 extends Component {
     return (
       <Grid cols="5 5 5 5" className="text-left d-flex align-items-center">
         <Grid cols="12 12 12 12">
-          <span className="idepCinzaGrande">Conheça o</span>
+          <span className="texto-cinca-grande">Conheça o</span>
           <br />
-          <span className="idepAzulGrande">IDEP</span>
-          <p className="textoPeqCinza">
+          <span className="idep-azul-grande">IDEP</span>
+          <p className="texto-pequeno-cinza">
             Saiba mais sobre a importância do índice, como ele é calculado e as
             metas da sua escola
           </p>

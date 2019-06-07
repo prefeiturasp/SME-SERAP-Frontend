@@ -6,14 +6,14 @@ import nse from './img/Icon_NSE.png';
 export default function Informativo() {
   return (
     <div className="row text-justify">
-      <Grid cols="6 6 6 6" className="fundoAzulEscuro p-5">
+      <Grid cols="6 6 6 6" className="fd-azl-esc p-5">
         <div>
-          <span className="headerBrancoItalico">
+          <span className="hd-bc-it">
             Entenda como são definidas as metas da sua escola
           </span>
         </div>
         <div>
-          <span className="fontePeqBranca">
+          <span className="ft-pq-bc">
             As metas serão estabelecidas para os próximos cinco anos, a partir
             dos grupos formados considerando o Índice Sócio Econômico (NSE) e
             Indicador de Complexidade de Gestão (ICG), levando em conta somente
@@ -25,10 +25,10 @@ export default function Informativo() {
           </span>
         </div>
       </Grid>
-      <Grid cols="6 6 6 6" className="fontePeqBranca fundoAzulEscuro p-5">
+      <Grid cols="6 6 6 6" className="ft-pq-bc fd-azl-esc p-5">
         <div className="row mt-4">
           <Grid cols="3 3 3 3" className="d-flex justify-content-center">
-            <img src={nse} alt="nse" className="iconePeq" />
+            <img src={nse} alt="nse" className="ic-pq" />
           </Grid>
           <Grid cols="9 9 9 9">
             <div className="border p-3 borda-amarela">
@@ -42,7 +42,7 @@ export default function Informativo() {
         
         <div className="row mt-4">
           <Grid cols="3 3 3 3" className="d-flex justify-content-center">
-            <img src={icg} alt="icg" className="iconePeq" />
+            <img src={icg} alt="icg" className="ic-pq" />
           </Grid>
           <Grid cols="9 9 9 9">
             <div className="border p-3 borda-amarela">

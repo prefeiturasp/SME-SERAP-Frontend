@@ -89,20 +89,20 @@ export class Main extends Component {
           <AnosHeader label="Anos Finais" />
           <CirculosAnos params={anosFinal} />
         </div>
-        <div className="row fundoAzulEscuro pt-5">
+        <div className="row fd-azl-esc pt-5">
           <Grid cols="11 11 11 11 " className="">
             <hr style={{ backgroundColor: '#FFBC0A' }} />
           </Grid>
           <Grid cols="1 1 1 1" className="d-flex align-items-end flex-column">
-            <span className="labelGrandeAmarelo">META</span>
+            <span className="lbl-gd-amr">META</span>
           </Grid>
         </div>
         <Informativo />
         <SeuGrupoHeader />
         <div className="row mt-3" ref={this.seuGrupoRef}>
-          <Grid cols="4 4 4 4" className="card infoCard">
+          <Grid cols="4 4 4 4" className="card info-card">
             <div className="card-body">
-              <h5 class="card-title cardTitulo">
+              <h5 class="card-title card-titulo">
                 {this.state.escolaSelecionada.label}
               </h5>
               <h6 class="card-subtitle mb-2 text-muted">Grupo 3</h6>
@@ -124,9 +124,9 @@ export class Main extends Component {
               <ChartContainer options={this.state.metasOptions} />
             </If>
           </Grid>
-          <Grid cols="4 4 4 4" className="card infoCard">
+          <Grid cols="4 4 4 4" className="card info-card">
             <div className="card-body">
-              <h5 class="card-title cardTitulo">
+              <h5 class="card-title card-titulo">
                 {this.state.escolaSelecionada.label}
               </h5>
               <h6 class="card-subtitle mb-2 text-muted">Grupo 3</h6>
