@@ -57,21 +57,17 @@ body {
   }
 }
 
-.midWhiteHeader {
+.label-header-branco {
   font-family: Roboto;
   font-style: italic;
   font-weight: bold;
   font-size: 26px;
-  /* line-height: 128.91%; */
-  /* or 34px */
-
-  /* display: flex; */
   align-items: center;
 
   color: #ffffff;
 }
 
-.littleWhiteText {
+.label-peq-branco {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -81,21 +77,21 @@ body {
 }
 
 /* NOVOOO */
-.cardTitulo {
+.card-titulo {
   font-style: normal;
   font-weight: bold;
   font-size: 1.5em;
   color: #1b80d4;
 }
 
-.idepAzulGrande {
+.idep-azul-grande {
   font-style: normal;
   font-weight: 900;
   font-size: 6em;
   line-height: 1em;
   color: #1b80d4;
 }
-.textoAzulMedio {
+.texto-azul-medio {
   font-style: normal;
   font-weight: 900;
   font-size: 3em;
@@ -104,7 +100,7 @@ body {
   font-weight: 300;
 }
 
-.idepCinzaGrande {
+.texto-cinca-grande {
   font-style: normal;
   font-weight: normal;
   font-size: 5em;
@@ -112,7 +108,7 @@ body {
   color: #828282;
 }
 
-.textoPeqCinza {
+.texto-pequeno-cinza {
   font-style: normal;
   font-weight: normal;
   font-size: 1em;
@@ -120,26 +116,26 @@ body {
   color: #828282;
 }
 
-.backGroundCustom {
+.bg-azul-escuro {
   background: rgba(27, 128, 212, 0.5);
 }
 
-.textoAzulNegritoItalico {
+.txt-ng-it {
   font-style: italic;
   font-weight: bold;
-  font-size: 2em;
+  font-size: 1.5em;
   line-height: 1em;
   align-items: center;
   float: right;
   color: #1b80d4;
 }
 
-.divComFundoAzul {
+.div-fd-azl {
   height: 7em;
   background: rgba(27, 128, 212, 0.5);
 }
 
-.fonteBrancaGrande {
+.txt-gd-brc {
   font-style: normal;
   font-size: 3em;
   line-height: 2em;
@@ -148,18 +144,17 @@ body {
   text-align: left;
 }
 
-.fundoAzulEscuro {
+.fd-azl-esc {
   background: #1b80d4;
 }
 
-.labelGrandeAmarelo {
+.lbl-gd-amr {
   font-size: 2em;
   color: #ffbc0a;
   font-weight: 300;
-  float: right;
 }
 
-.headerBrancoItalico {
+.hd-bc-it {
   font-style: italic;
   font-weight: bold;
   font-size: 2em;
@@ -167,26 +162,33 @@ body {
   color: #ffffff;
 }
 
-.fontePeqBranca {
+.ft-pq-bc {
   font-size: 1em;
   line-height: 1em;
   color: #ffffff;
 }
 
-.iconePeq {
+.ic-pq {
   height: 6.5em;
   width: 6.5em;
   float: right;
 }
 
 @media (max-width: 400px) {
-  .iconePeq {
+  .ic-pq {
     float: none;
   }
 }
 
-.iconeSeta {
-  height: 6.5em;
-  width: 20em;
+.ic-seta {
+  height: 7em;
+  width: 23em;
   float: left;
+}
+
+.borda-amarela {
+  border: 4px solid #ffbc0a;
+  box-sizing: border-box;
+  border-color: coral;
+  border-radius: 4px;
 }

@@ -27,7 +27,7 @@ export const getIndicesAnoInicial = async codEol => {
   const header = { ...BASE_HEADER };
 
   const response = await fetch(
-    `${CONFIG.API_URL}/indices_ano_inicial/${parseInt(codEol)}`,
+    `${CONFIG.API_URL}/indices_ano_inicial/${codEol}`,
     header
   );
   const data = await response.json();

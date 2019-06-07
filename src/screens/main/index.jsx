@@ -15,6 +15,7 @@ import Quad1 from './Quad1';
 import Quad2 from './Quad2';
 import Quad3 from './Quad3';
 import Quad4 from './Quad4';
+import Rodape from './Rodape';
 import SeuGrupoHeader from './SeuGrupoHeader';
 
 export class Main extends Component {
@@ -26,10 +27,10 @@ export class Main extends Component {
       metasOptions: ''
     };
     this.calculoRef = React.createRef();
-  }
-
-  onCalculoButtonClicked() {
-    this.handleScrollToElement(this.calculoRef);
+    this.seuGrupoRef = React.createRef();
+    this.metasRef = React.createRef();
+    this.homeRef = React.createRef();
+    this.suaEscolaREf = React.createRef();
   }
 
   handleScrollToElement(ref) {
@@ -37,7 +38,7 @@ export class Main extends Component {
   }
 
   onEscolaSelecionada(e) {
-    console.log(e);
+    console.log(e, 'escolaa');
     const escolaSelecionada = e.value;
     const codEol = escolaSelecionada.cd_unidade_educacao_atual;
     this.setState({ escolaSelecionada });
@@ -52,22 +53,35 @@ export class Main extends Component {
 
     getMetasIniciaisOption(codEol).then(response => {
       this.setState({ metasOptions: response });
-      // console.log('getMetasIniciaisOption', response);
     });
   }
 
   render() {
     return (
       <div className="container">
-        <div className="row">
+        <div className="row" ref={this.homeRef}>
           <Quad1 onEscolaSelecionada={e => this.onEscolaSelecionada(e)} />
-          <Quad2 onCalculoButtonClicked={() => this.onCalculoButtonClicked()} />
+          <Quad2
+            onHomeButtonClicked={() => this.handleScrollToElement(this.homeRef)}
+            onCalculoButtonClicked={() =>
+              this.handleScrollToElement(this.calculoRef)
+            }
+            onSeuGrupoButtonClicked={() =>
+              this.handleScrollToElement(this.seuGrupoRef)
+            }
+            onMetasButtonClicked={() => {
+              this.handleScrollToElement(this.metasRef);
+            }}
+            onSuaEscolaButtonClicked={() =>
+              this.handleScrollToElement(this.seuGrupoRef)
+            }
+          />
         </div>
         <div className="row" ref={this.calculoRef}>
           <Quad3 />
           <Quad4 />
         </div>
-        <div className="row">
+        <div className="row" ref={this.metasRef}>
           <AnosHeader label="Anos Iniciais" />
           <CirculosAnos params={anosInicial} />
         </div>
@@ -75,21 +89,21 @@ export class Main extends Component {
           <AnosHeader label="Anos Finais" />
           <CirculosAnos params={anosFinal} />
         </div>
-        <div className="row fundoAzulEscuro">
-          <Grid cols="4 4 4 4" />
-          <Grid cols="8 8 8 8">
-            <Grid cols="11 11 11 11">
-              <span className="labelGrandeAmarelo">................. META</span>
-            </Grid>
+        <div className="row fd-azl-esc pt-5">
+          <Grid cols="11 11 11 11 " className="">
+            <hr style={{ backgroundColor: '#FFBC0A' }} />
+          </Grid>
+          <Grid cols="1 1 1 1" className="d-flex align-items-end flex-column">
+            <span className="lbl-gd-amr">META</span>
           </Grid>
         </div>
         <Informativo />
         <SeuGrupoHeader />
-        <div className="row mt-3">
-          <Grid cols="6 6 6 6" className="card infoCard">
+        <div className="row mt-3" ref={this.seuGrupoRef}>
+          <Grid cols="4 4 4 4" className="card info-card">
             <div className="card-body">
-              <h5 class="card-title cardTitulo">
-                092797 EMEF Prof. Olavo Pezzotti
+              <h5 class="card-title card-titulo">
+                {this.state.escolaSelecionada.label}
               </h5>
               <h6 class="card-subtitle mb-2 text-muted">Grupo 3</h6>
               <p class="card-text">
@@ -98,22 +112,22 @@ export class Main extends Component {
               </p>
             </div>
           </Grid>
-          <Grid cols="6 6 6 6">
+          <Grid cols="8 8 8 8">
             <If isVisible={this.state.histogramOptions}>
               <ChartContainer options={this.state.histogramOptions} />
             </If>
           </Grid>
         </div>
-        <div className="row mt-3">
-          <Grid cols="6 6 6 6">
+        <div className="row mt-3" ref={this.suaEscolaREf}>
+          <Grid cols="8 8 8 8">
             <If isVisible={this.state.histogramOptions}>
               <ChartContainer options={this.state.metasOptions} />
             </If>
           </Grid>
-          <Grid cols="6 6 6 6" className="card infoCard">
+          <Grid cols="4 4 4 4" className="card info-card">
             <div className="card-body">
-              <h5 class="card-title cardTitulo">
-                092797 EMEF Prof. Olavo Pezzotti
+              <h5 class="card-title card-titulo">
+                {this.state.escolaSelecionada.label}
               </h5>
               <h6 class="card-subtitle mb-2 text-muted">Grupo 3</h6>
               <p class="card-text">
@@ -128,7 +142,7 @@ export class Main extends Component {
             </div>
           </Grid>
         </div>
-        {/* <Rodape /> */}
+        <Rodape />
       </div>
     );
   }

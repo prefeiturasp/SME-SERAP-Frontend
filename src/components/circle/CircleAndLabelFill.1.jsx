@@ -61,8 +61,8 @@ export default class CircleAndLabelFill extends Component {
     return (
       <div className="">
         <div className="container">
-          <img src={circleSelected} alt="circuloFill" className="circuloFill" />
-          <div className="textoNoMeioDocirculoFill text-center p-5">
+          <img src={circleSelected} alt="circulo-fill" className="circulo-fill" />
+          <div className="texto-no-meio-do-circulo text-center p-5">
             <span style={{ color: '#FFFFFF' }}>{label}</span>
           </div>
         </div>
@@ -77,8 +77,8 @@ export default class CircleAndLabelFill extends Component {
           .
         </div>
         <div class="w-100" />
-        <div class="card infoCard">
-          <span className="bottomLabel mt-4">{bottomLabel}</span>
+        <div class="card info-card">
+          <span className="bottomLabel mt-1 p-2">{bottomLabel}</span>
         </div>
       </div>
     );
