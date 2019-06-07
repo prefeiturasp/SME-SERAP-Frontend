@@ -10,24 +10,19 @@ const BASE_HEADER = {
 
 const rf = authService.getRF();
 
-export const ANOS_META = {
-  INICIAIS: "meta_ano_inicial",
-  FINAIS: "meta_ano_final"
-};
-
-export const getMetaAnos = async (codEol, tipo = ANOS_META.INICIAIS) => {
+export const getMetaAnos = async codEol => {
   const header = { ...BASE_HEADER };
-  const response = await fetch(`${CONFIG.API_URL}/${tipo}/${codEol}`, header);
+  const response = await fetch(`${CONFIG.API_URL}/barchart/${codEol}`, header);
   const data = await response.json();
-  return data.result[0];
+  return data.result;
 };
 
 // 10.49.23.85:8080/indices_ano_inicial/17973
-export const getIndicesAnoInicial = async codEol => {
+export const getIndicesAnos = async (codEol, endpoint) => {
   const header = { ...BASE_HEADER };
 
   const response = await fetch(
-    `${CONFIG.API_URL}/indices_ano_inicial/${codEol}`,
+    `${CONFIG.API_URL}/${endpoint}/${codEol}`,
     header
   );
   const data = await response.json();
@@ -42,24 +37,4 @@ export const getEscolas = async () => {
   );
   const data = await response.json();
   return data.results;
-};
-
-export const getPorNivelSocioEconomico = async (
-  nse,
-  tipo = ANOS_META.INICIAIS
-) => {
-  const header = { ...BASE_HEADER };
-  const response = await fetch(`${CONFIG.API_URL}/${tipo}/?nse=${nse}`, header);
-  const json = await response.json();
-  return json;
-};
-
-export const getPorIndiceComplexidadeGestao = async (
-  icg,
-  tipo = ANOS_META.INICIAIS
-) => {
-  const header = { ...BASE_HEADER };
-  const response = await fetch(`${CONFIG.API_URL}/${tipo}/?icg=${icg}`, header);
-  const json = await response.json();
-  return json;
 };

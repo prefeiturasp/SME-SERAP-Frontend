@@ -1,17 +1,20 @@
 import echarts from "echarts";
 import ecStat from "echarts-stat";
-import {
-  ANOS_META,
-  getIndicesAnoInicial,
-  getMetaAnos
-} from "../../services/idep";
+import { getIndicesAnos, getMetaAnos } from "../../services/idep";
 
 const roundNumber = number => {
   return parseFloat(Number(number).toFixed(2));
 };
+export const HISTOGRAMTYPE = {
+  FINAL: "histograma_final",
+  INICIAL: "histograma_inicial"
+};
 
-export const getHistogramOption = async codEOL => {
-  const meta = await getIndicesAnoInicial(codEOL);
+export const getHistogramOption = async (
+  codEOL,
+  type = HISTOGRAMTYPE.INICIAL
+) => {
+  const meta = await getIndicesAnos(codEOL, type);
 
   const { indices, indice_da_escola, erro } = meta;
   if (!indices && !indice_da_escola) {
@@ -118,7 +121,7 @@ export const getHistogramOption = async codEOL => {
 };
 
 let metaOption = {
-  color: ["#75BCFC", "#1B80D4", "#FF6C7C", "#422593"],
+  color: ["#75BCFC", "#5E239D"],
 
   tooltip: {
     trigger: "axis",
@@ -135,7 +138,7 @@ let metaOption = {
     }
   },
   legend: {
-    data: ["Inicial", "Final", "Meta inicial", "Meta final"]
+    data: ["Alcançado", "Meta"]
   },
   xAxis: [
     {
@@ -143,7 +146,7 @@ let metaOption = {
       axisTick: {
         alignWithLabel: true
       },
-      data: ["2018", "2019", "2020", "2021", "2022", "2023"],
+      data: [],
       name: "Ano",
       nameLocation: "middle",
       nameGap: 30
@@ -162,46 +165,58 @@ let metaOption = {
   ],
   series: [
     {
-      name: "Inicial",
+      name: "Alcançado",
       type: "bar",
       data: []
     },
     {
-      name: "Meta inicial",
-      type: "line",
-      data: []
-    },
-    {
-      name: "Final",
-      type: "bar",
-      data: []
-    },
-
-    {
-      name: "Meta final",
+      name: "Meta",
       type: "line",
       data: []
     }
   ]
 };
 
+const getAnosFinal = r => {
+  return [r.ano_final.indices.anos[0]].concat(r.ano_final.metas.anos);
+};
+
+const getMetaFinal = r => {
+  return [r.ano_final.indices.indices[0]].concat(r.ano_final.metas.metas);
+};
+
+const getValorAlcancadoFinal = r => {
+  return [r.ano_final.indices.indices[0]].concat([0, 0, 0, 0, 0]);
+};
+
+export const getMetasFinaisOption = async codEol => {
+  const meta = await getMetaAnos(codEol);
+  console.log("metaaaa", meta);
+  if (meta.erro) return meta.erro;
+  metaOption.series[0].data = getValorAlcancadoFinal(meta); // valor alcancado
+  metaOption.series[1].data = getMetaFinal(meta); // meta
+  metaOption.xAxis[0].data = getAnosFinal(meta);
+  metaOption.color[0] = "#1B80D4";
+  metaOption.color[1] = "#FF6C7B";
+  return metaOption;
+};
+
+const getAnosInicial = r => {
+  return [r.ano_inicial.indices.anos[0]].concat(r.ano_inicial.metas.anos);
+};
+const getMetaInicial = r => {
+  return [r.ano_inicial.indices.indices[0]].concat(r.ano_inicial.metas.metas);
+};
+const getValorAlcancadoInicial = r => {
+  return [r.ano_inicial.indices.indices[0]].concat([0, 0, 0, 0, 0, 0]);
+};
+
 export const getMetasIniciaisOption = async codEol => {
-  getMetaAnos(parseInt(codEol), ANOS_META.INICIAIS).then(inicial => {
-    // para tirar o primeiro elemento e concatenar com zeros...
-    // necessario por motivo de endpoint insuficiente
-    metaOption.series[0].data = inicial.metas
-      .slice(0, 1)
-      .concat([0, 0, 0, 0, 0]);
-    metaOption.series[1].data = inicial.metas;
-    metaOption.xAxis[0].data = inicial.anos;
-  });
-
-  getMetaAnos(parseInt(codEol), ANOS_META.FINAIS).then(final => {
-    // para tirar o primeiro elemento e concatenar com zeros...
-    // necessario por motivo de endpoint insuficiente
-    metaOption.series[2].data = final.metas.slice(0, 1).concat([0, 0, 0, 0, 0]);
-    metaOption.series[3].data = final.metas;
-  });
-
+  const meta = await getMetaAnos(codEol);
+  console.log("metaaaa final", meta);
+  if (meta.erro) return meta.erro;
+  metaOption.series[0].data = getValorAlcancadoInicial(meta); // valor alcancado
+  metaOption.series[1].data = getMetaInicial(meta); // meta
+  metaOption.xAxis[0].data = getAnosInicial(meta);
   return metaOption;
 };
