@@ -1,13 +1,20 @@
 import echarts from "echarts";
 import ecStat from "echarts-stat";
-import { getIndicesAnoInicial, getMetaAnos } from "../../services/idep";
+import { getIndicesAnos, getMetaAnos } from "../../services/idep";
 
 const roundNumber = number => {
   return parseFloat(Number(number).toFixed(2));
 };
+export const HISTOGRAMTYPE = {
+  FINAL: "histograma_final",
+  INICIAL: "histograma_inicial"
+};
 
-export const getHistogramOption = async codEOL => {
-  const meta = await getIndicesAnoInicial(codEOL);
+export const getHistogramOption = async (
+  codEOL,
+  type = HISTOGRAMTYPE.INICIAL
+) => {
+  const meta = await getIndicesAnos(codEOL, type);
 
   const { indices, indice_da_escola, erro } = meta;
   if (!indices && !indice_da_escola) {

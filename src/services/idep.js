@@ -18,11 +18,11 @@ export const getMetaAnos = async codEol => {
 };
 
 // 10.49.23.85:8080/indices_ano_inicial/17973
-export const getIndicesAnoInicial = async codEol => {
+export const getIndicesAnos = async (codEol, endpoint) => {
   const header = { ...BASE_HEADER };
 
   const response = await fetch(
-    `${CONFIG.API_URL}/indices_ano_inicial/${codEol}`,
+    `${CONFIG.API_URL}/${endpoint}/${codEol}`,
     header
   );
   const data = await response.json();

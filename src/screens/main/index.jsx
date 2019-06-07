@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import ChartContainer from '../../components/charts/ChartContainer';
 import {
+  getHistogramOption,
   getMetasFinaisOption,
-  getMetasIniciaisOption
+  getMetasIniciaisOption,
+  HISTOGRAMTYPE
 } from '../../components/charts/utils';
 import Grid from '../../components/Grid';
 import If from '../../components/layout';
@@ -23,7 +25,8 @@ export class Main extends Component {
     super(props);
     this.state = {
       escolaSelecionada: '',
-      histogramOptions: '',
+      histogramOptionsInicial: '',
+      histogramOptionsFinal: '',
       metasIniciaisOptions: '',
       metasFinaisOptions: ''
     };
@@ -41,16 +44,30 @@ export class Main extends Component {
   onEscolaSelecionada(e) {
     // console.log(e, 'escolaa');
     const escolaSelecionada = e.value;
-    const codEol = escolaSelecionada.cd_unidade_educacao_atual;
-    // this.setState({ escolaSelecionada });
-    // getHistogramOption(codEol).then(response => {
-    //   if (typeof response === 'object') {
-    //     console.log('response ok', response);
-    //     this.setState({ histogramOptions: response });
-    //   } else {
-    //     alert(response);
-    //   }
-    // });
+    // const codEol = escolaSelecionada.cd_unidade_educacao_atual;
+    this.setState({ escolaSelecionada });
+
+    getHistogramOption('017973', HISTOGRAMTYPE.INICIAL).then(
+      histogramOptionsInicial => {
+        if (typeof histogramOptionsInicial === 'object') {
+          console.log('response ok', histogramOptionsInicial);
+          this.setState({ histogramOptionsInicial });
+        } else {
+          alert(histogramOptionsInicial);
+        }
+      }
+    );
+
+    getHistogramOption('017973', HISTOGRAMTYPE.FINAL).then(
+      histogramOptionsFinal => {
+        if (typeof histogramOptionsFinal === 'object') {
+          console.log('response ok', histogramOptionsFinal);
+          this.setState({ histogramOptionsFinal });
+        } else {
+          alert(histogramOptionsFinal);
+        }
+      }
+    );
 
     getMetasIniciaisOption('017973').then(metasIniciaisOptions => {
       console.log('veiooo iniciais', metasIniciaisOptions);
@@ -130,8 +147,27 @@ export class Main extends Component {
             </div>
           </Grid>
           <Grid cols="8 8 8 8">
-            <If isVisible={this.state.histogramOptions}>
-              <ChartContainer options={this.state.histogramOptions} />
+            <If isVisible={this.state.histogramOptionsInicial}>
+              <ChartContainer options={this.state.histogramOptionsInicial} />
+            </If>
+          </Grid>
+        </div>
+        <div className="row mt-3">
+          <Grid cols="4 4 4 4" className="card info-card">
+            <div className="card-body">
+              <h5 class="card-title card-titulo">
+                {this.state.escolaSelecionada.label}
+              </h5>
+              <h6 class="card-subtitle mb-2 text-muted">Grupo 3</h6>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+            </div>
+          </Grid>
+          <Grid cols="8 8 8 8">
+            <If isVisible={this.state.histogramOptionsFinal}>
+              <ChartContainer options={this.state.histogramOptionsFinal} />
             </If>
           </Grid>
         </div>
