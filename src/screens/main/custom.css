@@ -1,16 +1,6 @@
 body {
   font-family: Roboto;
 }
-.conhecaINEP {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 80px;
-  line-height: 80px;
-  color: #828282;
-  display: flex;
-  align-items: center;
-  text-align: left;
-}
 
 .hrCinza {
   /* width: 658px;
@@ -108,6 +98,12 @@ body {
   color: #828282;
 }
 
+@media (max-width: 575.98px) {
+  .texto-cinca-grande {
+    font-size: 4em;
+  }
+}
+
 .texto-pequeno-cinza {
   font-style: normal;
   font-weight: normal;
@@ -184,6 +180,13 @@ body {
   height: 7em;
   width: 23em;
   float: left;
+}
+
+@media (max-width: 500px) {
+  .ic-seta {
+    height: 5em;
+    width: 15em;
+  }
 }
 
 .borda-amarela {

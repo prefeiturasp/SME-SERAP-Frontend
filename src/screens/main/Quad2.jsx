@@ -8,37 +8,32 @@ export default function Quad2(props) {
     <Grid cols="7 7 7 7" className="bg-azul-escuro">
       <Grid
         cols="12 12 12 12"
-        className="row align-items-center justify-content-between p-3"
+        className="d-flex flex-wrap justify-content-around p-3"
       >
         <Button
           label="HOME"
           style={ButtonStyle.OutlineLight}
           onClick={() => props.onHomeButtonClicked()}
-          className="ml-3"
         />
         <Button
           label="CÁLCULO"
           style={ButtonStyle.OutlineLight}
           onClick={() => props.onCalculoButtonClicked()}
-          className="ml-3"
         />
         <Button
           label="SEU GRUPO"
           style={ButtonStyle.OutlineLight}
           onClick={() => props.onSeuGrupoButtonClicked()}
-          className="ml-3"
         />
         <Button
           label="METAS"
           style={ButtonStyle.OutlineLight}
           onClick={() => props.onMetasButtonClicked()}
-          className="ml-3"
         />
         <Button
           label="SUA ESCOLA"
           style={ButtonStyle.OutlineLight}
           onClick={() => props.onSuaEscolaButtonClicked()}
-          className="ml-3"
         />
       </Grid>
       <Grid cols="12 12 12 12">
