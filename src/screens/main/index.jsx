@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import ChartContainer from '../../components/charts/ChartContainer';
-import { getHistogramOption, getMetasIniciaisOption } from '../../components/charts/utils';
+import {
+  getHistogramOption,
+  getMetasIniciaisOption
+} from '../../components/charts/utils';
 import Grid from '../../components/Grid';
 import If from '../../components/layout';
 import AnosHeader from './AnosHeader';
@@ -35,7 +38,7 @@ export class Main extends Component {
   }
 
   onEscolaSelecionada(e) {
-    console.log(e);
+    console.log(e, 'escolaa');
     const escolaSelecionada = e.value;
     const codEol = escolaSelecionada.cd_unidade_educacao_atual;
     this.setState({ escolaSelecionada });
@@ -100,7 +103,7 @@ export class Main extends Component {
           <Grid cols="4 4 4 4" className="card infoCard">
             <div className="card-body">
               <h5 class="card-title cardTitulo">
-                092797 EMEF Prof. Olavo Pezzotti
+                {this.state.escolaSelecionada.label}
               </h5>
               <h6 class="card-subtitle mb-2 text-muted">Grupo 3</h6>
               <p class="card-text">
@@ -124,7 +127,7 @@ export class Main extends Component {
           <Grid cols="4 4 4 4" className="card infoCard">
             <div className="card-body">
               <h5 class="card-title cardTitulo">
-                092797 EMEF Prof. Olavo Pezzotti
+                {this.state.escolaSelecionada.label}
               </h5>
               <h6 class="card-subtitle mb-2 text-muted">Grupo 3</h6>
               <p class="card-text">
