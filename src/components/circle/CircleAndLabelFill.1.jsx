@@ -66,7 +66,7 @@ export default class CircleAndLabelFill extends Component {
             <span style={{ color: '#FFFFFF' }}>{label}</span>
           </div>
         </div>
-        <div class="w-100" />
+        <div className="w-100" />
         <div className="pontos" style={{ color: dotsColor }}>
           .
         </div>
@@ -76,8 +76,8 @@ export default class CircleAndLabelFill extends Component {
         <div className="pontos" style={{ color: dotsColor }}>
           .
         </div>
-        <div class="w-100" />
-        <div class="card info-card">
+        <div className="w-100" />
+        <div className="card info-card">
           <span className="bottomLabel mt-1 p-2">{bottomLabel}</span>
         </div>
       </div>

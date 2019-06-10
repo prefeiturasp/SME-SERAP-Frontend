@@ -2,6 +2,7 @@ import React from 'react';
 import Grid from '../../components/Grid';
 import './custom.css';
 import setaVermelha from './img/Icon_arrow_red.png';
+import setaAmarela from './img/Image_5section_amarelo.png';
 
 export const HEADER_OPT = {
   INICIAL: 'INICIAL',
@@ -13,9 +14,10 @@ export default function SeuGrupoHeader(props) {
   let alt = 'setaVermelha';
   let lbl = 'Anos iniciais';
   let lblStyle = { color: '#FF6C7B' };
+  let imgClassname = 'ic-seta';
 
   if (props.headerTipo !== HEADER_OPT.FINAL) {
-    // imgSelected = setaVermelha
+    imgSelected = setaAmarela;
     alt = 'setaAmarela';
     lbl = 'Anos finais';
     lblStyle = { color: '#FFBC0A' };
@@ -24,7 +26,7 @@ export default function SeuGrupoHeader(props) {
   return (
     <div className="row mt-5">
       <Grid cols="7 7 7 7">
-        <img className="ic-seta" src={imgSelected} alt={alt} />
+        <img className={imgClassname} src={imgSelected} alt={alt} />
       </Grid>
       <Grid cols="5 5 5 5">
         <div className="d-flex align-items-end flex-column">

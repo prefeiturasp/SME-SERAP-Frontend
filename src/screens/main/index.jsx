@@ -132,15 +132,15 @@ export class Main extends Component {
           </Grid>
         </div>
         <Informativo />
-        <SeuGrupoHeader />
+        <SeuGrupoHeader headerTipo={HEADER_OPT.INICIAL} />
         <div className="row mt-3" ref={this.seuGrupoRef}>
           <Grid cols="4 4 4 4" className="card info-card">
             <div className="card-body">
-              <h5 class="card-title card-titulo">
+              <h5 className="card-title card-titulo">
                 {this.state.escolaSelecionada.label}
               </h5>
-              <h6 class="card-subtitle mb-2 text-muted">Grupo 3</h6>
-              <p class="card-text">
+              <h6 className="card-subtitle mb-2 text-muted">Grupo 3</h6>
+              <p className="card-text">
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
               </p>
@@ -156,11 +156,11 @@ export class Main extends Component {
         <div className="row mt-3">
           <Grid cols="4 4 4 4" className="card info-card">
             <div className="card-body">
-              <h5 class="card-title card-titulo">
+              <h5 className="card-title card-titulo">
                 {this.state.escolaSelecionada.label}
               </h5>
-              <h6 class="card-subtitle mb-2 text-muted">Grupo 3</h6>
-              <p class="card-text">
+              <h6 className="card-subtitle mb-2 text-muted">Grupo 3</h6>
+              <p className="card-text">
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
               </p>
@@ -180,11 +180,11 @@ export class Main extends Component {
           </Grid>
           <Grid cols="4 4 4 4" className="card info-card">
             <div className="card-body">
-              <h5 class="card-title card-titulo">
+              <h5 className="card-title card-titulo">
                 {this.state.escolaSelecionada.label}
               </h5>
-              <h6 class="card-subtitle mb-2 text-muted">Grupo 3</h6>
-              <p class="card-text">
+              <h6 className="card-subtitle mb-2 text-muted">Grupo 3</h6>
+              <p className="card-text">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -204,11 +204,11 @@ export class Main extends Component {
           </Grid>
           <Grid cols="4 4 4 4" className="card info-card">
             <div className="card-body">
-              <h5 class="card-title card-titulo">
+              <h5 className="card-title card-titulo">
                 {this.state.escolaSelecionada.label}
               </h5>
-              <h6 class="card-subtitle mb-2 text-muted">Grupo 3</h6>
-              <p class="card-text">
+              <h6 className="card-subtitle mb-2 text-muted">Grupo 3</h6>
+              <p className="card-text">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
