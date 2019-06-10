@@ -1,11 +1,13 @@
 import React from 'react';
 import Button, { ButtonStyle } from '../../components/Button';
-import CircleAndLabelOutline, { CIRCLE_COLOR } from '../../components/circle/CircleAndLabelOutline';
+import CircleAndLabelOutline, {
+  CIRCLE_COLOR
+} from '../../components/circle/CircleAndLabelOutline';
 import Grid from '../../components/Grid';
 
 export default function Quad4() {
   return (
-    <Grid cols="7 7 7 7" className="row justify-content-between">
+    <Grid cols="7 7 7 7" className="row justify-content-between mt-5">
       <Grid cols="4 4 4 4">
         <CircleAndLabelOutline
           label="5,94"

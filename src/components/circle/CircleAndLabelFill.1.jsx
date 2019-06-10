@@ -61,8 +61,12 @@ export default class CircleAndLabelFill extends Component {
     return (
       <div className="">
         <div className="container">
-          <img src={circleSelected} alt="circulo-fill" className="circulo-fill" />
-          <div className="texto-no-meio-do-circulo text-center p-5">
+          <img
+            src={circleSelected}
+            alt="circulo-fill"
+            className="circulo-fill"
+          />
+          <div className="texto-no-meio-do-circulo p-5">
             <span style={{ color: '#FFFFFF' }}>{label}</span>
           </div>
         </div>

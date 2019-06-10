@@ -58,38 +58,35 @@
 /* NOVO */
 
 .circulo-outline {
-  width: 7em;
-  height: 7em;
+  width: 9em;
+  height: 9em;
   text-align: center;
   position: "relative";
 }
 
 .circulo-fill {
-  width: 13em;
-  height: 13em;
-  /* text-align: center; */
-  /* position: "relative"; */
+  width: 12em;
+  height: 12em;
 }
 
 .texto-no-meio-do-circulo {
-  left: 1.5em;
+  left: 0em;
   top: 0em;
   position: absolute;
   text-align: center;
-  width: 7em;
   font-size: 1.6em;
 }
 
 @media (max-width: 575.98px) {
   .texto-no-meio-do-circulo {
-    left: 1.8em;
-    top: -0.5em;
+    left: 0.7em;
+    top: -0.2em;
     width: 9em;
   }
 }
 
 .label-cor-topo {
-  font-size: 1.5em;
+  font-size: 1.1em;
   text-align: center;
 }
 
@@ -100,6 +97,7 @@
   top: 2em;
   width: 100%;
   font-size: 2.5em;
+  font-weight: 900;
 }
 
 .pontos {

@@ -1,7 +1,8 @@
 import React from 'react';
-import CircleAndLabelFill, { CIRCLE_COLOR } from '../../components/circle/CircleAndLabelFill.1';
+import CircleAndLabelFill, {
+  CIRCLE_COLOR
+} from '../../components/circle/CircleAndLabelFill.1';
 import Grid from '../../components/Grid';
-
 
 export default function CirculosAnos(props) {
   const { params } = props;

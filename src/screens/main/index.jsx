@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 import ChartContainer from '../../components/charts/ChartContainer';
-import {
-  getHistogramOption,
-  getMetasFinaisOption,
-  getMetasIniciaisOption,
-  HISTOGRAMTYPE
-} from '../../components/charts/utils';
+import { getHistogramOption, getMetasFinaisOption, getMetasIniciaisOption, HISTOGRAMTYPE } from '../../components/charts/utils';
 import Grid from '../../components/Grid';
 import If from '../../components/layout';
 import AnosHeader from './AnosHeader';
