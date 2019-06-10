@@ -11,6 +11,7 @@ import If from '../../components/layout';
 import { getIndicesAnos } from '../../services/idep';
 import AnosHeader from './AnosHeader';
 import { anosFinal, anosInicial } from './aux';
+import CardEscolaDRE from './CardEscolaDRE';
 import CirculosAnos from './CirculosAnos';
 import './custom.css';
 import Informativo from './Informativo';
@@ -148,18 +149,10 @@ export class Main extends Component {
         <Informativo />
         <SeuGrupoHeader headerTipo={HEADER_OPT.INICIAL} />
         <div className="row mt-3" ref={this.seuGrupoRef}>
-          <Grid cols="4 4 4 4" className="card info-card">
-            <div className="card-body">
-              <h5 className="card-title card-titulo">
-                {this.state.escolaLabel}
-              </h5>
-              <h6 className="card-subtitle mb-2 text-muted">Grupo 3</h6>
-              <p className="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
-          </Grid>
+          <CardEscolaDRE
+            escolaLabel={this.state.escolaLabel}
+            dreCount={this.state.dreCount}
+          />
           <Grid cols="8 8 8 8">
             <If isVisible={this.state.histogramOptionsInicial}>
               <ChartContainer options={this.state.histogramOptionsInicial} />
@@ -168,34 +161,17 @@ export class Main extends Component {
         </div>
         <SeuGrupoHeader headerTipo={HEADER_OPT.FINAL} />
         <div className="row mt-3">
-          <Grid cols="4 4 4 4" className="card info-card">
-            <div className="card-body">
-              <h5 className="card-title card-titulo">
-                {this.state.escolaLabel}
-              </h5>
-              <h6 className="card-subtitle mb-2 text-muted">
-                Conheça quantas escolas compõem seu grupo:
-              </h6>
-              {this.state.dreCount.map(e => {
-                return (
-                  <div className="row card-text card-item">
-                    <div className="col">
-                      <p>{`DRE ${e[0]}:`}</p>
-                    </div>
-                    <div className="col text-left">
-                      <p>{`${e[1]} escolas`}</p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </Grid>
+          <CardEscolaDRE
+            escolaLabel={this.state.escolaLabel}
+            dreCount={this.state.dreCount}
+          />
           <Grid cols="8 8 8 8">
             <If isVisible={this.state.histogramOptionsFinal}>
               <ChartContainer options={this.state.histogramOptionsFinal} />
             </If>
           </Grid>
         </div>
+
         <div className="row mt-3" ref={this.suaEscolaREf}>
           <Grid cols="8 8 8 8">
             <If isVisible={this.state.metasIniciaisOptions}>

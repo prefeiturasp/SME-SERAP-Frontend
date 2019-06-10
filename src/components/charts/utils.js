@@ -23,7 +23,8 @@ export const getHistogramOption = async (
 
   let bins = ecStat.histogram(indices);
   const colorAll = "#75BCFC";
-  const colorSelected = "#FF6C7B";
+  let colorSelected = "#FFBC0A";
+  if (type !== HISTOGRAMTYPE.INICIAL) colorSelected = "#FF6C7B";
 
   let interval;
   let min = Infinity;
