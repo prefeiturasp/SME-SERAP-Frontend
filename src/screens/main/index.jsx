@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import ChartContainer from '../../components/charts/ChartContainer';
-import { getHistogramOption, getMetasFinaisOption, getMetasIniciaisOption, HISTOGRAMTYPE } from '../../components/charts/utils';
+import {
+  getHistogramOption,
+  getMetasFinaisOption,
+  getMetasIniciaisOption,
+  HISTOGRAMTYPE
+} from '../../components/charts/utils';
 import Grid from '../../components/Grid';
 import If from '../../components/layout';
+import { getIndicesAnos } from '../../services/idep';
 import AnosHeader from './AnosHeader';
 import { anosFinal, anosInicial } from './aux';
 import CirculosAnos from './CirculosAnos';
@@ -23,7 +29,9 @@ export class Main extends Component {
       histogramOptionsInicial: '',
       histogramOptionsFinal: '',
       metasIniciaisOptions: '',
-      metasFinaisOptions: ''
+      metasFinaisOptions: '',
+      escolaLabel: '',
+      dreCount: []
     };
     this.calculoRef = React.createRef();
     this.seuGrupoRef = React.createRef();
@@ -37,8 +45,14 @@ export class Main extends Component {
   }
 
   onEscolaSelecionada(e) {
-    // console.log(e, 'escolaa');
     const escolaSelecionada = e.value;
+    console.log(escolaSelecionada, 'escolaaxxxxxxxxxxxxxxxxxxxxxxxx');
+    // cd_unidade_educacao_atual: "095061"
+    // nomesc: "DES. FRANCISCO MEIRELLES"
+    // tipoesc: "EMEF"
+    this.setState({
+      escolaLabel: `${escolaSelecionada.tipoesc} ${escolaSelecionada.nomesc}`
+    });
     // const codEol = escolaSelecionada.cd_unidade_educacao_atual;
     this.setState({ escolaSelecionada });
 
@@ -82,6 +96,11 @@ export class Main extends Component {
       } else {
         alert(metasFinaisOptions);
       }
+    });
+
+    getIndicesAnos('017973', HISTOGRAMTYPE.INICIAL).then(indices => {
+      // este endpoint recebe varios dados e dentro deles o contador de DRES.
+      this.setState({ dreCount: indices.dre_count });
     });
   }
 
@@ -132,7 +151,7 @@ export class Main extends Component {
           <Grid cols="4 4 4 4" className="card info-card">
             <div className="card-body">
               <h5 className="card-title card-titulo">
-                {this.state.escolaSelecionada.label}
+                {this.state.escolaLabel}
               </h5>
               <h6 className="card-subtitle mb-2 text-muted">Grupo 3</h6>
               <p className="card-text">
@@ -152,13 +171,23 @@ export class Main extends Component {
           <Grid cols="4 4 4 4" className="card info-card">
             <div className="card-body">
               <h5 className="card-title card-titulo">
-                {this.state.escolaSelecionada.label}
+                {this.state.escolaLabel}
               </h5>
-              <h6 className="card-subtitle mb-2 text-muted">Grupo 3</h6>
-              <p className="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
+              <h6 className="card-subtitle mb-2 text-muted">
+                Conheça quantas escolas compõem seu grupo:
+              </h6>
+              {this.state.dreCount.map(e => {
+                return (
+                  <div className="row card-text card-item">
+                    <div className="col">
+                      <p>{`DRE ${e[0]}:`}</p>
+                    </div>
+                    <div className="col text-left">
+                      <p>{`${e[1]} escolas`}</p>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </Grid>
           <Grid cols="8 8 8 8">
