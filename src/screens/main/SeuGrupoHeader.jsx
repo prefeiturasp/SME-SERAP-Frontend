@@ -3,11 +3,28 @@ import Grid from '../../components/Grid';
 import './custom.css';
 import setaVermelha from './img/Icon_arrow_red.png';
 
-export default function SeuGrupoHeader(prps) {
+export const HEADER_OPT = {
+  INICIAL: 'INICIAL',
+  FINAL: 'FINAL'
+};
+
+export default function SeuGrupoHeader(props) {
+  let imgSelected = setaVermelha;
+  let alt = 'setaVermelha';
+  let lbl = 'Anos iniciais';
+  let lblStyle = { color: '#FF6C7B' };
+
+  if (props.headerTipo !== HEADER_OPT.FINAL) {
+    // imgSelected = setaVermelha
+    alt = 'setaAmarela';
+    lbl = 'Anos finais';
+    lblStyle = { color: '#FFBC0A' };
+  }
+
   return (
     <div className="row mt-5">
       <Grid cols="7 7 7 7">
-        <img className="ic-seta" src={setaVermelha} alt="setaVermelha" />
+        <img className="ic-seta" src={imgSelected} alt={alt} />
       </Grid>
       <Grid cols="5 5 5 5">
         <div className="d-flex align-items-end flex-column">
@@ -18,6 +35,7 @@ export default function SeuGrupoHeader(prps) {
           </span>
         </div>
       </Grid>
+      <h5 style={lblStyle}>{lbl}</h5>
     </div>
   );
 }

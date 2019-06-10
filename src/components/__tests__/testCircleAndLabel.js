@@ -1,15 +1,16 @@
 import { mount } from "enzyme";
 import React from "react";
-import CircleAndLabel from "../circle/CircleAndLabel";
+import CircleAndLabelOutline from "../circle/CircleAndLabelOutline";
 
 describe("test <CircleAndLabel>", () => {
   let wrapper;
   const props = {
     color: "blue",
-    label: "TEST..."
+    label: "TEST...",
+    bottomLabel: "My Bottom Label :)"
   };
   beforeAll(() => {
-    wrapper = mount(<CircleAndLabel {...props} />);
+    wrapper = mount(<CircleAndLabelOutline {...props} />);
   });
   it("correct div style", () => {
     expect(wrapper.props()).toStrictEqual({
@@ -17,11 +18,16 @@ describe("test <CircleAndLabel>", () => {
       color: "blue",
       label: "TEST...",
       mode: "NORMAL",
-      topLabel: "topLabel"
+      topLabel: "topLabel",
+      bottomLabel: props.bottomLabel
     });
   });
 
   it("correct label", () => {
-    expect(wrapper.find("div > span").text()).toBe(props.label);
+    expect(wrapper.find(".container").text()).toBe(props.label);
+  });
+
+  it("correct bottomLabel", () => {
+    expect(wrapper.find(".bottomLabel").text()).toBe(props.bottomLabel);
   });
 });

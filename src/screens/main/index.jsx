@@ -18,7 +18,7 @@ import Quad2 from './Quad2';
 import Quad3 from './Quad3';
 import Quad4 from './Quad4';
 import Rodape from './Rodape';
-import SeuGrupoHeader from './SeuGrupoHeader';
+import SeuGrupoHeader, { HEADER_OPT } from './SeuGrupoHeader';
 
 export class Main extends Component {
   constructor(props) {
@@ -152,6 +152,7 @@ export class Main extends Component {
             </If>
           </Grid>
         </div>
+        <SeuGrupoHeader headerTipo={HEADER_OPT.FINAL} />
         <div className="row mt-3">
           <Grid cols="4 4 4 4" className="card info-card">
             <div className="card-body">

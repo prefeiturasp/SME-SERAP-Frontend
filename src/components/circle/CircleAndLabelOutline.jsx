@@ -65,7 +65,7 @@ export default class CircleAndLabelOutline extends Component {
         <div className="label-cor-topo" style={{ color: letterColor }}>
           <p>{topLabel}</p>
         </div>
-        <div class="w-100" />
+        <div className="w-100" />
         <div className="container">
           <img
             src={circleSelected}
@@ -79,8 +79,8 @@ export default class CircleAndLabelOutline extends Component {
             {label}
           </span>
         </div>
-        <div class="w-100" />
-        <div class="mt-3">
+        <div className="w-100" />
+        <div className="mt-3">
           <span className="bottomLabel">{bottomLabel}</span>
         </div>
       </div>
