@@ -8,8 +8,10 @@ import {
 } from '../../components/charts/utils';
 import Grid from '../../components/Grid';
 import If from '../../components/layout';
+import { getIndicesAnos } from '../../services/idep';
 import AnosHeader from './AnosHeader';
 import { anosFinal, anosInicial } from './aux';
+import CardEscolaDRE from './CardEscolaDRE';
 import CirculosAnos from './CirculosAnos';
 import './custom.css';
 import Informativo from './Informativo';
@@ -28,7 +30,9 @@ export class Main extends Component {
       histogramOptionsInicial: '',
       histogramOptionsFinal: '',
       metasIniciaisOptions: '',
-      metasFinaisOptions: ''
+      metasFinaisOptions: '',
+      escolaLabel: '',
+      dreCount: []
     };
     this.calculoRef = React.createRef();
     this.seuGrupoRef = React.createRef();
@@ -42,8 +46,14 @@ export class Main extends Component {
   }
 
   onEscolaSelecionada(e) {
-    // console.log(e, 'escolaa');
     const escolaSelecionada = e.value;
+    console.log(escolaSelecionada, 'escolaaxxxxxxxxxxxxxxxxxxxxxxxx');
+    // cd_unidade_educacao_atual: "095061"
+    // nomesc: "DES. FRANCISCO MEIRELLES"
+    // tipoesc: "EMEF"
+    this.setState({
+      escolaLabel: `${escolaSelecionada.tipoesc} ${escolaSelecionada.nomesc}`
+    });
     // const codEol = escolaSelecionada.cd_unidade_educacao_atual;
     this.setState({ escolaSelecionada });
 
@@ -87,6 +97,11 @@ export class Main extends Component {
       } else {
         alert(metasFinaisOptions);
       }
+    });
+
+    getIndicesAnos('017973', HISTOGRAMTYPE.INICIAL).then(indices => {
+      // este endpoint recebe varios dados e dentro deles o contador de DRES.
+      this.setState({ dreCount: indices.dre_count });
     });
   }
 
@@ -134,18 +149,10 @@ export class Main extends Component {
         <Informativo />
         <SeuGrupoHeader headerTipo={HEADER_OPT.INICIAL} />
         <div className="row mt-3" ref={this.seuGrupoRef}>
-          <Grid cols="4 4 4 4" className="card info-card">
-            <div className="card-body">
-              <h5 className="card-title card-titulo">
-                {this.state.escolaSelecionada.label}
-              </h5>
-              <h6 className="card-subtitle mb-2 text-muted">Grupo 3</h6>
-              <p className="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
-          </Grid>
+          <CardEscolaDRE
+            escolaLabel={this.state.escolaLabel}
+            dreCount={this.state.dreCount}
+          />
           <Grid cols="8 8 8 8">
             <If isVisible={this.state.histogramOptionsInicial}>
               <ChartContainer options={this.state.histogramOptionsInicial} />
@@ -154,24 +161,17 @@ export class Main extends Component {
         </div>
         <SeuGrupoHeader headerTipo={HEADER_OPT.FINAL} />
         <div className="row mt-3">
-          <Grid cols="4 4 4 4" className="card info-card">
-            <div className="card-body">
-              <h5 className="card-title card-titulo">
-                {this.state.escolaSelecionada.label}
-              </h5>
-              <h6 className="card-subtitle mb-2 text-muted">Grupo 3</h6>
-              <p className="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
-          </Grid>
+          <CardEscolaDRE
+            escolaLabel={this.state.escolaLabel}
+            dreCount={this.state.dreCount}
+          />
           <Grid cols="8 8 8 8">
             <If isVisible={this.state.histogramOptionsFinal}>
               <ChartContainer options={this.state.histogramOptionsFinal} />
             </If>
           </Grid>
         </div>
+
         <div className="row mt-3" ref={this.suaEscolaREf}>
           <Grid cols="8 8 8 8">
             <If isVisible={this.state.metasIniciaisOptions}>

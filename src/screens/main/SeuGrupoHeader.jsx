@@ -10,17 +10,17 @@ export const HEADER_OPT = {
 };
 
 export default function SeuGrupoHeader(props) {
-  let imgSelected = setaVermelha;
+  let imgSelected = setaAmarela;
   let alt = 'setaVermelha';
   let lbl = 'Anos iniciais';
-  let lblStyle = { color: '#FF6C7B' };
+  let lblStyle = { color: '#FFBC0A' };
   let imgClassname = 'ic-seta';
 
-  if (props.headerTipo !== HEADER_OPT.FINAL) {
-    imgSelected = setaAmarela;
+  if (props.headerTipo === HEADER_OPT.FINAL) {
+    imgSelected = setaVermelha;
     alt = 'setaAmarela';
     lbl = 'Anos finais';
-    lblStyle = { color: '#FFBC0A' };
+    lblStyle = { color: '#FF6C7B' };
   }
 
   return (
