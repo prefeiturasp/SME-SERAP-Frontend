@@ -10,34 +10,29 @@ export const HEADER_OPT = {
 };
 
 export default function SeuGrupoHeader(props) {
-  let imgSelected = setaAmarela;
-  let alt = 'setaVermelha';
-  let lbl = 'Anos iniciais';
-  let lblStyle = { color: '#FFBC0A' };
-  let imgClassname = 'ic-seta';
+  let imgSelected = setaVermelha;
+  let alt = 'setaAmarela';
+
+  const imgClassname = 'ic-seta';
 
   if (props.headerTipo === HEADER_OPT.FINAL) {
-    imgSelected = setaVermelha;
-    alt = 'setaAmarela';
-    lbl = 'Anos finais';
-    lblStyle = { color: '#FF6C7B' };
+    imgSelected = setaAmarela;
+    alt = 'setaVermelha';
   }
 
   return (
     <div className="row mt-5">
-      <Grid cols="7 7 7 7">
+      <Grid cols="7 7 7 7" className="">
         <img className={imgClassname} src={imgSelected} alt={alt} />
       </Grid>
-      <Grid cols="5 5 5 5">
-        <div className="d-flex align-items-end flex-column">
-          <span className="texto-azul-medio p-2">SEU GRUPO</span>
-          <span className="texto-pequeno-cinza p-2">
-            Confira como está a posição da sua escola comparadas às escolas do
-            mesmo grupo e seus respectivos desempenhos
+      <Grid cols="5 5 5 5" className="">
+        <div className="d-flex align-items-end flex-column text-right">
+          <span className="texto-azul-medio pb-5">SEU GRUPO</span>
+          <span className="texto-pequeno-cinza">
+            O Seu Grupo é constituído pelas escolas que têm o mesmo Inse e fazem parte do mesmo agrupamento proposto para o ICG (Grupo 1 ou Grupo 2). O gráfico seguinte mostra a posição da escola no grupo, de acordo com o IDEP.
           </span>
         </div>
       </Grid>
-      <h5 style={lblStyle}>{lbl}</h5>
     </div>
   );
 }
