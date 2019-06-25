@@ -91,16 +91,6 @@ body {
     line-height: 80px;
 }
 
-.txt-ng-it {
-    font-style: italic;
-    font-weight: bold;
-    font-size: 1.5em;
-    line-height: 1em;
-    align-items: center;
-    float: right;
-    color: #1B80D4;
-}
-
 .div-fd-azl {
     height: 7em;
     background: rgba(27, 128, 212, 0.5);
@@ -210,6 +200,17 @@ body {
 
 .btn-calculo:hover {
     border-color: #FFF !important;
+}
+
+.operadores {
+    color: #D3D3D3;
+    font-size: 64px;
+    font-weight: 300;
+}
+
+.bottom-label {
+    font-size: 14px;
+    font-weight: normal;
 }
 
 .mt-n7 {

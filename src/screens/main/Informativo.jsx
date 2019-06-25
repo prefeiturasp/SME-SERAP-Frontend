@@ -1,7 +1,7 @@
 import React from 'react';
 import Grid from '../../components/Grid';
-import icg from './img/Icon_ICG_1-01.png';
-import nse from './img/Icon_NSE.png';
+import icg from './img/IconeICG.png';
+import nse from './img/IconeNSE.png';
 
 export default function Informativo() {
   return (

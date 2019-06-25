@@ -1,114 +1,110 @@
 .circle {
-  width: 10em;
-  height: 2.5em;
-  border-radius: 50%;
-  font-size: 54px;
-  color: #ff6c7c;
-  text-align: center;
-  display: table-cell;
-  vertical-align: middle;
-  border: 1em solid #ff6c7c;
-  background: rgb(255, 255, 255);
+    width: 10em;
+    height: 2.5em;
+    border-radius: 50%;
+    font-size: 54px;
+    color: #ff6c7c;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    border: 1em solid #ff6c7c;
+    background: rgb(255, 255, 255);
 }
 
 .boxCircle {
-  width: 10em;
+    width: 10em;
 }
 
 .boxShadow {
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
-  border-radius: 6px;
-  text-align: left;
-  display: flex;
-  vertical-align: middle;
-  line-height: normal;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+    text-align: left;
+    display: flex;
+    vertical-align: middle;
+    line-height: normal;
 }
 
 .circleFilled {
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  font-weight: bold;
-  font-size: 32px;
-  line-height: 40px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  color: #ff6c7c;
-  text-align: center;
-  display: table-cell;
-  vertical-align: middle;
-  border: 3px solid #ff6c7c;
-  background: rgb(255, 255, 255);
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 40px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #ff6c7c;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    border: 3px solid #ff6c7c;
+    background: rgb(255, 255, 255);
 }
 
 .box-circle-filled {
-  width: 220px;
-}
-
-.bottomLabel {
-  color: #828282;
-  font-size: 1em;
+    width: 220px;
 }
 
 .alinha-meio {
-  vertical-align: middle;
+    vertical-align: middle;
 }
 
 /* NOVO */
 
 .circulo-outline {
-  width: 9em;
-  height: 9em;
-  text-align: center;
-  position: "relative";
+    width: 9em;
+    height: 9em;
+    text-align: center;
+    position: "relative";
 }
 
 .circulo-fill {
-  width: 12em;
-  height: 12em;
+    width: 12em;
+    height: 12em;
 }
 
 .texto-no-meio-do-circulo {
-  left: 0em;
-  top: 0em;
-  position: absolute;
-  text-align: center;
-  font-size: 1.6em;
+    left: 0em;
+    top: 0em;
+    position: absolute;
+    text-align: center;
+    font-size: 1.6em;
 }
 
 @media (max-width: 575.98px) {
-  .texto-no-meio-do-circulo {
-    left: 0.7em;
-    top: -0.2em;
-    width: 9em;
-  }
+    .texto-no-meio-do-circulo {
+        left: 0.7em;
+        top: -0.2em;
+        width: 9em;
+    }
 }
 
 .label-cor-topo {
-  font-size: 1.1em;
-  text-align: center;
+    font-size: 20px;
+    font-weight: 300;
 }
 
 .texto-meio-circulo-outline {
-  left: 0;
-  position: absolute;
-  text-align: center;
-  top: 2em;
-  width: 100%;
-  font-size: 2.5em;
-  font-weight: 900;
+    font-size: 2.5em;
+    font-weight: 900;
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 100%;
 }
 
 .pontos {
-  text-align: center;
-  top: 2em;
-  width: 100%;
-  line-height: 0.5em;
-  font-size: 2em;
+    text-align: center;
+    top: 2em;
+    width: 100%;
+    line-height: 0.5em;
+    font-size: 2em;
 }
 
 .info-card {
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
-  border-radius: 0.3em;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 0.3em;
 }

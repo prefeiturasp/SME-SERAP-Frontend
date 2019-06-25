@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import './custom.css';
-import outlineAmareloCircle from './img/Shape_Criculo stroke_amarelo.png';
-import outlineAzulCircle from './img/Shape_Criculo stroke_azul.png';
-import outlineRosaCircle from './img/Shape_Criculo stroke_rosa.png';
+import outlineAmareloCircle from './img/CirculoStrokeAmarelo.png';
+import outlineAzulCircle from './img/CirculoStrokeAzul.png';
+import outlineRosaCircle from './img/CirculoStrokeRosa.png';
 
 export const CIRCLE_MODE = {
   NORMAL: 'NORMAL',
@@ -61,12 +61,10 @@ export default class CircleAndLabelOutline extends Component {
       customStyle.background = color;
     }
     return (
-      <div className="">
-        <div className="label-cor-topo" style={{ color: letterColor }}>
-          <p>{topLabel}</p>
-        </div>
+      <div>
+        <div className="label-cor-topo mb-1" style={{ color: letterColor }}>{topLabel}</div>
         <div className="w-100" />
-        <div className="container">
+        <div className="text-center position-relative">
           <img
             src={circleSelected}
             alt="circulo-outline"
@@ -79,10 +77,7 @@ export default class CircleAndLabelOutline extends Component {
             {label}
           </span>
         </div>
-        <div className="w-100" />
-        <div className="mt-3">
-          <span className="bottomLabel">{bottomLabel}</span>
-        </div>
+        <div className="mt-3 cor-cinza bottom-label">{bottomLabel}</div>
       </div>
     );
   }
