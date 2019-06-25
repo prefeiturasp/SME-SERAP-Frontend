@@ -18,7 +18,7 @@ export default function CardEscolaDRE(props) {
           <h5 className="card-texto-grupo mb-3">Conheça quantas escolas compõem seu grupo:</h5>
           {dreCount.map(dre => {
             return (
-              <div className="row card-texto-grupo cor-cinza mb-2">
+              <div className="row card-texto-grupo cor-cinza mb-1">
                 <div className="col">{`DRE ${dre[0]}:`}</div>
                 <div className="col text-left">{`${dre[1]} escolas`}</div>
               </div>

@@ -1,8 +1,8 @@
 import React from 'react';
 import Grid from '../../components/Grid';
 import './custom.css';
-import setaVermelha from './img/Icon_arrow_red.png';
-import setaAmarela from './img/Image_5section_amarelo.png';
+import setaVermelha from './img/SetaVermelha.png';
+import setaAmarela from './img/SetaAmarela.png';
 
 export const HEADER_OPT = {
   INICIAL: 'INICIAL',

@@ -1,7 +1,7 @@
 import React from 'react';
 import Grid from '../../components/Grid';
 import byncsa from './img/by-nc-sa.png';
-import logoSP from './img/Logo_SP.png';
+import logoSP from './img/LogoSP.png';
 
 export default function Rodape() {
   return (

@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700,900&display=swap');
+
 body {
-    font-family: Roboto;
+    font-family: 'Roboto', sans-serif;
 }
 
 .hrCinza {
@@ -89,32 +91,6 @@ body {
     line-height: 80px;
 }
 
-.texto-cinca-grande {
-    font-style: normal;
-    font-weight: normal;
-    font-size: 5em;
-    line-height: 1em;
-    color: #828282;
-}
-
-@media (max-width: 575.98px) {
-    .texto-cinca-grande {
-        font-size: 4em;
-    }
-}
-
-.texto-pequeno-cinza {
-    color: #828282;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 22px;
-}
-
-.bg-azul-escuro {
-    background: rgba(27, 128, 212, 0.5);
-}
-
 .txt-ng-it {
     font-style: italic;
     font-weight: bold;
@@ -198,19 +174,6 @@ body {
     border-radius: 4px;
 }
 
-.imagem-principal {
-    width: 90%;
-    height: 90%;
-}
-
-.button-fixed-width {
-    width: 8em;
-}
-
-.big-button {
-    font-size: 2.5em;
-}
-
 .card-item {
     font-size: 0.7em;
     line-height: 0.4em;
@@ -218,6 +181,36 @@ body {
 }
 
 /* Novo */
+
+.btn-fw {
+    height: 40px;
+    width: 112px;
+}
+
+.btn-fw:hover {
+    border: 1px solid #FFF !important;
+}
+
+.bloco-livros {
+    height: 445px;
+}
+
+.bloco-livros img {
+    opacity: 0.8;
+    right: 15px;
+    width: 105%;
+}
+
+.btn-calculo {
+    border-color: transparent !important;
+    font-size: 56px;
+    font-weight: 300;
+    line-height: 80px;
+}
+
+.btn-calculo:hover {
+    border-color: #FFF !important;
+}
 
 .mt-n7 {
     margin-top: -7rem !important;
@@ -231,13 +224,17 @@ body {
     color: #828282;
     font-size: 14px;
     font-weight: 300;
-    line-height: 16px;
+    line-height: 22px;
 }
 
 .borda-dotted {
     border-bottom-color: #C4C4C4 !important;
     border-bottom-style: dotted !important;
     border-bottom-width: 5px !important;
+}
+
+.btn-outline-light {
+    border-color: #E0E0E0 !important;
 }
 
 .secao-escola-titulo {
@@ -247,6 +244,22 @@ body {
 
 .espelha-imagem {
     transform: scaleX(-1);
+}
+
+.texto-cinza-inicio {
+    color: #828282;
+    font-size: 80px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 80px;
+}
+
+.descricao-cinza-inicio {
+    color: #828282;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 23px;
 }
 
 /* Cores */

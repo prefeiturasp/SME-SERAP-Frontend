@@ -31,15 +31,13 @@ export default class Quad1 extends Component {
 
   render() {
     return (
-      <Grid cols="5 5 5 5" className="text-left d-flex align-items-center">
-        <Grid cols="12 12 12 12">
-          <span className="texto-cinca-grande">Conheça o</span>
-          <br />
-          <span className="idep-azul-grande">IDEP</span>
-          <p className="texto-pequeno-cinza">
-            Saiba mais sobre a importância do índice, como ele é calculado e as
-            metas da sua escola
-          </p>
+      <Grid cols="5 5 5 5" className="d-flex justify-content-center align-items-center text-left">
+        <Grid cols="12 12 12 12" className="">
+          <div className="texto-cinza-inicio">
+            Conheça o <span className="cor-azul font-weight-bolder">IDEP</span>
+          </div>
+          <p className="descricao-cinza-inicio mt-4 mb-0 p-0">Saiba mais sobre a importância do índice,</p>
+          <p className="descricao-cinza-inicio mt-0 mb-4 p-0">como ele é calculado e as metas da sua escola</p>
           <Select
             placeholder="Selecione sua escola"
             options={this.state.options}

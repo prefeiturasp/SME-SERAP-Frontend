@@ -151,7 +151,7 @@ export class Main extends Component {
 
         <SuaEscolaHeader headerTipo={HEADER_OPT.INICIAL} />
         <div className="row mt-3">
-          <Grid cols="8 8 8 8">
+          <Grid cols="8 8 8 8" className="mt-n5">
             <If isVisible={this.state.metasIniciaisOptions}>
               <ChartContainer options={this.state.metasIniciaisOptions} />
             </If>
@@ -180,7 +180,7 @@ export class Main extends Component {
 
         <SuaEscolaHeader headerTipo={HEADER_OPT.FINAL} />
         <div className="row mt-3">
-          <Grid cols="8 8 8 8">
+          <Grid cols="8 8 8 8" className="mt-n5">
             <If isVisible={this.state.metasFinaisOptions}>
               <ChartContainer options={this.state.metasFinaisOptions} />
             </If>
@@ -192,7 +192,7 @@ export class Main extends Component {
           />
         </div>
 
-        <Rodape />
+        {/* <Rodape /> */}
       </div>
     );
   }
