@@ -6,7 +6,7 @@ import Grid from '../../components/Grid';
 export default function Quad4() {
   return (
     <Grid cols="7 7 7 7" className="mt-5 mb-5 p-0">
-      <div className="row m-0 d-flex flex-wrap justify-content-between d-flex align-items-start">
+      <div className="row mt-5 mb-5 ml-0 mr-0 d-flex flex-wrap justify-content-between d-flex align-items-start">
         <Grid cols="3 3 3 3" className="pl-0">
           <CircleAndLabelOutline
             label="5,94"
@@ -35,8 +35,8 @@ export default function Quad4() {
         </Grid>
       </div>
       <div className="row">
-        <Grid cols="12 12 12 12" className="mt-5 mb-5 border-bottom borda-dotted"></Grid>
-        <Grid cols="12 12 12 12" className="">
+        <Grid cols="12 12 12 12" className="mt-3 mb-5 border-bottom borda-dotted"></Grid>
+        <Grid cols="12 12 12 12" className="mt-2">
           <Button
             style={ButtonStyle.OutlinePrimary}
             label="Clique aqui para ver o cálculo"

@@ -14,7 +14,6 @@ import Quad1 from './Quad1';
 import Quad2 from './Quad2';
 import Quad3 from './Quad3';
 import Quad4 from './Quad4';
-import Rodape from './Rodape';
 import SeuGrupoHeader, { HEADER_OPT } from './SeuGrupoHeader';
 import SuaEscolaHeader from './SuaEscolaHeader';
 import CardEscolaMeta from './CardEscolaMeta';
