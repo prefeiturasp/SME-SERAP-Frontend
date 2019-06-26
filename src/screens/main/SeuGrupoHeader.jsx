@@ -28,7 +28,7 @@ export default function SeuGrupoHeader(props) {
       <Grid cols="5 5 5 5" className="">
         <div className="d-flex align-items-end flex-column text-right">
           <span className="texto-azul-medio pb-5">SEU GRUPO</span>
-          <span className="texto-pequeno-cinza">
+          <span className="card-texto-grupo">
             O Seu Grupo é constituído pelas escolas que têm o mesmo Inse e fazem parte do mesmo agrupamento proposto para o ICG (Grupo 1 ou Grupo 2). O gráfico seguinte mostra a posição da escola no grupo, de acordo com o IDEP.
           </span>
         </div>

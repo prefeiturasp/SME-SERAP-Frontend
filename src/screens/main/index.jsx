@@ -91,107 +91,121 @@ export class Main extends Component {
 
   render() {
     return (
-      <div className="container">
-        <div className="row" ref={this.homeRef}>
-          <Quad1 onEscolaSelecionada={e => this.onEscolaSelecionada(e)} />
-          <Quad2
-            onHomeButtonClicked={() => this.handleScrollToElement(this.homeRef)}
-            onCalculoButtonClicked={() =>
-              this.handleScrollToElement(this.calculoRef)
-            }
-            onSeuGrupoButtonClicked={() =>
-              this.handleScrollToElement(this.seuGrupoRef)
-            }
-            onMetasButtonClicked={() => {
-              this.handleScrollToElement(this.metasRef);
-            }}
-            onSuaEscolaButtonClicked={() =>
-              this.handleScrollToElement(this.seuGrupoRef)
-            }
-          />
-        </div>
-        <div className="row" ref={this.calculoRef}>
-          <Quad3 />
-          <Quad4 />
-        </div>
-        <div className="row" ref={this.metasRef}>
-          <AnosHeader label="Anos Iniciais" />
-          <CirculosAnos params={anosInicial} />
-        </div>
-        <div className="row">
-          <AnosHeader label="Anos Finais" />
-          <CirculosAnos params={anosFinal} />
-        </div>
-        <div className="row fd-azl-esc pt-5">
-          <Grid cols="11 11 11 11 " className="">
-            <hr style={{ backgroundColor: '#FFBC0A' }} />
-          </Grid>
-          <Grid cols="1 1 1 1" className="d-flex align-items-end flex-column">
-            <span className="lbl-gd-amr">META</span>
-          </Grid>
+      <div>
+        <div className="container">
+          <div className="row" ref={this.homeRef}>
+            <Quad1 onEscolaSelecionada={e => this.onEscolaSelecionada(e)} />
+            <Quad2
+              onHomeButtonClicked={() => this.handleScrollToElement(this.homeRef)}
+              onCalculoButtonClicked={() =>
+                this.handleScrollToElement(this.calculoRef)
+              }
+              onSeuGrupoButtonClicked={() =>
+                this.handleScrollToElement(this.seuGrupoRef)
+              }
+              onMetasButtonClicked={() => {
+                this.handleScrollToElement(this.metasRef);
+              }}
+              onSuaEscolaButtonClicked={() =>
+                this.handleScrollToElement(this.seuGrupoRef)
+              }
+            />
+          </div>
         </div>
 
-        <Informativo />
-
-        <SeuGrupoHeader headerTipo={HEADER_OPT.INICIAL} />
-        <div className="row mt-3" ref={this.seuGrupoRef}>
-          <CardEscolaDRE
-            escolaLabel={this.state.escolaLabel}
-            dreCount={this.state.dreCount}
-            anosLabel="Anos Iniciais"
-            anos="I"
-          />
-          <Grid cols="8 8 8 8">
-            <If isVisible={this.state.histogramOptionsInicial}>
-              <ChartContainer options={this.state.histogramOptionsInicial} />
-            </If>
-          </Grid>
+        <div className="container">
+          <div className="row" ref={this.calculoRef}>
+            <Quad3 />
+            <Quad4 />
+          </div>
         </div>
 
-        <SuaEscolaHeader headerTipo={HEADER_OPT.INICIAL} />
-        <div className="row mt-3">
-          <Grid cols="8 8 8 8" className="mt-n5">
-            <If isVisible={this.state.metasIniciaisOptions}>
-              <ChartContainer options={this.state.metasIniciaisOptions} />
-            </If>
-          </Grid>
-          <CardEscolaMeta
-            escolaLabel={this.state.escolaLabel}
-            anosLabel="Anos Iniciais"
-            anos="I"
-          />
+        <AnosHeader label="Anos Iniciais" />
+        <div className="container">
+          <div className="row" ref={this.metasRef}>
+            <CirculosAnos params={anosInicial} />
+          </div>
         </div>
 
-        <SeuGrupoHeader headerTipo={HEADER_OPT.FINAL} />
-        <div className="row mt-3">
-          <CardEscolaDRE
-            escolaLabel={this.state.escolaLabel}
-            dreCount={this.state.dreCount}
-            anosLabel="Anos Finais"
-            anos="F"
-          />
-          <Grid cols="8 8 8 8">
-            <If isVisible={this.state.histogramOptionsFinal}>
-              <ChartContainer options={this.state.histogramOptionsFinal} />
-            </If>
-          </Grid>
+        <AnosHeader label="Anos Finais" />
+        <div className="container">
+          <div className="row">
+            <CirculosAnos params={anosFinal} />
+          </div>
         </div>
 
-        <SuaEscolaHeader headerTipo={HEADER_OPT.FINAL} />
-        <div className="row mt-3">
-          <Grid cols="8 8 8 8" className="mt-n5">
-            <If isVisible={this.state.metasFinaisOptions}>
-              <ChartContainer options={this.state.metasFinaisOptions} />
-            </If>
-          </Grid>
-          <CardEscolaMeta
-            escolaLabel={this.state.escolaLabel}
-            anosLabel="Anos Finais"
-            anos="F"
-          />
+        <div className="fundo-azul-escuro">
+          <div className="container">
+            <div className="row mb-5 pb-4">
+              <Grid cols="12 12 12 12" className="text-right mt-5 mb-5">
+                <h2 className="m-0 mb-n4 p-0 pl-2 float-right fundo-azul-escuro cor-amarelo titulo-meta">META</h2>
+                <div className="clearfix"></div>
+                <div className="w-100 borda-meta"></div>
+              </Grid>
+              <Informativo />
+            </div>
+          </div>
         </div>
 
-        {/* <Rodape /> */}
+        <div className="container">
+          <SeuGrupoHeader headerTipo={HEADER_OPT.INICIAL} />
+          <div className="row mt-3" ref={this.seuGrupoRef}>
+            <CardEscolaDRE
+              escolaLabel={this.state.escolaLabel}
+              dreCount={this.state.dreCount}
+              anosLabel="Anos Iniciais"
+              anos="I"
+            />
+            <Grid cols="8 8 8 8">
+              <If isVisible={this.state.histogramOptionsInicial}>
+                <ChartContainer options={this.state.histogramOptionsInicial} />
+              </If>
+            </Grid>
+          </div>
+
+          <SuaEscolaHeader headerTipo={HEADER_OPT.INICIAL} />
+          <div className="row mt-3">
+            <Grid cols="8 8 8 8" className="mt-n5">
+              <If isVisible={this.state.metasIniciaisOptions}>
+                <ChartContainer options={this.state.metasIniciaisOptions} />
+              </If>
+            </Grid>
+            <CardEscolaMeta
+              escolaLabel={this.state.escolaLabel}
+              anosLabel="Anos Iniciais"
+              anos="I"
+            />
+          </div>
+
+          <SeuGrupoHeader headerTipo={HEADER_OPT.FINAL} />
+          <div className="row mt-3">
+            <CardEscolaDRE
+              escolaLabel={this.state.escolaLabel}
+              dreCount={this.state.dreCount}
+              anosLabel="Anos Finais"
+              anos="F"
+            />
+            <Grid cols="8 8 8 8">
+              <If isVisible={this.state.histogramOptionsFinal}>
+                <ChartContainer options={this.state.histogramOptionsFinal} />
+              </If>
+            </Grid>
+          </div>
+
+          <SuaEscolaHeader headerTipo={HEADER_OPT.FINAL} />
+          <div className="row mt-3">
+            <Grid cols="8 8 8 8" className="mt-n5">
+              <If isVisible={this.state.metasFinaisOptions}>
+                <ChartContainer options={this.state.metasFinaisOptions} />
+              </If>
+            </Grid>
+            <CardEscolaMeta
+              escolaLabel={this.state.escolaLabel}
+              anosLabel="Anos Finais"
+              anos="F"
+            />
+          </div>
+        </div>
       </div>
     );
   }

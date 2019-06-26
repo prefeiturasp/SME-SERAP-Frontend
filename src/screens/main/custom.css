@@ -13,19 +13,6 @@ body {
     background: rgb(255, 255, 255);
 }
 
-.bigX {
-    font-weight: 300;
-    font-size: 64px;
-    line-height: 128.91%;
-    /* or 82px */
-
-    display: flex;
-    align-items: center;
-    text-align: center;
-
-    color: #d3d3d3;
-}
-
 /* footer... */
 
 .bg-cinza-escuro {
@@ -45,25 +32,6 @@ body {
     .mb-xs-4 {
         margin-bottom: 1.5rem !important;
     }
-}
-
-.label-header-branco {
-    font-family: Roboto;
-    font-style: italic;
-    font-weight: bold;
-    font-size: 26px;
-    align-items: center;
-
-    color: #ffffff;
-}
-
-.label-peq-branco {
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    /* line-height: 22px; */
-    color: #ffffff;
 }
 
 /* NOVOOO */
@@ -91,12 +59,6 @@ body {
     line-height: 80px;
 }
 
-.div-fd-azl {
-    height: 7em;
-    background: rgba(27, 128, 212, 0.5);
-    text-align: left;
-}
-
 .txt-gd-brc {
     font-style: normal;
     font-size: 3em;
@@ -106,10 +68,6 @@ body {
     font-weight: 300;
     text-align: left;
     text-transform: uppercase;
-}
-
-.fd-azl-esc {
-    background: #1B80D4;
 }
 
 .lbl-gd-amr {
@@ -148,20 +106,6 @@ body {
     height: 7em;
     width: 23em;
     float: left;
-}
-
-@media (max-width: 500px) {
-    .ic-seta {
-        height: 5em;
-        width: 15em;
-    }
-}
-
-.borda-amarela {
-    border: 4px solid #ffbc0a;
-    box-sizing: border-box;
-    border-color: coral;
-    border-radius: 4px;
 }
 
 .card-item {
@@ -211,6 +155,32 @@ body {
 .bottom-label {
     font-size: 14px;
     font-weight: normal;
+}
+
+.titulo-anos {
+    color: #FFF;
+    font-size: 56px;
+    font-weight: 300;
+    line-height: 80px;
+}
+
+.titulo-meta {
+    font-size: 56px;
+    font-weight: 300;
+    line-height: 80px;
+}
+
+.borda-meta {
+    border-bottom: 5px dotted #FFBC0A;
+}
+
+.border-warning {
+    border-color: #FFBC0A !important;
+}
+
+.titulo-inse-icg {
+    font-size: 18px;
+    line-height: 22px;
 }
 
 .mt-n7 {
@@ -283,4 +253,8 @@ body {
 
 .fundo-azul-transparente {
     background: rgba(27, 128, 212, 0.5);
+}
+
+.fundo-azul-escuro {
+    background: #1B80D4;
 }

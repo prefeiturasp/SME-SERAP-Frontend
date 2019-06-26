@@ -2,82 +2,61 @@ import React from 'react';
 import Grid from '../../components/Grid';
 import icg from './img/IconeICG.png';
 import nse from './img/IconeNSE.png';
+import Button, { ButtonStyle } from '../../components/Button';
 
 export default function Informativo() {
   return (
-    <div className="row text-left">
-      <Grid cols="4 4 4 4" className="fd-azl-esc p-5">
-        <div>
-          <span className="hd-bc-it">
-            Entenda como são definidas as metas da sua escola
-          </span>
+    <>
+      <Grid cols="4 4 4 4" className="align-self-center">
+        <h2 className="font-italic font-weight-bolder text-white">Entenda como são definidas as metas da sua escola</h2>
+        <div className="mt-5 text-white card-texto-grupo">
+          As metas serão estabelecidas para os próximos cinco anos, a partir dos grupos formados considerando o
+          <strong>Índice Sócio Econômico (INSE) e Indicador de Complexidade de Gestão (ICG)</strong>, levando em
+          conta somente as escolas que compõem cada grupo, objetivando, assim, a diminuição da desigualdade dos
+          resultados ao longo dos anos. Dessa maneira, as diferenças entre os resultados das escolas serão
+          minimizadas dentro do grupo ao qual cada uma faz parte, como também, entre os grupos estabelecidos.
         </div>
-        <div className="mt-5">
-          <span className="ft-pq-bc">
-            As metas serão estabelecidas para os próximos cinco anos, a partir
-            dos grupos formados considerando o{' '}
-            <b>
-              Índice Sócio Econômico (INSE) e Indicador de Complexidade de
-              Gestão (ICG),
-            </b>{' '}
-            levando em conta somente as escolas que compõem cada grupo,
-            objetivando, assim, a diminuição da desigualdade dos resultados ao
-            longo dos anos. Dessa maneira, as diferenças entre os resultados das
-            escolas serão minimizadas dentro do grupo ao qual cada uma faz
-            parte, como também, entre os grupos estabelecidos.
-          </span>
-        </div>
+        <Button
+          style={ButtonStyle.OutlineLight}
+          label="Nota técnica"
+          className="font-weight-bold text-uppercase mt-5"
+        />
       </Grid>
-      <Grid cols="8 8 8 8" className="ft-pq-bc fd-azl-esc p-5">
-        <div className="row mt-4">
-          <Grid cols="3 3 3 3" className="d-flex align-items-center">
-            <img src={nse} alt="nse" className="ic-pq" />
+      <Grid cols="8 8 8 8" className="">
+        <div className="row">
+          <Grid cols="4 4 4 4" className="d-flex align-items-center justify-content-end">
+            <img src={nse} alt="" className="img-fluid w-50" />
           </Grid>
-          <Grid cols="9 9 9 9">
-            <div className="border border-warning p-3">
-              <p>
-                <b>ÍNDICE SÓCIO-ECONÔMICO (INSE)</b>
-              </p>
-              <span>
-                O Indicador do Nível Socioeconômico é considerado um constructo
-                latente, que sintetiza de maneira unidimensional informações
-                sobre a escolaridade dos pais e sobre a renda familiar, e o Inse
-                objetiva contextualizar o desempenho das escolas nas avaliações
-                e exames realizados pelo Inep, bem como o seu esforço na
-                realização do trabalho educativo, ao caracterizar, de modo
-                geral, o padrão de vida de seu público, relacionados à
-                respectiva posição na hierarquia social.
-              </span>
+          <Grid cols="8 8 8 8">
+            <div className="border border-warning rounded p-4">
+              <h4 className="font-weight-bold text-white titulo-inse-icg">ÍNDICE SÓCIO-ECONÔMICO (INSE)</h4>
+              <div className="text-white card-texto-grupo">
+                O Indicador do Nível Socioeconômico (Inse) consiste em um construto latente que sintetiza,
+                de forma unidimensional, informações a respeito da escolaridade dos pais e da renda familiar.
+                O objetivo do Inse é contextualizar o desempenho da escolas nas avaliações e exames que realizam,
+                bem como sua prática educativa, caracterizando, dessa forma, o padrão de vida dos estudantes e suas famílias.
+              </div>
             </div>
           </Grid>
         </div>
-
-        <div className="row mt-4">
-          <Grid cols="3 3 3 3" className="d-flex align-items-center">
-            <img src={icg} alt="icg" className="ic-pq" />
+        <div className="row mt-5">
+          <Grid cols="4 4 4 4" className="d-flex align-items-center justify-content-end">
+            <img src={icg} alt="" className="img-fluid w-50" />
           </Grid>
-          <Grid cols="9 9 9 9">
-            <div className="border border-warning p-3">
-              <p>
-                <b>INDICADOR DE COMPLEXIDADE DE GESTÃO (ICG)</b>
-              </p>
-              <span>
-                O Indicador de Complexidade de Gestão das escolas resume em uma
-                única medida as informações de porte, turnos de funcionamento,
-                nível de complexidade das etapas e quantidade de etapas
-                ofertadas. A gestão da escola certamente envolve outros fatores
-                e dimensões não contemplados aqui, entretanto, verifica-se que,
-                mesmo com poucos aspectos contemplados na sua construção o
-                indicador apresenta potencial para contextualização dos
-                resultados das avaliações. O ICG é divulgado em 6 níveis, mas
-                para utilizá-lo na constituição das metas, foram agrupados em
-                dois grupos sendo: Grupo 1 formado pelos níveis 1, 2 e 3 e o
-                Grupo 2 formados pelos níveis 4, 5 e 6.
-              </span>
+          <Grid cols="8 8 8 8">
+            <div className="border border-warning rounded p-4">
+              <h4 className="font-weight-bold text-white titulo-inse-icg">INDICADOR DE COMPLEXIDADE DE GESTÃO (ICG)</h4>
+              <div className="text-white card-texto-grupo">
+                O Indicador de Complexidade de Gestão (ICG) das escolas sintetiza, em uma única medida, informações de porte,
+                turnos de funcionamento, nível de complexidade das etapas de ensino e quantidade de etapas ofertadas.
+                Há vários fatores envolvidos na gestão de uma escola, porém, o ICG mostra, com validade, a contextualização
+                dos resultados das avaliações. O ICG é divulgado em 6 níveis, mas para utilizá-lo na constituição das metas,
+                eles foram reagrupados em dois grupos sendo: Grupo 1, formado pelos níveis 1, 2 e 3; e Grupo 2, formado pelos níveis 4, 5 e 6.
+              </div>
             </div>
           </Grid>
         </div>
       </Grid>
-    </div>
+    </>
   );
 }

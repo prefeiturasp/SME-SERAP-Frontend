@@ -53,31 +53,8 @@
 /* NOVO */
 
 .circulo-outline {
-    width: 9em;
     height: 9em;
-    text-align: center;
-    position: "relative";
-}
-
-.circulo-fill {
-    width: 12em;
-    height: 12em;
-}
-
-.texto-no-meio-do-circulo {
-    left: 0em;
-    top: 0em;
-    position: absolute;
-    text-align: center;
-    font-size: 1.6em;
-}
-
-@media (max-width: 575.98px) {
-    .texto-no-meio-do-circulo {
-        left: 0.7em;
-        top: -0.2em;
-        width: 9em;
-    }
+    width: 9em;
 }
 
 .label-cor-topo {
@@ -90,21 +67,38 @@
     font-weight: 900;
     left: 50%;
     position: absolute;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 100%;
+}
+
+.circulo-fill {
+    height: 12em;
+    width: 12em;
+}
+
+.texto-meio-circulo-fill {
+    font-size: 1.6em;
+    left: 50%;
+    line-height: 36px;
+    position: absolute;
     text-align: center;
     top: 50%;
     transform: translateX(-50%) translateY(-50%);
     width: 100%;
 }
 
-.pontos {
-    text-align: center;
-    top: 2em;
-    width: 100%;
-    line-height: 0.5em;
-    font-size: 2em;
+.texto-meio-ano {
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 20px;
 }
 
-.info-card {
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
-    border-radius: 0.3em;
+.pontos {
+    font-size: 3em;
+    transform: rotate(90deg) translateY(-15px);
+}
+
+.card-circulo {
+    height: 9em;
 }

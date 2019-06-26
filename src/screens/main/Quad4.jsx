@@ -5,7 +5,7 @@ import Grid from '../../components/Grid';
 
 export default function Quad4() {
   return (
-    <Grid cols="7 7 7 7" className="mt-5 mb-5 p-0">
+    <Grid cols="7 7 7 7" className="mt-5 mb-5 p-0 text-center">
       <div className="row mt-5 mb-5 ml-0 mr-0 d-flex flex-wrap justify-content-between d-flex align-items-start">
         <Grid cols="3 3 3 3" className="pl-0">
           <CircleAndLabelOutline
