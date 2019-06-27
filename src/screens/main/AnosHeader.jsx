@@ -3,7 +3,7 @@ import Grid from '../../components/Grid';
 
 export default function AnosHeader(props) {
   return (
-    <div className="fundo-azul-transparente pt-4 pb-4">
+    <div className="fundo-azul-transparente pt-1 pb-1">
       <div className="container">
         <div className="row">
           <Grid cols="12 12 12 12" className="text-left">
