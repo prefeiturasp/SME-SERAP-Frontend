@@ -5,7 +5,7 @@ import Grid from '../../components/Grid';
 import If from '../../components/layout';
 import { getIndicesAnos } from '../../services/idep';
 import AnosHeader from './AnosHeader';
-import { anosFinal, anosInicial } from './aux';
+import { anosFinal, anosInicial } from './Strings';
 import CardEscolaDRE from './CardEscolaDRE';
 import CirculosAnos from './CirculosAnos';
 import './custom.css';
