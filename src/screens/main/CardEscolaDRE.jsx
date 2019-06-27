@@ -16,9 +16,9 @@ export default function CardEscolaDRE(props) {
             <button type="button" className="btn btn-outline-light btn-sm font-weight-bold cor-azul">ICG: 2</button>
           </div>
           <h5 className="card-texto-grupo mb-3">Conheça quantas escolas compõem seu grupo:</h5>
-          {dreCount.map(dre => {
+          {dreCount.map((dre, key) => {
             return (
-              <div className="row card-texto-grupo cor-cinza mb-1">
+              <div className="row card-texto-grupo cor-cinza mb-1" key={key}>
                 <div className="col">{`DRE ${dre[0]}:`}</div>
                 <div className="col text-left">{`${dre[1]} escolas`}</div>
               </div>

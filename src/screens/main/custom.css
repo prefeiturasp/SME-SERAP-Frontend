@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i,900,900i&display=swap');
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -126,7 +126,7 @@ body {
 }
 
 .bloco-livros {
-    height: 445px;
+    height: 470px;
 }
 
 .bloco-livros img {
@@ -194,7 +194,7 @@ body {
 .card-texto-grupo {
     color: #828282;
     font-size: 14px;
-    font-weight: 300;
+    font-weight: normal;
     line-height: 22px;
 }
 
@@ -227,7 +227,7 @@ body {
 
 .descricao-cinza-inicio {
     color: #828282;
-    font-size: 14px;
+    font-size: 18px;
     font-style: normal;
     font-weight: normal;
     line-height: 23px;

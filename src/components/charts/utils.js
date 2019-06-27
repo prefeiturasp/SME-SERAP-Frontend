@@ -84,7 +84,7 @@ export const getHistogramOption = async (
         min: min,
         max: max,
         interval: interval,
-        name: "Meta",
+        name: "IDEP",
         nameLocation: "middle",
         nameGap: 30
       }
@@ -148,7 +148,7 @@ let metaOption = {
         alignWithLabel: true
       },
       data: [],
-      name: "Ano",
+      name: "Anos",
       nameLocation: "middle",
       nameGap: 30
     }
@@ -192,7 +192,6 @@ const getValorAlcancadoFinal = r => {
 
 export const getMetasFinaisOption = async codEol => {
   const meta = await getMetaAnos(codEol);
-  console.log("metaaaa", meta);
   if (meta.erro) return meta.erro;
   metaOption.series[0].data = getValorAlcancadoFinal(meta); // valor alcancado
   metaOption.series[1].data = getMetaFinal(meta); // meta
@@ -214,10 +213,11 @@ const getValorAlcancadoInicial = r => {
 
 export const getMetasIniciaisOption = async codEol => {
   const meta = await getMetaAnos(codEol);
-  console.log("metaaaa final", meta);
+  console.log(meta);
   if (meta.erro) return meta.erro;
-  metaOption.series[0].data = getValorAlcancadoInicial(meta); // valor alcancado
-  metaOption.series[1].data = getMetaInicial(meta); // meta
+  metaOption.series[0].data = getValorAlcancadoInicial(meta);
+  metaOption.series[1].data = getMetaInicial(meta);
   metaOption.xAxis[0].data = getAnosInicial(meta);
+  console.log(metaOption);
   return metaOption;
 };

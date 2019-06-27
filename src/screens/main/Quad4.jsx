@@ -34,9 +34,9 @@ export default function Quad4() {
           />
         </Grid>
       </div>
-      <div className="row">
+      <div className="row m-0">
         <Grid cols="12 12 12 12" className="mt-3 mb-5 border-bottom borda-dotted"></Grid>
-        <Grid cols="12 12 12 12" className="mt-2">
+        <Grid cols="12 12 12 12" className="mt-5 pt-1">
           <Button
             style={ButtonStyle.OutlinePrimary}
             label="Clique aqui para ver o cálculo"

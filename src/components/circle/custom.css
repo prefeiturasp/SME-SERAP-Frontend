@@ -73,19 +73,18 @@
 }
 
 .circulo-fill {
-    height: 12em;
-    width: 12em;
+    height: 13em;
+    width: 13em;
 }
 
 .texto-meio-circulo-fill {
-    font-size: 1.6em;
+    font-size: 30px;
     left: 50%;
     line-height: 36px;
     position: absolute;
     text-align: center;
     top: 50%;
     transform: translateX(-50%) translateY(-50%);
-    width: 100%;
 }
 
 .texto-meio-ano {
@@ -94,11 +93,15 @@
     line-height: 20px;
 }
 
+.w-60 {
+    width: 60%;
+}
+
 .pontos {
     font-size: 3em;
     transform: rotate(90deg) translateY(-15px);
 }
 
 .card-circulo {
-    height: 9em;
+    height: 10em;
 }

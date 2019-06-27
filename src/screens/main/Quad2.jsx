@@ -5,7 +5,7 @@ import livros from './img/Livros.png';
 
 export default function Quad2(props) {
   return (
-    <Grid cols="7 7 7 7" className="pt-4 pb-4 position-relative fundo-azul-transparente">
+    <Grid cols="7 7 7 7" className="pt-5 pb-5 position-relative fundo-azul-transparente">
       <Grid
         cols="12 12 12 12"
         className="d-flex justify-content-between"
@@ -44,7 +44,7 @@ export default function Quad2(props) {
       <Grid cols="12 12 12 12" className="d-block position-relative mt-5 mb-5 bloco-livros">
         <img className="position-absolute" src={livros} alt="" />
       </Grid>
-      <Grid cols="12 12 12 12" className="">
+      <Grid cols="12 12 12 12" className="mt-4">
         <Button
           label="Cálculo"
           onClick={() => props.onCalculoButtonClicked()}

@@ -114,7 +114,7 @@ export class Main extends Component {
         </div>
 
         <div className="container">
-          <div className="row" ref={this.calculoRef}>
+          <div className="row mb-3" ref={this.calculoRef}>
             <Quad3 />
             <Quad4 />
           </div>
