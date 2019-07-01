@@ -17,6 +17,7 @@ import Quad4 from './Quad4';
 import SeuGrupoHeader, { HEADER_OPT } from './SeuGrupoHeader';
 import SuaEscolaHeader from './SuaEscolaHeader';
 import CardEscolaMeta from './CardEscolaMeta';
+import Button from '../../components/Button';
 
 export class Main extends Component {
   constructor(props) {
@@ -38,7 +39,7 @@ export class Main extends Component {
   }
 
   handleScrollToElement(ref) {
-    window.scrollTo(0, ref.current.offsetTop);
+    window.scrollTo(0, ref.current.offsetTop - 10);
   }
 
   onEscolaSelecionada(e) {
@@ -94,7 +95,12 @@ export class Main extends Component {
       <div>
         <div className="container">
           <div className="row" ref={this.homeRef}>
-            <Quad1 onEscolaSelecionada={e => this.onEscolaSelecionada(e)} />
+            <Quad1
+              onEscolaSelecionada={e => this.onEscolaSelecionada(e)}
+              onCalculoButtonClicked={() =>
+                this.handleScrollToElement(this.calculoRef)
+              }
+            />
             <Quad2
               onHomeButtonClicked={() => this.handleScrollToElement(this.homeRef)}
               onCalculoButtonClicked={() =>
@@ -113,8 +119,8 @@ export class Main extends Component {
           </div>
         </div>
 
-        <div className="container">
-          <div className="row mb-3" ref={this.calculoRef}>
+        <div className="container" ref={this.calculoRef}>
+          <div className="row mb-3">
             <Quad3 />
             <Quad4 />
           </div>
@@ -204,6 +210,16 @@ export class Main extends Component {
               anosLabel="Anos Finais"
               anos="F"
             />
+          </div>
+
+          <div className="row mt-3">
+            <Grid cols="12 12 12 12" className="text-right pr-4 pb-4">
+              <Button
+                label="VOLTAR AO TOPO"
+                className="btn-sm border-0 bg-transparent text-uppercase font-weight-bold cor-azul"
+                onClick={() => this.handleScrollToElement(this.homeRef)}
+              />
+            </Grid>
           </div>
         </div>
       </div>

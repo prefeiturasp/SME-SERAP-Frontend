@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Select from 'react-select';
 import Grid from '../../components/Grid';
 import { getEscolas } from '../../services/idep';
+import imgRolar from './img/Rolar.png';
 
 export default class Quad1 extends Component {
   state = {
@@ -43,6 +44,7 @@ export default class Quad1 extends Component {
             options={this.state.options}
             onChange={e => this.props.onEscolaSelecionada(e)}
           />
+          <img src={imgRolar} alt="Rolar" className="mt-5" onClick={() => this.props.onCalculoButtonClicked()} />
         </Grid>
       </Grid>
     );
