@@ -1,7 +1,7 @@
 import React from 'react';
 import Button, { ButtonStyle } from '../../components/Button';
 import Grid from '../../components/Grid';
-import livros from './img/Livros.png';
+import livros from './img/livros.png';
 
 export default function Quad2(props) {
   return (
