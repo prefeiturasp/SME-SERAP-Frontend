@@ -17,7 +17,6 @@ export const getMetaAnos = async codEol => {
   return data.result;
 };
 
-// 10.49.23.85:8080/indices_ano_inicial/17973
 export const getIndicesAnos = async (codEol, endpoint) => {
   try {
     const header = { ...BASE_HEADER };

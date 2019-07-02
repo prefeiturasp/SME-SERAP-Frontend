@@ -49,17 +49,17 @@ export class Main extends Component {
     });
     this.setState({ escolaSelecionada });
 
-    getHistogramOption('017973', HISTOGRAMTYPE.INICIAL).then(
+    getHistogramOption(escolaSelecionada.cd_unidade_educacao_atual, HISTOGRAMTYPE.INICIAL).then(
       histogramOptionsInicial => {
         if (typeof histogramOptionsInicial === 'object') {
           this.setState({ histogramOptionsInicial });
         } else {
-          alert(histogramOptionsInicial);
+          console.log(histogramOptionsInicial);
         }
       }
     );
 
-    getHistogramOption('017973', HISTOGRAMTYPE.FINAL).then(
+    getHistogramOption(escolaSelecionada.cd_unidade_educacao_atual, HISTOGRAMTYPE.FINAL).then(
       histogramOptionsFinal => {
         if (typeof histogramOptionsFinal === 'object') {
           this.setState({ histogramOptionsFinal });
@@ -69,7 +69,7 @@ export class Main extends Component {
       }
     );
 
-    getMetasIniciaisOption('017973').then(metasIniciaisOptions => {
+    getMetasIniciaisOption(escolaSelecionada.cd_unidade_educacao_atual).then(metasIniciaisOptions => {
       if (typeof metasIniciaisOptions === 'object') {
         this.setState({ metasIniciaisOptions });
       } else {
@@ -77,7 +77,7 @@ export class Main extends Component {
       }
     });
 
-    getMetasFinaisOption('017973').then(metasFinaisOptions => {
+    getMetasFinaisOption(escolaSelecionada.cd_unidade_educacao_atual).then(metasFinaisOptions => {
       if (typeof metasFinaisOptions === 'object') {
         this.setState({ metasFinaisOptions });
       } else {
@@ -85,7 +85,7 @@ export class Main extends Component {
       }
     });
 
-    getIndicesAnos('017973', HISTOGRAMTYPE.INICIAL).then(indices => {
+    getIndicesAnos(escolaSelecionada.cd_unidade_educacao_atual, HISTOGRAMTYPE.INICIAL).then(indices => {
       this.setState({ dreCount: indices.dre_count });
     });
   }

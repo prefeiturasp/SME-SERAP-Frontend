@@ -65,8 +65,6 @@ export const getHistogramOption = async (
     };
   };
 
-  // Aqui é a variavel que interessa...
-
   let histogramOption = {
     toolbox: {
       feature: {
@@ -193,8 +191,8 @@ const getValorAlcancadoFinal = r => {
 export const getMetasFinaisOption = async codEol => {
   const meta = await getMetaAnos(codEol);
   if (meta.erro) return meta.erro;
-  metaOption.series[0].data = getValorAlcancadoFinal(meta); // valor alcancado
-  metaOption.series[1].data = getMetaFinal(meta); // meta
+  metaOption.series[0].data = getValorAlcancadoFinal(meta);
+  metaOption.series[1].data = getMetaFinal(meta);
   metaOption.xAxis[0].data = getAnosFinal(meta);
   metaOption.color[0] = "#1B80D4";
   metaOption.color[1] = "#FF6C7B";
@@ -213,11 +211,11 @@ const getValorAlcancadoInicial = r => {
 
 export const getMetasIniciaisOption = async codEol => {
   const meta = await getMetaAnos(codEol);
-  console.log(meta);
+  console.log(meta.ano_inicial);
   if (meta.erro) return meta.erro;
   metaOption.series[0].data = getValorAlcancadoInicial(meta);
   metaOption.series[1].data = getMetaInicial(meta);
   metaOption.xAxis[0].data = getAnosInicial(meta);
-  console.log(metaOption);
+  // console.log(metaOption);
   return metaOption;
 };
