@@ -194,6 +194,8 @@ export const getMetasFinaisOption = async codEol => {
   metaOption.series[0].data = getValorAlcancadoFinal(meta);
   metaOption.series[1].data = getMetaFinal(meta);
   metaOption.xAxis[0].data = getAnosFinal(meta);
+  metaOption.parametros = meta.ano_final.parametros;
+  metaOption.parametros.indice = meta.ano_final.indices.indices[0];
   metaOption.color[0] = "#1B80D4";
   metaOption.color[1] = "#FF6C7B";
   return metaOption;
@@ -211,11 +213,11 @@ const getValorAlcancadoInicial = r => {
 
 export const getMetasIniciaisOption = async codEol => {
   const meta = await getMetaAnos(codEol);
-  console.log(meta.ano_inicial);
   if (meta.erro) return meta.erro;
   metaOption.series[0].data = getValorAlcancadoInicial(meta);
   metaOption.series[1].data = getMetaInicial(meta);
   metaOption.xAxis[0].data = getAnosInicial(meta);
-  // console.log(metaOption);
+  metaOption.parametros = meta.ano_inicial.parametros;
+  metaOption.parametros.indice = meta.ano_inicial.indices.indices[0];
   return metaOption;
 };

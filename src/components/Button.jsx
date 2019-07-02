@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import If from './layout';
-// import If from './If';
 
 export var ButtonStyle = {
   Primary: 'primary',
@@ -50,9 +48,13 @@ export default class Button extends Component {
       buttonStyle,
       disabled,
       label,
-      icon,
-      onClick
+      onClick,
+      dataToggle,
+      dataTarget,
+      ariaExpanded,
+      ariaControls
     } = this.props;
+
     return (
       <button
         type={type || ButtonType.BUTTON}
@@ -60,11 +62,12 @@ export default class Button extends Component {
         onClick={onClick}
         style={buttonStyle}
         disabled={disabled}
+        data-toggle={dataToggle}
+        data-target={dataTarget}
+        aria-expanded={ariaExpanded}
+        aria-controls={ariaControls}
       >
         {label}
-        <If isVisible={true}>
-          <i className={`fa fa-${icon}`} />
-        </If>
       </button>
     );
   }

@@ -29,17 +29,20 @@ export class Main extends Component {
       metasIniciaisOptions: '',
       metasFinaisOptions: '',
       escolaLabel: '',
-      dreCount: []
+      dreCount: [],
+      parametrosIniciais: '',
+      parametrosFinais: ''
     };
     this.homeRef = React.createRef();
     this.calculoRef = React.createRef();
+    this.anosRef = React.createRef();
     this.metasRef = React.createRef();
     this.anosIniciaisRef = React.createRef();
     this.anosFinaisRef = React.createRef();
   }
 
   handleScrollToElement(ref) {
-    window.scrollTo(0, ref.current.offsetTop - 10);
+    window.scrollTo(0, ref.current.offsetTop - 5);
   }
 
   onEscolaSelecionada(e) {
@@ -64,7 +67,7 @@ export class Main extends Component {
         if (typeof histogramOptionsFinal === 'object') {
           this.setState({ histogramOptionsFinal });
         } else {
-          alert(histogramOptionsFinal);
+          console.log(histogramOptionsFinal);
         }
       }
     );
@@ -72,16 +75,18 @@ export class Main extends Component {
     getMetasIniciaisOption(escolaSelecionada.cd_unidade_educacao_atual).then(metasIniciaisOptions => {
       if (typeof metasIniciaisOptions === 'object') {
         this.setState({ metasIniciaisOptions });
+        this.setState({ parametrosIniciais: metasIniciaisOptions.parametros });
       } else {
-        alert(metasIniciaisOptions);
+        console.log(metasIniciaisOptions);
       }
     });
 
     getMetasFinaisOption(escolaSelecionada.cd_unidade_educacao_atual).then(metasFinaisOptions => {
       if (typeof metasFinaisOptions === 'object') {
         this.setState({ metasFinaisOptions });
+        this.setState({ parametrosFinais: metasFinaisOptions.parametros });
       } else {
-        alert(metasFinaisOptions);
+        console.log(metasFinaisOptions);
       }
     });
 
@@ -122,10 +127,17 @@ export class Main extends Component {
         <div className="container" ref={this.calculoRef}>
           <div className="row mb-3">
             <Quad3 />
-            <Quad4 />
+            <Quad4
+              anosIniciais={this.state.parametrosIniciais}
+              anosFinais={this.state.parametrosFinais}
+              onAnosButtonClicked={() =>
+                this.handleScrollToElement(this.anosRef)
+              }
+            />
           </div>
         </div>
 
+        <div className="w-100" ref={this.anosRef}></div>
         <AnosHeader label="Anos Iniciais" />
         <div className="container">
           <div className="row">
@@ -161,6 +173,7 @@ export class Main extends Component {
               dreCount={this.state.dreCount}
               anosLabel="Anos Iniciais"
               anos="I"
+              parametros={this.state.parametrosIniciais}
             />
             <Grid cols="8 8 8 8">
               <If isVisible={this.state.histogramOptionsInicial}>
@@ -180,16 +193,19 @@ export class Main extends Component {
               escolaLabel={this.state.escolaLabel}
               anosLabel="Anos Iniciais"
               anos="I"
+              parametros={this.state.parametrosIniciais}
             />
           </div>
 
+          <div className="w-100" ref={this.anosFinaisRef}></div>
           <SeuGrupoHeader headerTipo={HEADER_OPT.FINAL} />
-          <div className="row mt-3" ref={this.anosFinaisRef}>
+          <div className="row mt-3">
             <CardEscolaDRE
               escolaLabel={this.state.escolaLabel}
               dreCount={this.state.dreCount}
               anosLabel="Anos Finais"
               anos="F"
+              parametros={this.parametrosFinais}
             />
             <Grid cols="8 8 8 8">
               <If isVisible={this.state.histogramOptionsFinal}>
@@ -209,6 +225,7 @@ export class Main extends Component {
               escolaLabel={this.state.escolaLabel}
               anosLabel="Anos Finais"
               anos="F"
+              parametros={this.state.parametrosFinais}
             />
           </div>
 
