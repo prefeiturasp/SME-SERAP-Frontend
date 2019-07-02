@@ -31,11 +31,11 @@ export class Main extends Component {
       escolaLabel: '',
       dreCount: []
     };
-    this.calculoRef = React.createRef();
-    this.seuGrupoRef = React.createRef();
-    this.metasRef = React.createRef();
     this.homeRef = React.createRef();
-    this.suaEscolaREf = React.createRef();
+    this.calculoRef = React.createRef();
+    this.metasRef = React.createRef();
+    this.anosIniciaisRef = React.createRef();
+    this.anosFinaisRef = React.createRef();
   }
 
   handleScrollToElement(ref) {
@@ -106,14 +106,14 @@ export class Main extends Component {
               onCalculoButtonClicked={() =>
                 this.handleScrollToElement(this.calculoRef)
               }
-              onSeuGrupoButtonClicked={() =>
-                this.handleScrollToElement(this.seuGrupoRef)
-              }
               onMetasButtonClicked={() => {
                 this.handleScrollToElement(this.metasRef);
               }}
-              onSuaEscolaButtonClicked={() =>
-                this.handleScrollToElement(this.seuGrupoRef)
+              onAnosIniciaisButtonClicked={() =>
+                this.handleScrollToElement(this.anosIniciaisRef)
+              }
+              onAnosFinaisButtonClicked={() =>
+                this.handleScrollToElement(this.anosFinaisRef)
               }
             />
           </div>
@@ -128,7 +128,7 @@ export class Main extends Component {
 
         <AnosHeader label="Anos Iniciais" />
         <div className="container">
-          <div className="row" ref={this.metasRef}>
+          <div className="row">
             <CirculosAnos params={anosInicial} />
           </div>
         </div>
@@ -142,7 +142,7 @@ export class Main extends Component {
 
         <div className="fundo-azul-escuro">
           <div className="container">
-            <div className="row mb-5 pb-4">
+            <div className="row mb-5 pb-4" ref={this.metasRef}>
               <Grid cols="12 12 12 12" className="text-right mt-5 mb-5">
                 <h2 className="m-0 mb-n4 p-0 pl-2 float-right fundo-azul-escuro cor-amarelo titulo-meta">META</h2>
                 <div className="clearfix"></div>
@@ -153,9 +153,9 @@ export class Main extends Component {
           </div>
         </div>
 
-        <div className="container">
+        <div className="container" ref={this.anosIniciaisRef}>
           <SeuGrupoHeader headerTipo={HEADER_OPT.INICIAL} />
-          <div className="row mt-3" ref={this.seuGrupoRef}>
+          <div className="row mt-3">
             <CardEscolaDRE
               escolaLabel={this.state.escolaLabel}
               dreCount={this.state.dreCount}
@@ -184,7 +184,7 @@ export class Main extends Component {
           </div>
 
           <SeuGrupoHeader headerTipo={HEADER_OPT.FINAL} />
-          <div className="row mt-3">
+          <div className="row mt-3" ref={this.anosFinaisRef}>
             <CardEscolaDRE
               escolaLabel={this.state.escolaLabel}
               dreCount={this.state.dreCount}

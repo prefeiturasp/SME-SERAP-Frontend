@@ -23,21 +23,21 @@ export default function Quad2(props) {
           className="btn-sm btn-fw border-0 bg-transparent text-white text-uppercase"
         />
         <Button
-          label="Seu Grupo"
-          style={ButtonStyle.OutlineLight}
-          onClick={() => props.onSeuGrupoButtonClicked()}
-          className="btn-sm btn-fw border-0 bg-transparent text-white text-uppercase"
-        />
-        <Button
           label="Metas"
           style={ButtonStyle.OutlineLight}
           onClick={() => props.onMetasButtonClicked()}
           className="btn-sm btn-fw border-0 bg-transparent text-white text-uppercase"
         />
         <Button
-          label="Sua Escola"
+          label="Anos Iniciais"
           style={ButtonStyle.OutlineLight}
-          onClick={() => props.onSuaEscolaButtonClicked()}
+          onClick={() => props.onAnosIniciaisButtonClicked()}
+          className="btn-sm btn-fw border-0 bg-transparent text-white text-uppercase"
+        />
+        <Button
+          label="Anos Finais"
+          style={ButtonStyle.OutlineLight}
+          onClick={() => props.onAnosFinaisButtonClicked()}
           className="btn-sm btn-fw border-0 bg-transparent text-white text-uppercase"
         />
       </Grid>
