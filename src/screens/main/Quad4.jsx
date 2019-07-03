@@ -4,10 +4,17 @@ import CircleAndLabelOutline, { CIRCLE_COLOR } from '../../components/circle/Cir
 import Grid from '../../components/Grid';
 
 function toggleAreaCalculo(event) {
+  document.querySelectorAll('.btn-anos').forEach(btn => {
+    btn.classList.remove('btn-primary', 'text-white');
+  });
+  event.target.classList.remove('btn-outline-primary');
+  event.target.classList.add('btn-primary', 'text-white');
+
   document.querySelectorAll('.collapse').forEach(col => {
     col.classList.remove('d-flex');
     col.classList.add('d-none');
   })
+  document.querySelector(`${event.target.getAttribute('data-target')}`).classList.remove('d-none');
   document.querySelector(`${event.target.getAttribute('data-target')}`).classList.add('d-flex');
 };
 
@@ -40,7 +47,7 @@ export default function Quad4(props) {
         <Button
           style={ButtonStyle.OutlinePrimary}
           label="Anos Iniciais"
-          className="text-uppercase mt-5 mr-5 cor-azul"
+          className="text-uppercase mt-5 mr-5 btn-anos cor-azul"
           dataToggle="collapse"
           dataTarget="#anosIniciais"
           ariaExpanded="false"
@@ -50,7 +57,7 @@ export default function Quad4(props) {
         <Button
           style={ButtonStyle.OutlinePrimary}
           label="Anos Finais"
-          className="text-uppercase mt-5 cor-azul"
+          className="text-uppercase mt-5 btn-anos cor-azul"
           dataToggle="collapse"
           dataTarget="#anosFinais"
           ariaExpanded="false"

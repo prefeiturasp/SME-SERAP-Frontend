@@ -19,7 +19,7 @@ import SuaEscolaHeader from './SuaEscolaHeader';
 import CardEscolaMeta from './CardEscolaMeta';
 import Button from '../../components/Button';
 
-export class Main extends Component {
+export default class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -41,6 +41,12 @@ export class Main extends Component {
     this.anosFinaisRef = React.createRef();
   }
 
+  componentDidMount() {
+    document.querySelector('.btn-anos').classList.add('btn-primary', 'text-white');
+    document.querySelector('.btn-anos').classList.remove('btn-outline-primary');
+    document.querySelector('.collapse').classList.add('d-flex');
+  }
+
   handleScrollToElement(ref) {
     window.scrollTo(0, ref.current.offsetTop - 5);
   }
@@ -58,6 +64,7 @@ export class Main extends Component {
           this.setState({ histogramOptionsInicial });
         } else {
           console.log(histogramOptionsInicial);
+          window.alert('Não existem índices e metas para esta escola!');
         }
       }
     );
@@ -75,7 +82,9 @@ export class Main extends Component {
     getMetasIniciaisOption(escolaSelecionada.cd_unidade_educacao_atual).then(metasIniciaisOptions => {
       if (typeof metasIniciaisOptions === 'object') {
         this.setState({ metasIniciaisOptions });
-        this.setState({ parametrosIniciais: metasIniciaisOptions.parametros });
+        setTimeout(function () {
+          this.setState({ parametrosIniciais: metasIniciaisOptions.parametros });
+        }.bind(this), 1000);
       } else {
         console.log(metasIniciaisOptions);
       }
@@ -84,7 +93,9 @@ export class Main extends Component {
     getMetasFinaisOption(escolaSelecionada.cd_unidade_educacao_atual).then(metasFinaisOptions => {
       if (typeof metasFinaisOptions === 'object') {
         this.setState({ metasFinaisOptions });
-        this.setState({ parametrosFinais: metasFinaisOptions.parametros });
+        setTimeout(function () {
+          this.setState({ parametrosFinais: metasFinaisOptions.parametros });
+        }.bind(this), 1000);
       } else {
         console.log(metasFinaisOptions);
       }
@@ -243,5 +254,3 @@ export class Main extends Component {
     );
   }
 }
-
-export default Main;
