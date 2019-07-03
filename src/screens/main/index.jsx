@@ -177,71 +177,71 @@ export default class Main extends Component {
         </div>
 
         <div className="container" ref={this.anosIniciaisRef}>
-          <SeuGrupoHeader headerTipo={HEADER_OPT.INICIAL} />
-          <div className="row mt-3">
-            <CardEscolaDRE
-              escolaLabel={this.state.escolaLabel}
-              dreCount={this.state.dreCount}
-              anosLabel="Anos Iniciais"
-              anos="I"
-              parametros={this.state.parametrosIniciais}
-            />
-            <Grid cols="8 8 8 8">
-              <If isVisible={this.state.histogramOptionsInicial}>
+          <If isVisible={this.state.histogramOptionsInicial}>
+            <SeuGrupoHeader headerTipo={HEADER_OPT.INICIAL} />
+            <div className="row mt-3">
+              <CardEscolaDRE
+                escolaLabel={this.state.escolaLabel}
+                dreCount={this.state.dreCount}
+                anosLabel="Anos Iniciais"
+                anos="I"
+                parametros={this.state.parametrosIniciais}
+              />
+              <Grid cols="8 8 8 8">
                 <ChartContainer options={this.state.histogramOptionsInicial} />
-              </If>
-            </Grid>
-          </div>
+              </Grid>
+            </div>
+          </If>
 
-          <SuaEscolaHeader headerTipo={HEADER_OPT.INICIAL} />
-          <div className="row mt-3">
-            <Grid cols="8 8 8 8" className="mt-n5">
-              <If isVisible={this.state.metasIniciaisOptions}>
+          <If isVisible={this.state.metasIniciaisOptions}>
+            <SuaEscolaHeader headerTipo={HEADER_OPT.INICIAL} />
+            <div className="row mt-3">
+              <Grid cols="8 8 8 8" className="mt-n5">
                 <ChartContainer options={this.state.metasIniciaisOptions} />
-              </If>
-            </Grid>
-            <CardEscolaMeta
-              escolaLabel={this.state.escolaLabel}
-              anosLabel="Anos Iniciais"
-              anos="I"
-              parametros={this.state.parametrosIniciais}
-            />
-          </div>
+              </Grid>
+              <CardEscolaMeta
+                escolaLabel={this.state.escolaLabel}
+                anosLabel="Anos Iniciais"
+                anos="I"
+                parametros={this.state.parametrosIniciais}
+              />
+            </div>
+          </If>
 
-          <div className="w-100" ref={this.anosFinaisRef}></div>
-          <SeuGrupoHeader headerTipo={HEADER_OPT.FINAL} />
-          <div className="row mt-3">
-            <CardEscolaDRE
-              escolaLabel={this.state.escolaLabel}
-              dreCount={this.state.dreCount}
-              anosLabel="Anos Finais"
-              anos="F"
-              parametros={this.parametrosFinais}
-            />
-            <Grid cols="8 8 8 8">
-              <If isVisible={this.state.histogramOptionsFinal}>
+          <If isVisible={this.state.histogramOptionsFinal}>
+            <div className="w-100" ref={this.anosFinaisRef}></div>
+            <SeuGrupoHeader headerTipo={HEADER_OPT.FINAL} />
+            <div className="row mt-3">
+              <CardEscolaDRE
+                escolaLabel={this.state.escolaLabel}
+                dreCount={this.state.dreCount}
+                anosLabel="Anos Finais"
+                anos="F"
+                parametros={this.parametrosFinais}
+              />
+              <Grid cols="8 8 8 8">
                 <ChartContainer options={this.state.histogramOptionsFinal} />
-              </If>
-            </Grid>
-          </div>
+              </Grid>
+            </div>
+          </If>
 
-          <SuaEscolaHeader headerTipo={HEADER_OPT.FINAL} />
-          <div className="row mt-3">
-            <Grid cols="8 8 8 8" className="mt-n5">
-              <If isVisible={this.state.metasFinaisOptions}>
+          <If isVisible={this.state.metasFinaisOptions}>
+            <SuaEscolaHeader headerTipo={HEADER_OPT.FINAL} />
+            <div className="row mt-3">
+              <Grid cols="8 8 8 8" className="mt-n5">
                 <ChartContainer options={this.state.metasFinaisOptions} />
-              </If>
-            </Grid>
-            <CardEscolaMeta
-              escolaLabel={this.state.escolaLabel}
-              anosLabel="Anos Finais"
-              anos="F"
-              parametros={this.state.parametrosFinais}
-            />
-          </div>
+              </Grid>
+              <CardEscolaMeta
+                escolaLabel={this.state.escolaLabel}
+                anosLabel="Anos Finais"
+                anos="F"
+                parametros={this.state.parametrosFinais}
+              />
+            </div>
+          </If>
 
           <div className="row mt-3">
-            <Grid cols="12 12 12 12" className="text-right pr-4 pb-4">
+            <Grid cols="12 12 12 12" className="text-right pr-4 pb-3">
               <Button
                 label="VOLTAR AO TOPO"
                 className="btn-sm border-0 bg-transparent text-uppercase font-weight-bold cor-azul"

@@ -6,7 +6,7 @@ export default function CardEscolaDRE(props) {
 
   return (
     <Grid cols="4 4 4 4" className="text-left mt-n7">
-      <div className="card border-0 shadow">
+      <div className="card border-0 shadow min-h-500">
         <div className="card-body">
           <h5 className={`card-anos font-weight-bold text-uppercase ${(anos === "I" ? "cor-vermelho" : "cor-amarelo")}`}>{anosLabel}</h5>
           <h5 className="card-titulo mt-3 mb-3">{escolaLabel}</h5>
