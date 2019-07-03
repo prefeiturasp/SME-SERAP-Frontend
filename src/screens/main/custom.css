@@ -13,6 +13,10 @@ body {
     background: rgb(255, 255, 255);
 }
 
+.App {
+    overflow-x: hidden;
+}
+
 /* footer... */
 
 .bg-cinza-escuro {
@@ -90,18 +94,6 @@ body {
     color: #ffffff;
 }
 
-.ic-pq {
-    height: 6.5em;
-    width: 6.5em;
-    float: right;
-}
-
-@media (max-width: 400px) {
-    .ic-pq {
-        float: none;
-    }
-}
-
 .ic-seta {
     height: 7em;
     width: 23em;
@@ -116,6 +108,14 @@ body {
 
 /* Novo */
 
+@media (max-width: 575.98px) {
+    .ic-seta {
+        height: 7em;
+        width: auto;
+        float: none;
+    }
+}
+
 .btn-fw {
     height: 40px;
     width: 112px;
@@ -127,6 +127,16 @@ body {
 
 .bloco-livros {
     height: 470px;
+}
+
+@media (max-width: 575.98px) {
+    .bloco-livros {
+        height: 232px;
+    }
+
+    .bloco-livros img {
+        position: relative !important;
+    }
 }
 
 .bloco-livros img {
@@ -185,6 +195,12 @@ body {
 
 .mt-n7 {
     margin-top: -7rem !important;
+}
+
+@media (max-width: 575.98px) {
+    .mt-n7 {
+        margin-top: 0 !important;
+    }
 }
 
 .card-anos {

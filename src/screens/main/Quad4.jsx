@@ -74,7 +74,7 @@ export default function Quad4(props) {
             bottomLabel="Quanto maior a nota, maior o aprendizado"
           />
         </Grid>
-        <Grid className="align-self-center operadores">X</Grid>
+        <Grid className="align-self-center d-lg-block d-none operadores">X</Grid>
         <Grid cols="3 3 3 3" className="">
           <CircleAndLabelOutline
             label={fluxoIniciais}
@@ -83,7 +83,7 @@ export default function Quad4(props) {
             bottomLabel="Quanto maior o valor, maior a aprovação"
           />
         </Grid>
-        <Grid className="align-self-center operadores">=</Grid>
+        <Grid className="align-self-center d-lg-block d-none operadores">=</Grid>
         <Grid cols="3 3 3 3" className="pr-0">
           <CircleAndLabelOutline
             label={indiceIniciais}
@@ -102,7 +102,7 @@ export default function Quad4(props) {
             bottomLabel="Quanto maior a nota, maior o aprendizado"
           />
         </Grid>
-        <Grid className="align-self-center operadores">X</Grid>
+        <Grid className="align-self-center d-lg-block d-none operadores">X</Grid>
         <Grid cols="3 3 3 3" className="">
           <CircleAndLabelOutline
             label={fluxoFinais}
@@ -111,7 +111,7 @@ export default function Quad4(props) {
             bottomLabel="Quanto maior o valor, maior a aprovação"
           />
         </Grid>
-        <Grid className="align-self-center operadores">=</Grid>
+        <Grid className="align-self-center d-lg-block d-none operadores">=</Grid>
         <Grid cols="3 3 3 3" className="pr-0">
           <CircleAndLabelOutline
             label={indiceFinais}

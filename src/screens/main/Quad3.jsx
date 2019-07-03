@@ -6,7 +6,7 @@ export default function Quad3() {
   return (
     <>
       <Grid cols="4 4 4 4" className="text-left pr-0">
-        <h2 className="font-italic font-weight-bolder d-block mb-5 pb-4 cor-azul card-anos">Todos os estudantes tem direito não só à educação, <br /> mas à educação de qualidade</h2>
+        <h2 className="font-italic font-weight-bolder d-block mt-lg-0 mt-5 mb-5 pb-lg-4 pb-0 cor-azul card-anos">Todos os estudantes tem direito não só à educação, <br /> mas à educação de qualidade</h2>
         <div className="text-left card-texto-grupo">
           <p><strong>O Índice de Desenvolvimento da Educação (IDEP)</strong> foi criado para
             medir o desempenho das escolas da Rede Municipal de Ensino, levando em

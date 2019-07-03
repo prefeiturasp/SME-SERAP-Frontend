@@ -19,12 +19,12 @@ export default function Informativo() {
         <Button
           style={ButtonStyle.OutlineLight}
           label="Nota técnica"
-          className="font-weight-bold text-uppercase mt-5"
+          className="font-weight-bold text-uppercase mt-5 mb-lg-0 mb-5"
         />
       </Grid>
       <Grid cols="8 8 8 8" className="">
         <div className="row">
-          <Grid cols="4 4 4 4" className="d-flex align-items-center justify-content-end">
+          <Grid cols="4 4 4 4" className="d-lg-flex d-none align-items-center justify-content-end">
             <img src={nse} alt="" className="img-fluid w-50" />
           </Grid>
           <Grid cols="8 8 8 8">
@@ -40,7 +40,7 @@ export default function Informativo() {
           </Grid>
         </div>
         <div className="row mt-5">
-          <Grid cols="4 4 4 4" className="d-flex align-items-center justify-content-end">
+          <Grid cols="4 4 4 4" className="d-lg-flex d-none align-items-center justify-content-end">
             <img src={icg} alt="" className="img-fluid w-50" />
           </Grid>
           <Grid cols="8 8 8 8">

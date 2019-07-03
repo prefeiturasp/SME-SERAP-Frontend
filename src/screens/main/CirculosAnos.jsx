@@ -6,7 +6,7 @@ import Button, { ButtonStyle } from '../../components/Button';
 export default function CirculosAnos(props) {
   const { params } = props;
   return (
-    <Grid cols="12 12 12 12" className="row mt-5 mb-5 text-center">
+    <Grid cols="12 12 12 12" className="flex-wrap mt-5 mb-5 text-center">
       <div className="card-deck">
         <Grid cols="3 3 3 3" className="mt-5 mb-2">
           <CircleAndLabelFill
