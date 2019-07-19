@@ -3,6 +3,8 @@ import Grid from '../../components/Grid';
 import icg from './img/IconeICG.png';
 import nse from './img/IconeNSE.png';
 import Button, { ButtonStyle } from '../../components/Button';
+import NotaTecnicaCalculoMetasIDEP from '../../assets/files/Nota_Tecnica_Calculo_Metas_IDEP.pdf';
+import { Link } from 'react-router-dom';
 
 export default function Informativo() {
   return (
@@ -16,11 +18,17 @@ export default function Informativo() {
           resultados ao longo dos anos. Dessa maneira, as diferenças entre os resultados das escolas serão
           minimizadas dentro do grupo ao qual cada uma faz parte, como também, entre os grupos estabelecidos.
         </div>
-        <Button
-          style={ButtonStyle.OutlineLight}
-          label="Nota técnica"
-          className="font-weight-bold text-uppercase mt-5 mb-lg-0 mb-5"
-        />
+        <Link
+          to={NotaTecnicaCalculoMetasIDEP}
+          target="_blank"
+          download
+        >
+          <Button
+            style={ButtonStyle.OutlineLight}
+            label="Nota técnica"
+            className="font-weight-bold text-uppercase mt-5 mb-lg-0 mb-5"
+          />
+        </Link>
       </Grid>
       <Grid cols="8 8 8 8" className="">
         <div className="row">
