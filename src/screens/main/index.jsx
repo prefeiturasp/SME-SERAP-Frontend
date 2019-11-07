@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import ChartContainer from '../../components/charts/ChartContainer';
-import { getHistogramOption, getMetasFinaisOption, getMetasIniciaisOption, HISTOGRAMTYPE } from '../../components/charts/utils';
+import {
+  getHistogramOption,
+  getMetasFinaisOption,
+  getMetasIniciaisOption,
+  HISTOGRAMTYPE
+} from '../../components/charts/utils';
 import Grid from '../../components/Grid';
 import If from '../../components/layout';
 import { getIndicesAnos } from '../../services/idep';
@@ -42,7 +47,9 @@ export default class Main extends Component {
   }
 
   componentDidMount() {
-    document.querySelector('.btn-anos').classList.add('btn-primary', 'text-white');
+    document
+      .querySelector('.btn-anos')
+      .classList.add('btn-primary', 'text-white');
     document.querySelector('.btn-anos').classList.remove('btn-outline-primary');
     document.querySelector('.collapse').classList.add('d-flex');
   }
@@ -58,50 +65,62 @@ export default class Main extends Component {
     });
     this.setState({ escolaSelecionada });
 
-    getHistogramOption(escolaSelecionada.cd_unidade_educacao_atual, HISTOGRAMTYPE.INICIAL).then(
-      histogramOptionsInicial => {
-        if (typeof histogramOptionsInicial === 'object') {
-          this.setState({ histogramOptionsInicial });
-        } else {
-          console.log(histogramOptionsInicial);
-          window.alert('Não existem índices e metas para esta escola!');
-        }
-      }
-    );
-
-    getHistogramOption(escolaSelecionada.cd_unidade_educacao_atual, HISTOGRAMTYPE.FINAL).then(
-      histogramOptionsFinal => {
-        if (typeof histogramOptionsFinal === 'object') {
-          this.setState({ histogramOptionsFinal });
-        } else {
-          console.log(histogramOptionsFinal);
-        }
-      }
-    );
-
-    getMetasIniciaisOption(escolaSelecionada.cd_unidade_educacao_atual).then(metasIniciaisOptions => {
-      if (typeof metasIniciaisOptions === 'object') {
-        this.setState({ metasIniciaisOptions });
-        setTimeout(function () {
-          this.setState({ parametrosIniciais: metasIniciaisOptions.parametros });
-        }.bind(this), 1000);
+    getHistogramOption(
+      escolaSelecionada.cd_unidade_educacao_atual,
+      HISTOGRAMTYPE.INICIAL
+    ).then(histogramOptionsInicial => {
+      if (typeof histogramOptionsInicial === 'object') {
+        this.setState({ histogramOptionsInicial });
       } else {
-        console.log(metasIniciaisOptions);
+        console.log(histogramOptionsInicial);
+        window.alert('Não existem índices e metas para esta escola!');
       }
     });
 
-    getMetasFinaisOption(escolaSelecionada.cd_unidade_educacao_atual).then(metasFinaisOptions => {
-      if (typeof metasFinaisOptions === 'object') {
-        this.setState({ metasFinaisOptions });
-        setTimeout(function () {
+    getHistogramOption(
+      escolaSelecionada.cd_unidade_educacao_atual,
+      HISTOGRAMTYPE.FINAL
+    ).then(histogramOptionsFinal => {
+      if (typeof histogramOptionsFinal === 'object') {
+        this.setState({ histogramOptionsFinal });
+      } else {
+        console.log(histogramOptionsFinal);
+      }
+    });
+
+    getMetasIniciaisOption(escolaSelecionada.cd_unidade_educacao_atual).then(
+      metasIniciaisOptions => {
+        if (typeof metasIniciaisOptions === 'object') {
+          this.setState({ metasIniciaisOptions });
+          console.log(
+            'getMetasIniciaisOption',
+            metasIniciaisOptions.parametros
+          );
+          this.setState({
+            parametrosIniciais: metasIniciaisOptions.parametros
+          });
+        } else {
+          console.log(metasIniciaisOptions);
+        }
+      }
+    );
+
+    getMetasFinaisOption(escolaSelecionada.cd_unidade_educacao_atual).then(
+      metasFinaisOptions => {
+        if (typeof metasFinaisOptions === 'object') {
+          this.setState({ metasFinaisOptions });
+          console.log('getMetasFinaisOption', metasFinaisOptions.parametros);
           this.setState({ parametrosFinais: metasFinaisOptions.parametros });
-        }.bind(this), 1000);
-      } else {
-        console.log(metasFinaisOptions);
+        } else {
+          console.log(metasFinaisOptions);
+        }
       }
-    });
+    );
 
-    getIndicesAnos(escolaSelecionada.cd_unidade_educacao_atual, HISTOGRAMTYPE.INICIAL).then(indices => {
+    getIndicesAnos(
+      escolaSelecionada.cd_unidade_educacao_atual,
+      HISTOGRAMTYPE.INICIAL
+    ).then(indices => {
       this.setState({ dreCount: indices.dre_count });
     });
   }
@@ -118,7 +137,9 @@ export default class Main extends Component {
               }
             />
             <Quad2
-              onHomeButtonClicked={() => this.handleScrollToElement(this.homeRef)}
+              onHomeButtonClicked={() =>
+                this.handleScrollToElement(this.homeRef)
+              }
               onCalculoButtonClicked={() =>
                 this.handleScrollToElement(this.calculoRef)
               }
@@ -167,7 +188,9 @@ export default class Main extends Component {
           <div className="container">
             <div className="row mb-5 pb-4" ref={this.metasRef}>
               <Grid cols="12 12 12 12" className="text-right mt-5 mb-5">
-                <h2 className="m-0 mb-n4 p-0 pl-2 float-right fundo-azul-escuro cor-amarelo titulo-meta">META</h2>
+                <h2 className="m-0 mb-n4 p-0 pl-2 float-right fundo-azul-escuro cor-amarelo titulo-meta">
+                  META
+                </h2>
                 <div className="clearfix"></div>
                 <div className="w-100 borda-meta"></div>
               </Grid>
