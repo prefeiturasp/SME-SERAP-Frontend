@@ -32,19 +32,31 @@ export default class Quad1 extends Component {
 
   render() {
     return (
-      <Grid cols="5 5 5 5" className="d-flex justify-content-center align-items-center text-left">
+      <Grid
+        cols="5 5 5 5"
+        className="d-flex justify-content-center align-items-center text-left"
+      >
         <Grid cols="12 12 12 12" className="mt-lg-0 mt-5">
           <div className="texto-cinza-inicio">
             Conheça o <span className="cor-azul font-weight-bolder">IDEP</span>
           </div>
-          <p className="descricao-cinza-inicio mt-4 mb-0 p-0">Saiba mais sobre a importância do índice,</p>
-          <p className="descricao-cinza-inicio mt-0 mb-4 p-0">como ele é calculado e as metas da sua escola</p>
+          <p className="descricao-cinza-inicio mt-4 mb-0 p-0">
+            Saiba mais sobre a importância do índice,
+          </p>
+          <p className="descricao-cinza-inicio mt-0 mb-4 p-0">
+            como ele é calculado e as metas da sua escola
+          </p>
           <Select
             placeholder="Selecione sua escola"
             options={this.state.options}
             onChange={e => this.props.onEscolaSelecionada(e)}
           />
-          <img src={imgRolar} alt="Rolar" className="mt-5 mb-lg-0 mb-5" onClick={() => this.props.onCalculoButtonClicked()} />
+          <img
+            src={imgRolar}
+            alt="Rolar"
+            className="mt-5 mb-lg-0 mb-5"
+            onClick={() => this.props.onCalculoButtonClicked()}
+          />
         </Grid>
       </Grid>
     );

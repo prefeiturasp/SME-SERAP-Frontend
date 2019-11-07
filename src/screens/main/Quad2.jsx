@@ -5,11 +5,11 @@ import livros from './img/livros.png';
 
 export default function Quad2(props) {
   return (
-    <Grid cols="7 7 7 7" className="pt-5 pb-5 position-relative fundo-azul-transparente">
-      <Grid
-        cols="12 12 12 12"
-        className="d-flex justify-content-between"
-      >
+    <Grid
+      cols="7 7 7 7"
+      className="pt-5 pb-5 position-relative fundo-azul-transparente"
+    >
+      <Grid cols="12 12 12 12" className="d-flex justify-content-between">
         <Button
           label="Home"
           style={ButtonStyle.OutlineLight}
@@ -41,7 +41,10 @@ export default function Quad2(props) {
           className="btn-sm btn-fw border-0 bg-transparent text-white text-uppercase"
         />
       </Grid>
-      <Grid cols="12 12 12 12" className="d-block position-relative mt-5 mb-5 bloco-livros">
+      <Grid
+        cols="12 12 12 12"
+        className="d-block position-relative mt-5 mb-5 bloco-livros"
+      >
         <img className="position-absolute" src={livros} alt="" />
       </Grid>
       <Grid cols="12 12 12 12" className="mt-4">

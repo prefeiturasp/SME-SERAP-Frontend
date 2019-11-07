@@ -188,19 +188,6 @@ const getValorAlcancadoFinal = r => {
   return [r.ano_final.indices.indices[0]].concat([0, 0, 0, 0, 0]);
 };
 
-export const getMetasFinaisOption = async codEol => {
-  const meta = await getMetaAnos(codEol);
-  if (meta.erro) return meta.erro;
-  metaOption.series[0].data = getValorAlcancadoFinal(meta);
-  metaOption.series[1].data = getMetaFinal(meta);
-  metaOption.xAxis[0].data = getAnosFinal(meta);
-  metaOption.parametros = meta.ano_final.parametros;
-  metaOption.parametros.indice = meta.ano_final.indices.indices[0];
-  metaOption.color[0] = "#1B80D4";
-  metaOption.color[1] = "#FF6C7B";
-  return metaOption;
-};
-
 const getAnosInicial = r => {
   return [r.ano_inicial.indices.anos[0]].concat(r.ano_inicial.metas.anos);
 };
@@ -219,5 +206,20 @@ export const getMetasIniciaisOption = async codEol => {
   metaOption.xAxis[0].data = getAnosInicial(meta);
   metaOption.parametros = meta.ano_inicial.parametros;
   metaOption.parametros.indice = meta.ano_inicial.indices.indices[0];
+  console.log("iniciais", metaOption.parametros);
+  return metaOption;
+};
+
+export const getMetasFinaisOption = async codEol => {
+  const meta = await getMetaAnos(codEol);
+  if (meta.erro) return meta.erro;
+  metaOption.series[0].data = getValorAlcancadoFinal(meta);
+  metaOption.series[1].data = getMetaFinal(meta);
+  metaOption.xAxis[0].data = getAnosFinal(meta);
+  metaOption.parametros = meta.ano_final.parametros;
+  metaOption.parametros.indice = meta.ano_final.indices.indices[0];
+  metaOption.color[0] = "#1B80D4";
+  metaOption.color[1] = "#FF6C7B";
+  console.log("FINAIS", metaOption.parametros);
   return metaOption;
 };

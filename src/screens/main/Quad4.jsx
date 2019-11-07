@@ -1,6 +1,8 @@
 import React from 'react';
 import Button, { ButtonStyle } from '../../components/Button';
-import CircleAndLabelOutline, { CIRCLE_COLOR } from '../../components/circle/CircleAndLabelOutline';
+import CircleAndLabelOutline, {
+  CIRCLE_COLOR
+} from '../../components/circle/CircleAndLabelOutline';
 import Grid from '../../components/Grid';
 
 function toggleAreaCalculo(event) {
@@ -13,10 +15,14 @@ function toggleAreaCalculo(event) {
   document.querySelectorAll('.collapse').forEach(col => {
     col.classList.remove('d-flex');
     col.classList.add('d-none');
-  })
-  document.querySelector(`${event.target.getAttribute('data-target')}`).classList.remove('d-none');
-  document.querySelector(`${event.target.getAttribute('data-target')}`).classList.add('d-flex');
-};
+  });
+  document
+    .querySelector(`${event.target.getAttribute('data-target')}`)
+    .classList.remove('d-none');
+  document
+    .querySelector(`${event.target.getAttribute('data-target')}`)
+    .classList.add('d-flex');
+}
 
 export default function Quad4(props) {
   const { anosIniciais, anosFinais, onAnosButtonClicked } = props;
@@ -27,18 +33,48 @@ export default function Quad4(props) {
   let indiceIniciais = '';
   let indiceFinais = '';
 
+  console.dir(
+    `iniciais: ${anosIniciais.fluxo} ${anosIniciais.indice} ___
+   finais: ${anosFinais.fluxo} ${anosFinais.indice}`,
+    { depth: null }
+  );
+
   if (anosIniciais.indice !== undefined && anosIniciais.fluxo !== undefined) {
-    aprendizadoIniciais = parseFloat(anosIniciais.indice) / parseFloat(anosIniciais.fluxo.replace(',', '.'));
-    aprendizadoIniciais = aprendizadoIniciais.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-    fluxoIniciais = parseFloat(anosIniciais.fluxo.replace(',', '.')).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-    indiceIniciais = parseFloat(anosIniciais.indice).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    aprendizadoIniciais =
+      parseFloat(anosIniciais.indice) /
+      parseFloat(anosIniciais.fluxo.replace(',', '.'));
+    aprendizadoIniciais = aprendizadoIniciais.toLocaleString('pt-BR', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
+    fluxoIniciais = parseFloat(
+      anosIniciais.fluxo.replace(',', '.')
+    ).toLocaleString('pt-BR', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
+    indiceIniciais = parseFloat(anosIniciais.indice).toLocaleString('pt-BR', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
   }
 
   if (anosFinais.indice !== undefined && anosFinais.fluxo !== undefined) {
-    aprendizadoFinais = parseFloat(anosFinais.indice) / parseFloat(anosFinais.fluxo.replace(',', '.'));
-    aprendizadoFinais = aprendizadoFinais.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-    fluxoFinais = parseFloat(anosFinais.fluxo.replace(',', '.')).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-    indiceFinais = parseFloat(anosFinais.indice).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    aprendizadoFinais =
+      parseFloat(anosFinais.indice) /
+      parseFloat(anosFinais.fluxo.replace(',', '.'));
+    aprendizadoFinais = aprendizadoFinais.toLocaleString('pt-BR', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
+    fluxoFinais = parseFloat(anosFinais.fluxo.replace(',', '.')).toLocaleString(
+      'pt-BR',
+      { minimumFractionDigits: 2, maximumFractionDigits: 2 }
+    );
+    indiceFinais = parseFloat(anosFinais.indice).toLocaleString('pt-BR', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
   }
 
   return (
@@ -65,7 +101,10 @@ export default function Quad4(props) {
           onClick={toggleAreaCalculo}
         />
       </div>
-      <div className="row mt-5 mb-5 ml-0 mr-0 flex-wrap justify-content-between align-items-start collapse multi-collapse" id="anosIniciais">
+      <div
+        className="row mt-5 mb-5 ml-0 mr-0 flex-wrap justify-content-between align-items-start collapse multi-collapse"
+        id="anosIniciais"
+      >
         <Grid cols="3 3 3 3" className="pl-0">
           <CircleAndLabelOutline
             label={aprendizadoIniciais}
@@ -74,7 +113,9 @@ export default function Quad4(props) {
             bottomLabel="Quanto maior a nota, maior o aprendizado"
           />
         </Grid>
-        <Grid className="align-self-center d-lg-block d-none operadores">X</Grid>
+        <Grid className="align-self-center d-lg-block d-none operadores">
+          X
+        </Grid>
         <Grid cols="3 3 3 3" className="">
           <CircleAndLabelOutline
             label={fluxoIniciais}
@@ -83,7 +124,9 @@ export default function Quad4(props) {
             bottomLabel="Quanto maior o valor, maior a aprovação"
           />
         </Grid>
-        <Grid className="align-self-center d-lg-block d-none operadores">=</Grid>
+        <Grid className="align-self-center d-lg-block d-none operadores">
+          =
+        </Grid>
         <Grid cols="3 3 3 3" className="pr-0">
           <CircleAndLabelOutline
             label={indiceIniciais}
@@ -93,7 +136,10 @@ export default function Quad4(props) {
           />
         </Grid>
       </div>
-      <div className="row mt-5 mb-5 ml-0 mr-0 flex-wrap justify-content-between align-items-start collapse multi-collapse" id="anosFinais">
+      <div
+        className="row mt-5 mb-5 ml-0 mr-0 flex-wrap justify-content-between align-items-start collapse multi-collapse"
+        id="anosFinais"
+      >
         <Grid cols="3 3 3 3" className="pl-0">
           <CircleAndLabelOutline
             label={aprendizadoFinais}
@@ -102,7 +148,9 @@ export default function Quad4(props) {
             bottomLabel="Quanto maior a nota, maior o aprendizado"
           />
         </Grid>
-        <Grid className="align-self-center d-lg-block d-none operadores">X</Grid>
+        <Grid className="align-self-center d-lg-block d-none operadores">
+          X
+        </Grid>
         <Grid cols="3 3 3 3" className="">
           <CircleAndLabelOutline
             label={fluxoFinais}
@@ -111,7 +159,9 @@ export default function Quad4(props) {
             bottomLabel="Quanto maior o valor, maior a aprovação"
           />
         </Grid>
-        <Grid className="align-self-center d-lg-block d-none operadores">=</Grid>
+        <Grid className="align-self-center d-lg-block d-none operadores">
+          =
+        </Grid>
         <Grid cols="3 3 3 3" className="pr-0">
           <CircleAndLabelOutline
             label={indiceFinais}
@@ -122,7 +172,10 @@ export default function Quad4(props) {
         </Grid>
       </div>
       <div className="row m-0">
-        <Grid cols="12 12 12 12" className="mt-3 mb-5 border-bottom borda-dotted"></Grid>
+        <Grid
+          cols="12 12 12 12"
+          className="mt-3 mb-5 border-bottom borda-dotted"
+        />
         <Grid cols="12 12 12 12" className="mt-2 pt-2">
           <Button
             style={ButtonStyle.OutlinePrimary}
