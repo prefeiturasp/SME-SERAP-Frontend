@@ -240,7 +240,7 @@ export default class Main extends Component {
                 dreCount={this.state.dreCount}
                 anosLabel="Anos Finais"
                 anos="F"
-                parametros={this.parametrosFinais}
+                parametros={this.state.parametrosFinais}
               />
               <Grid cols="8 8 8 8">
                 <ChartContainer options={this.state.histogramOptionsFinal} />
