@@ -1,5 +1,7 @@
 import React from 'react';
-import CircleAndLabelFill, { CIRCLE_COLOR } from '../../components/circle/CircleAndLabelFill';
+import CircleAndLabelFill, {
+  CIRCLE_COLOR
+} from '../../components/circle/CircleAndLabelFill';
 import Grid from '../../components/Grid';
 import Button, { ButtonStyle } from '../../components/Button';
 import NotaTecnicaCalculoMetasIDEP from '../../assets/files/Nota_Tecnica_Calculo_Metas_IDEP.pdf';
@@ -46,11 +48,7 @@ export default function CirculosAnos(props) {
         </Grid>
       </div>
       <Grid cols="12 12 12 12" className="text-right">
-        <Link
-          to={NotaTecnicaCalculoMetasIDEP}
-          target="_blank"
-          download
-        >
+        <Link to={NotaTecnicaCalculoMetasIDEP} target="_blank" download>
           <Button
             style={ButtonStyle.OutlinePrimary}
             label="Nota técnica"
