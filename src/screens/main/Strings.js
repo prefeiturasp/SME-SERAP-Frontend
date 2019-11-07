@@ -9,7 +9,8 @@ export const anosInicial = {
   },
   third: {
     label: "MP 3º ano + MP 5º ano ÷ 6",
-    bottomLabel: "MP (Média Ponderada) Soma das duas médias dividido por 6 (número de avaliações)"
+    bottomLabel:
+      "MP (Média Ponderada) Soma das duas médias dividido por 6 (número de avaliações)"
   },
   forth: {
     label: "Fluxo 1º ano ao 5º ano",
@@ -28,7 +29,8 @@ export const anosFinal = {
   },
   third: {
     label: "MP 7º ano + MP 9º ano ÷ 6",
-    bottomLabel: "MP (Média Ponderada) Soma das duas médias dividido por 6 (número de avaliações)"
+    bottomLabel:
+      "MP (Média Ponderada) Soma das duas médias dividido por 6 (número de avaliações)"
   },
   forth: {
     label: "Fluxo 6º ano ao 9º ano",

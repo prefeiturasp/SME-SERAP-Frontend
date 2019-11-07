@@ -169,7 +169,7 @@ export default class Main extends Component {
           </div>
         </div>
 
-        <div className="w-100" ref={this.anosRef}></div>
+        <div className="w-100" ref={this.anosRef} />
         <AnosHeader label="Anos Iniciais" />
         <div className="container">
           <div className="row">
@@ -191,8 +191,8 @@ export default class Main extends Component {
                 <h2 className="m-0 mb-n4 p-0 pl-2 float-right fundo-azul-escuro cor-amarelo titulo-meta">
                   META
                 </h2>
-                <div className="clearfix"></div>
-                <div className="w-100 borda-meta"></div>
+                <div className="clearfix" />
+                <div className="w-100 borda-meta" />
               </Grid>
               <Informativo />
             </div>
@@ -232,7 +232,7 @@ export default class Main extends Component {
           </If>
 
           <If isVisible={this.state.histogramOptionsFinal}>
-            <div className="w-100" ref={this.anosFinaisRef}></div>
+            <div className="w-100" ref={this.anosFinaisRef} />
             <SeuGrupoHeader headerTipo={HEADER_OPT.FINAL} />
             <div className="row mt-3">
               <CardEscolaDRE

@@ -175,7 +175,7 @@ export default function Quad4(props) {
         <Grid
           cols="12 12 12 12"
           className="mt-3 mb-5 border-bottom borda-dotted"
-        ></Grid>
+        />
         <Grid cols="12 12 12 12" className="mt-2 pt-2">
           <Button
             style={ButtonStyle.OutlinePrimary}

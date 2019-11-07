@@ -61,17 +61,16 @@ export default class CircleAndLabelFill extends Component {
     return (
       <div>
         <div className="container position-relative text-center">
-          <img
-            src={circleSelected}
-            alt=""
-            className="circulo-fill"
-          />
+          <img src={circleSelected} alt="" className="circulo-fill" />
           <div className="text-white font-weight-bold w-50 texto-meio-circulo-fill">
             {label}
             <div className="texto-meio-ano">{ano}</div>
           </div>
         </div>
-        <div className="d-flex justify-content-center align-items-center pontos" style={{ color: dotsColor }}>
+        <div
+          className="d-flex justify-content-center align-items-center pontos"
+          style={{ color: dotsColor }}
+        >
           .....
         </div>
         <div className="card border-0 shadow card-circulo card-texto-grupo">
