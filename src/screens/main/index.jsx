@@ -72,7 +72,6 @@ export default class Main extends Component {
       if (typeof histogramOptionsInicial === 'object') {
         this.setState({ histogramOptionsInicial });
       } else {
-        console.log(histogramOptionsInicial);
         window.alert('Não existem índices e metas para esta escola!');
       }
     });
@@ -92,10 +91,6 @@ export default class Main extends Component {
       metasIniciaisOptions => {
         if (typeof metasIniciaisOptions === 'object') {
           this.setState({ metasIniciaisOptions });
-          console.log(
-            'getMetasIniciaisOption',
-            metasIniciaisOptions.parametros
-          );
           this.setState({
             parametrosIniciais: metasIniciaisOptions.parametros
           });
@@ -109,7 +104,6 @@ export default class Main extends Component {
       metasFinaisOptions => {
         if (typeof metasFinaisOptions === 'object') {
           this.setState({ metasFinaisOptions });
-          console.log('getMetasFinaisOption', metasFinaisOptions.parametros);
           this.setState({ parametrosFinais: metasFinaisOptions.parametros });
         } else {
           console.log(metasFinaisOptions);
@@ -169,7 +163,7 @@ export default class Main extends Component {
           </div>
         </div>
 
-        <div className="w-100" ref={this.anosRef} />
+        <div className="w-100" ref={this.anosRef}></div>
         <AnosHeader label="Anos Iniciais" />
         <div className="container">
           <div className="row">
@@ -191,8 +185,8 @@ export default class Main extends Component {
                 <h2 className="m-0 mb-n4 p-0 pl-2 float-right fundo-azul-escuro cor-amarelo titulo-meta">
                   META
                 </h2>
-                <div className="clearfix" />
-                <div className="w-100 borda-meta" />
+                <div className="clearfix"></div>
+                <div className="w-100 borda-meta"></div>
               </Grid>
               <Informativo />
             </div>
@@ -232,7 +226,7 @@ export default class Main extends Component {
           </If>
 
           <If isVisible={this.state.histogramOptionsFinal}>
-            <div className="w-100" ref={this.anosFinaisRef} />
+            <div className="w-100" ref={this.anosFinaisRef}></div>
             <SeuGrupoHeader headerTipo={HEADER_OPT.FINAL} />
             <div className="row mt-3">
               <CardEscolaDRE
