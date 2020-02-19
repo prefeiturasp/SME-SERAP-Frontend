@@ -177,23 +177,25 @@ let metaOption = {
 };
 
 const getAnosFinal = r => {
-    return [r.ano_final.indices.anos[0]].concat(r.ano_final.metas.anos);
+    // return [r.ano_final.indices.anos[0]].concat(r.ano_final.metas.anos);
+    return r.ano_final.metas.anos;
 };
 
 const getMetaFinal = r => {
-    return [r.ano_final.indices.indices[0]].concat(r.ano_final.metas.metas);
+    // return [r.ano_final.indices.indices[0]].concat(r.ano_final.metas.metas);
+    return r.ano_final.metas.metas;
 };
 
 
 //PEPPE -
-/*const getValorAlcancadoFinal = r => {
-  return [r.ano_final.indices.indices[0]].concat([0, 0, 0, 0, 0]);
-};*/
-
-
 const getValorAlcancadoFinal = r => {
-    return [0].concat([r.ano_final.indices.indices[0], 0, 0, 0, 0]);
+  return [r.ano_final.indices.indices[0]].concat([0, 0, 0, 0, 0]);
 };
+
+
+// const getValorAlcancadoFinal = r => {
+//     return [0].concat([r.ano_final.indices.indices[0], 0, 0, 0, 0]);
+// };
 
 export const getMetasFinaisOption = async codEol => {
     const meta = await getMetaAnos(codEol);
@@ -209,19 +211,23 @@ export const getMetasFinaisOption = async codEol => {
 };
 
 const getAnosInicial = r => {
-    return [r.ano_inicial.indices.anos[0]].concat(r.ano_inicial.metas.anos);
+    // return [r.ano_inicial.indices.anos[0]].concat(r.ano_inicial.metas.anos);
+    return r.ano_inicial.metas.anos;
 };
-const getMetaInicial = r => {
-    return [r.ano_inicial.indices.indices[0]].concat(r.ano_inicial.metas.metas);
-};
-//PEPPE
-/*const getValorAlcancadoInicial = r => {
-    return [r.ano_inicial.indices.indices[0]].concat([0, 0, 0, 0, 0, 0]);
-};*/
 
-const getValorAlcancadoInicial = r => {
-    return [0].concat([r.ano_inicial.indices.indices[0], 0, 0, 0, 0, 0]);
+const getMetaInicial = r => {
+    // return [r.ano_inicial.indices.indices[0]].concat(r.ano_inicial.metas.metas);
+    return r.ano_inicial.metas.metas;
 };
+
+//PEPPE
+const getValorAlcancadoInicial = r => {
+    return [r.ano_inicial.indices.indices[0]].concat([0, 0, 0, 0, 0, 0]);
+};
+
+// const getValorAlcancadoInicial = r => {
+//     return [0].concat([r.ano_inicial.indices.indices[0], 0, 0, 0, 0, 0]);
+// };
 
 
 export const getMetasIniciaisOption = async codEol => {
