@@ -189,7 +189,7 @@ const getMetaFinal = r => {
 
 //PEPPE -
 const getValorAlcancadoFinal = r => {
-  return [r.ano_final.indices.indices[0]].concat([0, 0, 0, 0, 0]);
+    return [r.ano_final.indices.indices[0]].concat([0, 0, 0, 0, 0]);
 };
 
 
@@ -233,10 +233,11 @@ const getValorAlcancadoInicial = r => {
 export const getMetasIniciaisOption = async codEol => {
     const meta = await getMetaAnos(codEol);
     if (meta.erro) return meta.erro;
-    metaOption.series[0].data = getValorAlcancadoInicial(meta);
-    metaOption.series[1].data = getMetaInicial(meta);
-    metaOption.xAxis[0].data = getAnosInicial(meta);
-    metaOption.parametros = meta.ano_inicial.parametros;
-    metaOption.parametros.indice = meta.ano_inicial.indices.indices[0];
-    return metaOption;
+    let AI = JSON.parse(JSON.stringify(metaOption));
+    AI.series[0].data = getValorAlcancadoInicial(meta);
+    AI.series[1].data = getMetaInicial(meta);
+    AI.xAxis[0].data = getAnosInicial(meta);
+    AI.parametros = meta.ano_inicial.parametros;
+    AI.parametros.indice = meta.ano_inicial.indices.indices[0];
+    return AI;
 };
